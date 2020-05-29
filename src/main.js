@@ -1,6 +1,5 @@
 // Variables
 const root = document.getElementById('root');
-const login = document.getElementById('login');
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -18,19 +17,19 @@ firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 
 // AREA DE LOGIN
-const loginPage = () => {
-  login.innerHTML = '';
-  login.innerHTML = `<div id="loginPage">
+const container = () => {
+  root.innerHTML = '';
+  root.innerHTML = `<section id="loginPage">
                     <h1>¡Bienvenido!</h1>
                     <h2>¡Comparte tu receta con nosotros!</h2>
                     <input type="email" placeholder="Correo electrónico" id="emailA" class="loginInput"/> 
                     <input type="password" placeholder="Contraseña" id="passwordA" class="loginInput"/>
                     <button id="loginBtn" class="button">Iniciar sesión</button>
-                    <p>¿No tienes cuenta? Regístrate</p> <a href='#userRegisterPage' id="newAccount">Aquí</a>
-                    </div>`;
+                    <p>¿No tienes cuenta? Regístrate<a href='#userRegisterPage' id="newAccount">Aquí</a></p>
+                    </section>`;
 };
 
-loginPage();
+container();
 
 // CLICK LOGIN
 document.getElementById('loginBtn').addEventListener('click', () => {
@@ -56,10 +55,13 @@ firebase.auth().onAuthStateChanged(function(user) {
     const isAnonymous = user.isAnonymous;
     const uid = user.uid;
     const providerData = user.providerData;
-    //document.getElementById('login').innerHTML=`<div><p>Estas regístrado ${user.email}</p></div>`
-    console.log(user);
+    //document.getElementById('userLogin').innerHTML=`<div><p>Estas regístrado ${user.email}</p>
+    //</div>`
+    //console.log(user);
   } else {
-    //document.getElementById('login').innerHTML=`<div><p>No estas regístrado</p></div>`
+    //document.getElementById('userLogin').innerHTML=`<div><p>No estas regístrado</p>
+    //<p>¿No tienes cuenta? Regístrate</p> <a href='#userRegisterPage' id="newAccount">Aquí</a>
+    //</div>`
   }
 }); 
 
@@ -75,21 +77,24 @@ const userRegisterPage = () => {
                     <button id="userRegisterBtn" class="button">Crear cuenta</button>
                     </div>`;
 };
-
+//userRegisterPage();
 
 document.getElementById('newAccount').addEventListener('click', () => {
   userRegisterPage();
+  registerBtn();
 });
 
-document.getElementById('userRegisterBtn').addEventListener('click', () => {
-  const name = document.getElementById('name').value;
+const registerBtn = () => { 
+  
+  document.getElementById('userRegisterBtn').addEventListener('click', () => {
+  //const name = document.getElementById('name').value;
   const email = document.getElementById('email').value;
   const pass = document.getElementById('pass').value;
 
-  firebase.auth().createUserWithEmailAndPassword(name,email, pass).catch(function (error) {
+  firebase.auth().createUserWithEmailAndPassword(email, pass).catch(function (error) {
     const errorCode = error.code;
     const errorMessage = error.message;
     alert(errorCode);
   });
 });
-
+};
