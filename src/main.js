@@ -19,7 +19,7 @@ firebase.analytics();
 // AREA DE LOGIN
 const container = () => {
   root.innerHTML = '';
-  root.innerHTML = `<section id="loginPage">
+  root.innerHTML = `<section id="loginPage" class="containerPage">
                     <div class="containerLeft">
                     <img class="logo" src="./img/logo.png">
                     </div>
@@ -83,12 +83,23 @@ firebase.auth().onAuthStateChanged(function(user) {
 
 const userRegisterPage = () => {
   root.innerHTML = '';
-  root.innerHTML = `<section id="userRegisterPage">
-                    <h1>Registrate</h1>
-                    <input type="text" placeholder="Nombre" id="name" class="loginInput"/> 
-                    <input type="email" placeholder="Correo electrónico" id="email" class="loginInput"/> 
-                    <input type="password" placeholder="Contraseña" id="pass" class="loginInput"/>
-                    <button id="userRegisterBtn" class="button">Crear cuenta</button>
+  root.innerHTML = `<section id="userRegisterPage" class="containerPage">
+                    <div class="containerLeft">
+                    <img class="logo" src="./img/logo.png">
+                    </div>
+                    <div class="containerRight">
+                    <div class="userRegisterform">
+                    <div class="title">
+                    <h1 class="userRegisterTitle">¡Regístrate!</h1>
+                    </div>
+                    <i class="fas fa-user"><input type="text" placeholder="Nombre" id="name" class="userRegisterInput"/></i>
+                    <i class="fas fa-envelope"><input type="email" placeholder="Correo electrónico" id="email" class="userRegisterInput"/></i> 
+                    <i class="fas fa-unlock"><input type="password" placeholder="Contraseña" id="pass" class="userRegisterInput"/></i>
+                    </div>
+                    <div>
+                    <button id="userRegisterBtn" class="Allbtn">Crear cuenta</button>
+                    </div>
+                    </div>
                     </section>`;
 };
 //userRegisterPage();
