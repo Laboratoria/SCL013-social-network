@@ -17,19 +17,33 @@ firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 
 // AREA DE LOGIN
-const loginPage = () => {
+const container = () => {
   root.innerHTML = '';
-  root.innerHTML = `<section id="userRegisterPage">
-                    <h1>¡Bienvenido!</h1>
-                    <h2>¡Comparte tu receta con nosotros!</h2>
+  root.innerHTML = `<section id="loginPage">
+                    <div class="containerLeft">
+                    <img class="logo" src="./img/logo.png">
+                    </div>
+                    <div class="containerRight">
+                    <div class="title">
+                    <h1 class="firstTitle">¡Bienvenido!</h1>
+                    <h2 class="subtitle">¡Comparte tu receta con nosotros!</h2>
+                    </div>
+                    <div class="form">
                     <input type="email" placeholder="Correo electrónico" id="emailA" class="loginInput"/> 
                     <input type="password" placeholder="Contraseña" id="passwordA" class="loginInput"/>
-                    <button id="loginBtn" class="button">Iniciar sesión</button>
-                    <p>¿No tienes cuenta? Regístrate</p> <a href='#userRegisterPage' id="newAccount">Aquí</a>
-                    </section>`;
+                    <button id="loginBtn" class="btnStart">Iniciar sesión</button>
+                    <hr size="3px" />
+                    </div>
+                    <div>
+                    <p class="titleRegister">¿No tienes cuenta? Regístrate<a href='#userRegisterPage' id="newAccount" class="signUp"> AQUÍ </a></p>
+                    </div>
+                    </div>
+                    </section>`
+                    
+;
 };
 
-loginPage();
+container();
 
 // CLICK LOGIN
 document.getElementById('loginBtn').addEventListener('click', () => {
@@ -37,15 +51,15 @@ document.getElementById('loginBtn').addEventListener('click', () => {
   const passwordA = document.getElementById('passwordA').value;
 
   firebase.auth().signInWithEmailAndPassword(emailA, passwordA)
-    .catch(function(error) {
+    .catch(function(error){
       const errorCode = error.code;
       const errorMessage = error.message;
-      alert(errorMessage);
-    });
+      alert(errorMessage)
+       });
 });
 
 //AREA DE LOGIN
-firebase.auth().onAuthStateChanged((user) => {
+firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
     const displayName = user.displayName;
@@ -55,10 +69,13 @@ firebase.auth().onAuthStateChanged((user) => {
     const isAnonymous = user.isAnonymous;
     const uid = user.uid;
     const providerData = user.providerData;
-    //document.getElementById('login').innerHTML=`<div><p>Estas regístrado ${user.email}</p></div>`
-    console.log(user);
+    //document.getElementById('userLogin').innerHTML=`<div><p>Estas regístrado ${user.email}</p>
+    //</div>`
+    //console.log(user);
   } else {
-    //document.getElementById('login').innerHTML=`<div><p>No estas regístrado</p></div>`
+    //document.getElementById('userLogin').innerHTML=`<div><p>No estas regístrado</p>
+    //<p>¿No tienes cuenta? Regístrate</p> <a href='#userRegisterPage' id="newAccount">Aquí</a>
+    //</div>`
   }
 }); 
 
@@ -66,31 +83,32 @@ firebase.auth().onAuthStateChanged((user) => {
 
 const userRegisterPage = () => {
   root.innerHTML = '';
-  root.innerHTML = `<div id="userRegisterPage">
+  root.innerHTML = `<section id="userRegisterPage">
                     <h1>Registrate</h1>
                     <input type="text" placeholder="Nombre" id="name" class="loginInput"/> 
                     <input type="email" placeholder="Correo electrónico" id="email" class="loginInput"/> 
                     <input type="password" placeholder="Contraseña" id="pass" class="loginInput"/>
                     <button id="userRegisterBtn" class="button">Crear cuenta</button>
-                    </div>`;
+                    </section>`;
 };
-
+//userRegisterPage();
 
 document.getElementById('newAccount').addEventListener('click', () => {
   userRegisterPage();
-  addActionToRegisterBtn();
+  registerBtn();
 });
 
-
-const addActionToRegisterBtn = () => {
+const registerBtn = () => { 
+  
   document.getElementById('userRegisterBtn').addEventListener('click', () => {
-    const email = document.getElementById('email').value;
-    const pass = document.getElementById('pass').value;
+  //const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const pass = document.getElementById('pass').value;
 
-    firebase.auth().createUserWithEmailAndPassword(email, pass).catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      alert(errorCode);
-    });
+  firebase.auth().createUserWithEmailAndPassword(email, pass).catch(function (error) {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    alert(errorCode);
   });
+});
 };
