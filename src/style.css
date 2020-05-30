@@ -8,7 +8,7 @@ body {
     font-family: 'Comfortaa', cursive;
 }
 
-#loginPage {
+.containerPage {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
@@ -52,6 +52,7 @@ body {
 .subtitle {
     text-align: center;
     font-size: 20px;
+    margin:15px; 
     padding: 7px;
 
 }
@@ -68,10 +69,10 @@ body {
     color: black;
     border: none;
     font-family: 'Comfortaa', cursive;
+    text-align: center;
     border-radius: 5px;
     margin: 7px;
-    padding: 7px;
-    width: 338px;
+    width: 360px;
     height: 42.06px;
     left: 936px;
     top: 396.94px;
@@ -111,4 +112,71 @@ body {
 
 hr {
     margin: 10px;
+}
+
+/*User Register Page*/
+
+.userRegisterTitle {
+    text-align: left;
+    font-weight: lighter;
+    font-size: 40px;
+    margin:30px 0px;
+    padding: 7px;
+
+}
+
+.userRegisterform {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    width: 420px;
+    height: 480px;
+    left: 836px;
+    top: 186px;
+    background: rgb(250, 240, 222);
+    border-radius: 22px;
+}
+
+.userRegisterform i {
+    font-size: 25px;
+    margin: 7px;
+    padding: 7px;
+    color: #F9B233;
+}
+
+.userRegisterInput {
+    color: black;
+    border: none;
+    font-family: 'Comfortaa', cursive;
+    border-radius: 5px;
+    margin: 7px 0px 7px 30px;
+    padding: 15px;
+    width: 255px;
+    height: 42px;
+    left: 980px;
+    top: 531px;
+    background: #C4C4C4;
+    border-radius: 5px;
+}
+
+
+.Allbtn {
+    border: none;
+    border-radius: 20px;
+    margin: 10px 0px;
+    padding: 7px;
+    width: 420px;
+    height: 45px;
+    left: 836px;
+    top: 729px;
+    cursor: pointer;
+    font-family: 'Comfortaa', cursive;
+    font-size: medium;
+    background-color: #F9B233;
+}
+
+.Allbtn:hover {
+    background-color: rgba(253, 199, 105, 0.966);
 }
