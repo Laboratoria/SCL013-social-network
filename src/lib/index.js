@@ -17,4 +17,35 @@
       }
       console.log(error);
     });
+};
+
+// CREAR CUENTA MAIL Y PWD
+export const createAccount = (name, email, password) => {
+  firebase
+    .auth()
+    .createUserWithEmailAndPassword(email, password)
+    .then((result) => {
+      return result.user.updateProfile({
+        displayName: name,
+      });
+    })
+    .then(() => {
+      veriFyUser();
+      alert('User account created');
+    })
+    .catch((error) => {
+      // const errorCode = error.code;
+      // const errorMessage = error.message;
+      if (errorCode === 'auth/email en uso') {
+        alert('Correo en uso');
+      }
+      if (errorCode === 'auth/email inválido') {
+        alert('Email inválido');
+      }
+      if (errorCode === 'auth/password débil') {
+        alert('Contraseña tiene que tener más de 8 caracteres y una mayúscula');
+      }
+      alert(`${errorCode}`);
+    });
 };*/
+
