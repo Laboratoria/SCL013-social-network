@@ -1,5 +1,7 @@
-// Este es el punto de entrada de tu aplicacion
+import { loginPage } from './lib/view/viewLogin.js';
+import './lib/init-firebase.js';
+// #Observador de autenticación
 
-import { myFunction } from './lib/index.js';
-
-myFunction();
+loginPage();
+/*export const stateObserved = () => {};
+stateObserved();*/
