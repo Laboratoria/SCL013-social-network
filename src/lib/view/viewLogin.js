@@ -2,12 +2,12 @@ import { loadRegister } from './viewRegister.js';
 export const loginPage = () => {
 window.location.hash = '/login';
 document.getElementById('root').innerHTML = `
-<div id='viewLogin' class="viewLoginRegistre">
-  <div >
-    <img src="./img/SoloLogo.png">
+<div id='viewLogin'>
+<div >
+<img src="./img/SoloLogo.png">
   </div>
   <div>
-    <img src="./img/welcome.png">
+  <img src="./img/welcome.png">
   </div>
   <div class="formLoginRegistre">
       <form name="formlogin">
