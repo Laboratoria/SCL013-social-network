@@ -2,10 +2,10 @@
 document.getElementById('root').innerHTML = `
 <div id='viewLogin'>
 <div >
-  <img src='/src/img/LogoLadoPink.jpg' >
+<img src="./img/SoloLogo.png">
   </div>
   <div>
-  <img  src='/src/img/welcome.png'>
+  <img src="./img/welcome.png">
   </div>
     <div id="formLogin" class="formLogin">
       <form  >
