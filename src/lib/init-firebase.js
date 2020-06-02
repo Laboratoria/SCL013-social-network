@@ -1,4 +1,4 @@
-const firebaseConfig = {
+/*const firebaseConfig = {
     apiKey: "AIzaSyDPMtGl6DmY3tN6iF14A1pjD9YhIkMseMM",
     authDomain: "social-network-36db2.firebaseapp.com",
     databaseURL: "https://social-network-36db2.firebaseio.com",
@@ -10,4 +10,4 @@ const firebaseConfig = {
   };
   
   // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
+  firebase.initializeApp(firebaseConfig);*/
