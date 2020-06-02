@@ -181,3 +181,68 @@ hr {
 .Allbtn:hover {
     background-color: rgba(253, 199, 105, 0.966);
 }
+
+@media screen and (max-width: 360px) {
+
+    .containerPage {
+        flex-flow: row wrap;
+
+    }
+
+    .containerLeft {
+        align-items: center;
+    }
+
+    .containerRight {
+        width: 100%;
+        background-color: whitesmoke;
+    }
+
+    .logo {
+        width: 300px;
+    }
+
+    .firstTitle {
+        font-size: 30px;
+    }
+
+    .subtitle {
+        font-size: 18px;
+    }
+
+    .loginInput {
+        width: 240px;
+    }
+
+    .titleRegister {
+        font-size: 14px;
+    }
+
+     /*REGISTER PAGE*/
+     
+    .userRegisterTitle {
+        font-size: 30px;
+        margin: 15px 0px;
+
+    }
+
+    .userRegisterform {
+        width: 320px;
+        height: 380px;
+    }
+
+    .userRegisterform i {
+        font-size: 18px;
+    }
+
+    .userRegisterInput {
+        width: 200px;
+
+    }
+
+    .Allbtn {
+        width: 320px;
+        margin: 25px 0px;
+    }
+
+}
