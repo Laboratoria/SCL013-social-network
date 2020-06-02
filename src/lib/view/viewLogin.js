@@ -1,3 +1,4 @@
+import {loginGoogle} from "../index.js";
 import { loadRegister } from './viewRegister.js';
 import {home} from "./viewHome.js";
 export const loginPage = () => {
@@ -21,7 +22,7 @@ document.getElementById('root').innerHTML = `
           <img src="./img/iniciacon.png">
         </div>
         <div>
-          <a href="" id="btnGmail" ><img src="./img/google.png" class="small-icon" alt=""></a>
+          <a href="" id="btnGoogle" ><img src="./img/google.png" class="small-icon" alt=""></a>
           <a href="" id="btnFace"><img src="./img/facebook.png" class="small-icon" alt=""></a>
         </div>
       <div>
@@ -36,10 +37,15 @@ document.getElementById('root').innerHTML = `
      });
    // buildListenerForm();
 
+  const btnGoogle = document.getElementById("btnGoogle");
+  btnGoogle.addEventListener("click", () =>{
+    loginGoogle();
+  })
+
 
    const buttonEnter = document.getElementById("btnIniciar");
   // BOTÓN PARA LOGUEAR CON EMAIL Y PASSWORD
-  buttonEnter.addEventListener("click", function () {
+  buttonEnter.addEventListener("click", () => {
     home();
     });
 

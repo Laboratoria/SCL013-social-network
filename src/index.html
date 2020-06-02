@@ -13,13 +13,31 @@
   </header>
   <div id="root"></div>
 
-  <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-auth.js"></script>
-
-  <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-database.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-firestore.js"></script>
 
   <script type="module" src="./main.js"></script>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-firestore.js"></script>
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyDPMtGl6DmY3tN6iF14A1pjD9YhIkMseMM",
+      authDomain: "social-network-36db2.firebaseapp.com",
+      databaseURL: "https://social-network-36db2.firebaseio.com",
+      projectId: "social-network-36db2",
+      storageBucket: "social-network-36db2.appspot.com",
+      messagingSenderId: "102856671384",
+      appId: "1:102856671384:web:f6a2082be415523dc150ed",
+      measurementId: "G-4S7MSW126G"
+    };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
   
 </body>
 </html>
