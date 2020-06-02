@@ -15,6 +15,7 @@ export const loginView = () => {
                       <div class="form">
                       <input type="email" placeholder="Correo electrónico" id="emailA" class="loginInput"/> 
                       <input type="password" placeholder="Contraseña" id="passwordA" class="loginInput"/>
+                      <button id="loginGoogleBtn" class="btnStart">Iniciar con Google</button>
                       <button id="loginBtn" class="btnStart">Iniciar sesión</button>
                       <hr size="3px" />
                       </div>
