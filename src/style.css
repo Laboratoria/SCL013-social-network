@@ -53,7 +53,7 @@ body {
 .subtitle {
     text-align: center;
     font-size: 20px;
-    margin:15px; 
+    margin: 15px;
     padding: 7px;
 
 }
@@ -121,7 +121,7 @@ hr {
     text-align: left;
     font-weight: lighter;
     font-size: 40px;
-    margin:30px 0px;
+    margin: 30px 0px;
     padding: 7px;
 
 }
@@ -182,6 +182,45 @@ hr {
     background-color: rgba(253, 199, 105, 0.966);
 }
 
+/*---------MOBILE------------*/
+
+.containerMobile {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.containerColor {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.logoMobile {
+    display: none;
+    align-content: center;
+    width: 300px;
+}
+
+.logoUserMobile {
+    display: none;
+    align-content: flex-start;
+    justify-content: center;
+    width: 35%;
+    margin: 15px;
+}
+
+.btnGoogleMobile {
+    display: flex;
+    max-width: 10%;
+    margin: 10px 0px;
+    align-self: center;
+    cursor: pointer;
+}
+
 @media screen and (max-width: 576px) {
 
     .containerPage {
@@ -190,16 +229,42 @@ hr {
     }
 
     .containerLeft {
-        align-items: center;
+        display: none;
     }
 
     .containerRight {
+        display: flex;
         width: 100%;
         background-color: whitesmoke;
     }
 
-    .logo {
+    .containerMobile {
+        display: flex;
+        background: url(img/img-background.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        align-self: auto;
+        width: 100%;
+        height: 100vh;
+    }
+
+    .containerColor {
+        display: flex;
+        width: 318px;
+        height: 453px;
+        left: 29px;
+        top: 138px;
+        background: rgba(252, 244, 244, 0.48);
+        border-radius: 1px;
+    }
+
+    .logoMobile {
+        display: flex;
         width: 300px;
+    }
+
+    .logoUserMobile {
+        display: flex;
     }
 
     .firstTitle {
@@ -218,8 +283,17 @@ hr {
         font-size: 14px;
     }
 
-     /*REGISTER PAGE*/
-     
+    .signUp {
+        color: black;
+        text-decoration: none;
+    }
+
+    .btnGoogleMobile {
+        display: flex;
+    }
+
+    /*REGISTER PAGE*/
+
     .userRegisterTitle {
         font-size: 30px;
         margin: 15px 0px;

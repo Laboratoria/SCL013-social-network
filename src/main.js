@@ -1,6 +1,8 @@
-import { firebaseConfig, signIn, firebaseAuthentication, createUserWithFirebase } from './firebase.js';
+import { firebaseConfig, signIn, firebaseAuthentication, createUserWithFirebase, googleLogin} from './firebase.js';
 
 import { loginView, userRegisterPage } from './htmlcreator.js';
+
+
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
@@ -29,4 +31,8 @@ const registerBtn = () => {
 document.getElementById('newAccount').addEventListener('click', () => {
   userRegisterPage();
   registerBtn();
+});
+
+document.getElementById('loginGoogleBtn').addEventListener('click',() => {
+  googleLogin();
 });
