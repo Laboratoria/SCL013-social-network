@@ -21,7 +21,52 @@ export const loginGoogle = () => {
  
 }
 
+export const createAccount = (email, password) => {
 
+//alert(email); alert(password);
+firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+
+
+
+if(errorCode == 'auth/email-already-in-use'){
+alert('Email ya está registrado');
+
+}
+
+  // ...
+});
+
+
+
+
+  /*firebase.auth().createUserWithEmailAndPassword(email, password)
+    .then((result) => {
+      return result.user.updateProfile({
+        displayName: name,
+      });
+    })
+    .then(() => {
+      veriFyUser();
+      alert('User account created');
+    })
+    .catch((error) => {
+       const errorCode = error.code;
+       const errorMessage = error.message;
+      if (errorCode === 'auth/email en uso') {
+        alert('Correo en uso');
+      }
+      if (errorCode === 'auth/email inválido') {
+        alert('Email inválido');
+      }
+      if (errorCode === 'auth/password débil') {
+        alert('Contraseña tiene que tener más de 8 caracteres y una mayúscula');
+      }
+      alert(`${errorCode}`);
+    });*/
+};
 
 
 
@@ -44,10 +89,10 @@ export const loginGoogle = () => {
       }
       console.log(error);
     });
-};
+};*/
 
 // CREAR CUENTA MAIL Y PWD
-export const createAccount = (name, email, password) => {
+/*export const createAccount = (name, email, password) => {
   firebase
     .auth()
     .createUserWithEmailAndPassword(email, password)
