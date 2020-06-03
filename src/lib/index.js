@@ -40,84 +40,39 @@ alert('Email ya está registrado');
 });
 
 
-
-
-  /*firebase.auth().createUserWithEmailAndPassword(email, password)
-    .then((result) => {
-      return result.user.updateProfile({
-        displayName: name,
-      });
-    })
-    .then(() => {
-      veriFyUser();
-      alert('User account created');
-    })
-    .catch((error) => {
-       const errorCode = error.code;
-       const errorMessage = error.message;
-      if (errorCode === 'auth/email en uso') {
-        alert('Correo en uso');
-      }
-      if (errorCode === 'auth/email inválido') {
-        alert('Email inválido');
-      }
-      if (errorCode === 'auth/password débil') {
-        alert('Contraseña tiene que tener más de 8 caracteres y una mayúscula');
-      }
-      alert(`${errorCode}`);
-    });*/
 };
 
 
-
-// aqui exportaras las funciones que necesites
-
 // LOGIN CON EMAIL Y PWD
-/*export const emailLogin = (email, password) => {
- 
+export const emailLogin = (email, password) => {
+  
   event.preventDefault();
   firebase
     .auth()
     .signInWithEmailAndPassword(email, password)
     .catch((error) => {
       const errorCode = error.code;
+      alert(errorCode);
       const errorMessage = error.message;
+      alert(errorCode);
       if (errorCode === 'auth/wrong-password') {
         alert('Contraseña Incorrecta');
-      } else {
-        alert(errorMessage);
+      } else if (errorCode === 'auth/user-not-found') {
+        alert('Usuario no encontrado');
+      }else{
+        alert('Problemas para iniciar sesión, verifique sus datos y vuelva a ingresar');
       }
-      console.log(error);
+     
     });
-};*/
+  
+};
 
-// CREAR CUENTA MAIL Y PWD
-/*export const createAccount = (name, email, password) => {
-  firebase
-    .auth()
-    .createUserWithEmailAndPassword(email, password)
-    .then((result) => {
-      return result.user.updateProfile({
-        displayName: name,
-      });
-    })
-    .then(() => {
-      veriFyUser();
-      alert('User account created');
-    })
-    .catch((error) => {
-      // const errorCode = error.code;
-      // const errorMessage = error.message;
-      if (errorCode === 'auth/email en uso') {
-        alert('Correo en uso');
-      }
-      if (errorCode === 'auth/email inválido') {
-        alert('Email inválido');
-      }
-      if (errorCode === 'auth/password débil') {
-        alert('Contraseña tiene que tener más de 8 caracteres y una mayúscula');
-      }
-      alert(`${errorCode}`);
-    });
-};*/
+export const logout = () => {
 
+  firebase.auth().signOut().then(function() {
+    alert('sesión cerrada con éxito');
+  }).catch(function(error) {
+    // An error happened.
+    alert('Ocurrió un error inesperado');
+  });
+};

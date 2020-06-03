@@ -19,13 +19,13 @@ export const loadRegister = () => {
                 <img src="./img/registro.png">
             </div>
             <div id="formRegister" class="formLoginRegistre">
-              <form >
+              <div >
               
               <input type="email" id="eMailTwo"  name="eMailTwo" class="inputMailPassName" placeholder="Ingresa E-mail"/>
               <input type="password"  id="passTwo" name="passTwo" class="inputMailPassName" placeholder="Ingresa Contraseña" minlength="6">
               <button class="btnLoginRegister" id="btnRegister" >Registrar</button>
               <button id="loginBack">Volver</button>
-              </form>
+              </div>
             </div>
           </div>`;
     

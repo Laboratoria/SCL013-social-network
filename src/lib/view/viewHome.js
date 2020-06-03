@@ -1,7 +1,9 @@
+import {logout} from '../index.js';
 export const home = () => {
     window.location.hash = '/home';
     document.getElementById('root').innerHTML = `
     <header>
+    <button id="btnOut"> salir </button>
     <img src="./img/logoLadoFondoBlanco.jpg"> <!--Este se debe cambiar a png-->
     </header>
 
@@ -54,4 +56,8 @@ export const home = () => {
 
     
     </footer>`;
+     // BOTON QUE CREA CUENTA PARA NUEVO USUARIO
+     document.getElementById('btnOut').addEventListener('click', () => {
+        logout();
+      });
     };

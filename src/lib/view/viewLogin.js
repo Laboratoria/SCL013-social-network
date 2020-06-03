@@ -1,6 +1,6 @@
 import {loginGoogle} from "../index.js";
 import { loadRegister } from './viewRegister.js';
-import { home } from './viewHome.js';
+import {emailLogin} from '../index.js';
 //import { emailLogin, createAccount } from './';
 export const loginPage = () => {
 window.location.hash = '/login';
@@ -48,7 +48,11 @@ document.getElementById('root').innerHTML = `
    const buttonEnter = document.getElementById("btnIniciar");
   // BOTÓN PARA LOGUEAR CON EMAIL Y PASSWORD
   buttonEnter.addEventListener("click", () => {
-    home();
+
+    const email = document.getElementById('eMailOne').value;
+    const password = document.getElementById('passOne').value;
+    emailLogin(email, password);
+
     });
 
 
