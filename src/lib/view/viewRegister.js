@@ -29,12 +29,13 @@ export const loadRegister = () => {
           </div>`;
     
           // BOTON QUE CREA CUENTA PARA NUEVO USUARIO
-         /* document.getElementById('btnRegister').addEventListener('click', () => {
+          document.getElementById('btnRegister').addEventListener('click', () => {
             const name = document.getElementById('nameUser').value;
             const email = document.getElementById('eMailTwo').value;
             const password = document.getElementById('passTwo').value;
             createAccount(name, email, password);
-          });*/
+            alert("si funciona")
+          });
           // BÓTÓN DE REGRESO AL LOGIN
           document.getElementById('loginBack').addEventListener('click', () => {
             loginPage();
