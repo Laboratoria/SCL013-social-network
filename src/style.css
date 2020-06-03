@@ -182,7 +182,7 @@ hr {
     background-color: rgba(253, 199, 105, 0.966);
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 576px) {
 
     .containerPage {
         flex-flow: row wrap;

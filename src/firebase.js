@@ -20,7 +20,7 @@ export const signIn = (emailA, passwordA) => {
         });
 };
 
-// Area de login
+// Observador de eventos
 export const firebaseAuthentication = () => {
     firebase.auth().onAuthStateChanged((user) => {
         if (user) {
