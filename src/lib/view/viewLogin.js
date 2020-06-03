@@ -23,7 +23,7 @@ document.getElementById('root').innerHTML = `
           <img src="./img/iniciacon.png">
         </div>
         <div>
-          <a href="" id="btnGoogle" ><img src="./img/google.png" class="small-icon" alt=""></a>
+          <button href="" id="btnGoogle" ><img src="./img/google.png" class="small-icon" alt=""></button>
           <a href="" id="btnFace"><img src="./img/facebook.png" class="small-icon" alt=""></a>
         </div>
       <div>
@@ -41,6 +41,7 @@ document.getElementById('root').innerHTML = `
   const btnGoogle = document.getElementById("btnGoogle");
   btnGoogle.addEventListener("click", () =>{
     loginGoogle();
+    
   })
 
 
