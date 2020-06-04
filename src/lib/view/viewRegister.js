@@ -1,16 +1,12 @@
 import { loginPage } from './viewLogin.js';
 import { createAccount } from '../index.js';
-export const loadRegister = () => {
-        buildformRegister();
-};
-    
-       //  FUNCIÓN INICIA BOTÓN DE LOGIN CUANDO ESTE EXISTA
-    const buildformRegister = () => {
 
-        // BOTÓN CREACIÓN DE CUENTA
-       
-        window.location.hash = '/register';
-          document.getElementById('root').innerHTML = `
+
+//  FUNCIÓN INICIA BOTÓN DE LOGIN CUANDO ESTE EXISTA
+const buildformRegister = () => {
+// BOTÓN CREACIÓN DE CUENTA
+  window.location.hash = '/register';
+  document.getElementById('root').innerHTML = `
           <div id='viewRegistre' class="viewLoginRegistre"> 
             <div>
                 <img src="./img/SoloLogo.png">
@@ -28,21 +24,19 @@ export const loadRegister = () => {
               </div>
             </div>
           </div>`;
-    
-          // BOTON QUE CREA CUENTA PARA NUEVO USUARIO
-          document.getElementById('btnRegister').addEventListener('click', () => {
-            const email = document.getElementById('eMailTwo').value;
-            const password = document.getElementById('passTwo').value;
-            createAccount( email, password);
-            alert("si funciona")
+  // BOTON QUE CREA CUENTA PARA NUEVO USUARIO
+  document.getElementById('btnRegister').addEventListener('click', () => {
+    const email = document.getElementById('eMailTwo').value;
+    const password = document.getElementById('passTwo').value;
+    createAccount(email, password);
+    alert('si funciona');
+  });
+  // BÓTÓN DE REGRESO AL LOGIN
+  document.getElementById('loginBack').addEventListener('click', () => {
+    loginPage();
+  });
+};
 
-          
-
-          });
-          // BÓTÓN DE REGRESO AL LOGIN
-          document.getElementById('loginBack').addEventListener('click', () => {
-            loginPage();
-          });
-
-    };
-    
+export const loadRegister = () => {
+  buildformRegister();
+};

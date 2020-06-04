@@ -1,15 +1,9 @@
-import {loginGoogle} from "../index.js";
+import { loginGoogle, loginFacebook, emailLogin } from '../index.js';
 import { loadRegister } from './viewRegister.js';
 
-import {home} from "./viewHome.js";
-import {loginFacebook} from "../index.js";
-
-import {emailLogin} from '../index.js';
-//import { emailLogin, createAccount } from './';
-
 export const loginPage = () => {
-window.location.hash = '/login';
-document.getElementById('root').innerHTML = `
+  window.location.hash = '/login';
+  document.getElementById('root').innerHTML = `
 <div id='viewLogin'>
 <div >
 <img src="./img/logoLadoFondoBlanco.jpg"> <!--Este se debe cambiar a png-->
@@ -38,56 +32,27 @@ document.getElementById('root').innerHTML = `
   </div>
 </div>`;
 
-    document.getElementById('registro').addEventListener('click', () => { 
-      loadRegister();
-     });
-   // buildListenerForm();
+  document.getElementById('registro').addEventListener('click', () => {
+    loadRegister();
+  });
+  // buildListenerForm();
 
-  const btnGoogle = document.getElementById("btnGoogle");
-  btnGoogle.addEventListener("click", () =>{
+  const btnGoogle = document.getElementById('btnGoogle');
+  btnGoogle.addEventListener('click', () => {
     loginGoogle();
-    
-  })
+  });
 
-  const btnFacebook = document.getElementById("btnFace");
-  btnFacebook.addEventListener("click", () =>{
+  const btnFacebook = document.getElementById('btnFace');
+  btnFacebook.addEventListener('click', () => {
     loginFacebook();
-    
-  })
+  });
 
 
-   const buttonEnter = document.getElementById("btnIniciar");
+  const buttonEnter = document.getElementById('btnIniciar');
   // BOTÓN PARA LOGUEAR CON EMAIL Y PASSWORD
-  buttonEnter.addEventListener("click", () => {
-
+  buttonEnter.addEventListener('click', () => {
     const email = document.getElementById('eMailOne').value;
     const password = document.getElementById('passOne').value;
     emailLogin(email, password);
-
-    });
-
-
-   };
-
-   //  FUNCIÓN INICIA BOTÓN DE LOGIN CUANDO ESTE EXISTA
-//const buildListenerForm = () => {
-
-    // BOTÓN PARA LOGUEAR CON EMAIL Y PASSWORD
-    /*document.getElementById('formlogin').addEventListener('', () => {
-      const email = document.getElementById('eMailOne').value;
-      const password = document.getElementById('passOne').value;
-      emailLogin(email, password);
-    });*/
-
-    /*document.getElementById('formlogin').addEventListener('submit', function(evt){
-      evt.preventDefault();
-
-   };
-
-   //  FUNCIÓN INICIA BOTÓN DE LOGIN CUANDO ESTE EXISTA
-
-      
-    });
-  
-};*/
-
+  });
+};
