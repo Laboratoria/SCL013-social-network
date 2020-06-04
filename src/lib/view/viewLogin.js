@@ -1,7 +1,12 @@
 import {loginGoogle} from "../index.js";
 import { loadRegister } from './viewRegister.js';
+
+import {home} from "./viewHome.js";
+import {loginFacebook} from "../index.js";
+
 import {emailLogin} from '../index.js';
 //import { emailLogin, createAccount } from './';
+
 export const loginPage = () => {
 window.location.hash = '/login';
 document.getElementById('root').innerHTML = `
@@ -24,7 +29,7 @@ document.getElementById('root').innerHTML = `
         </div>
         <div>
           <button href="" id="btnGoogle" ><img src="./img/google.png" class="small-icon" alt=""></button>
-          <a href="" id="btnFace"><img src="./img/facebook.png" class="small-icon" alt=""></a>
+          <button href="" id="btnFace"><img src="./img/facebook.png" class="small-icon" alt=""></button>
         </div>
       <div>
         <img src="./img/notienescuenta.png">
@@ -41,6 +46,12 @@ document.getElementById('root').innerHTML = `
   const btnGoogle = document.getElementById("btnGoogle");
   btnGoogle.addEventListener("click", () =>{
     loginGoogle();
+    
+  })
+
+  const btnFacebook = document.getElementById("btnFace");
+  btnFacebook.addEventListener("click", () =>{
+    loginFacebook();
     
   })
 
