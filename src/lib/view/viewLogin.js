@@ -1,7 +1,12 @@
 import {loginGoogle} from "../index.js";
 import { loadRegister } from './viewRegister.js';
+
 import {home} from "./viewHome.js";
-import {loginFacebook} from "../index"
+import {loginFacebook} from "../index.js";
+
+import {emailLogin} from '../index.js';
+//import { emailLogin, createAccount } from './';
+
 export const loginPage = () => {
 window.location.hash = '/login';
 document.getElementById('root').innerHTML = `
@@ -13,11 +18,11 @@ document.getElementById('root').innerHTML = `
   <img src="./img/welcome.png">
   </div>
   <div class="formLoginRegistre">
-      <form name="formlogin">
+      <div name="formlogin">
         <input type="email" id="eMailOne" name="eMailOne" class="inputMailPassName" placeholder="Ingresa E-mail"/>
         <input type="password" id="passOne" name="passOne"  class="inputMailPassName" placeholder="Ingresa Contraseña" minlength="6">
         <button class="btnLoginRegistre" id="btnIniciar" type="submit" >Iniciar Sesión</button>
-      </form>
+      </div>
       <div class="fila">
         <div>
           <img src="./img/iniciacon.png">
@@ -54,7 +59,11 @@ document.getElementById('root').innerHTML = `
    const buttonEnter = document.getElementById("btnIniciar");
   // BOTÓN PARA LOGUEAR CON EMAIL Y PASSWORD
   buttonEnter.addEventListener("click", () => {
-    home();
+
+    const email = document.getElementById('eMailOne').value;
+    const password = document.getElementById('passOne').value;
+    emailLogin(email, password);
+
     });
 
 
@@ -67,18 +76,14 @@ document.getElementById('root').innerHTML = `
     /*document.getElementById('formlogin').addEventListener('', () => {
       const email = document.getElementById('eMailOne').value;
       const password = document.getElementById('passOne').value;
-      emailLogin(email, password);submit
+      emailLogin(email, password);
     });*/
 
     /*document.getElementById('formlogin').addEventListener('submit', function(evt){
       evt.preventDefault();
-
-      const email = document.getElementById('eMailOne').value;
-      const password = document.getElementById('passOne').value;
-      emailLogin(email, password);
-
+   };
+   //  FUNCIÓN INICIA BOTÓN DE LOGIN CUANDO ESTE EXISTA
       
     });
   
 };*/
-
