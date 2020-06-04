@@ -38,11 +38,7 @@ export const loadRegister = () => {
             createAccount(name, email, password);
             alert("si funciona")
 
-           
           
-            const email = document.getElementById('eMailTwo').value;
-            const password = document.getElementById('passTwo').value;
-          createAccount(email, password);
 
           });
           // BÓTÓN DE REGRESO AL LOGIN
