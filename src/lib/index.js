@@ -32,7 +32,7 @@ export const loginFacebook = () => {
 export const createAccount = (email, password) => {
 
 
-//alert(email); alert(password);
+alert(email); alert(password);
 firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
   // Handle Errors here.
   var errorCode = error.code;

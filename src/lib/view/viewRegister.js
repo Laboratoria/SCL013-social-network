@@ -31,11 +31,9 @@ export const loadRegister = () => {
     
           // BOTON QUE CREA CUENTA PARA NUEVO USUARIO
           document.getElementById('btnRegister').addEventListener('click', () => {
-
-            const name = document.getElementById('nameUser').value;
             const email = document.getElementById('eMailTwo').value;
             const password = document.getElementById('passTwo').value;
-            createAccount(name, email, password);
+            createAccount( email, password);
             alert("si funciona")
 
           
