@@ -23,7 +23,6 @@ export const signIn = (emailA, passwordA, onSuccess, onErrorMessage) => {
     .auth()
     .signInWithEmailAndPassword(emailA, passwordA)
     .then((response) => {
-        console.log('hola toi probando');
         onSuccess(response);
     })
     .catch((error) => {

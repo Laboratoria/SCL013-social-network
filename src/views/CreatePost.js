@@ -1,6 +1,5 @@
 export const createPost = () => {
     const createPostSection = document.createElement("section");
-    createPostSection.className = "create-post";
     const createPostView = `<div class="create-post-div">
                             <textarea id="text-area-input" placeholder="Escribe tu receta aquí" class="textarea">
                             </textarea>
@@ -12,6 +11,8 @@ export const createPost = () => {
                             <button class="button" type="submit">Publicar</button>
                             </div>
                             `;
+
+    createPostSection.className = "create-post";
     createPostSection.innerHTML = createPostView;
     return createPostSection;
 };
