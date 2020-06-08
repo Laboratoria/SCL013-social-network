@@ -1,4 +1,6 @@
-import { signIn, googleLogin } from "../firebase.js";
+import { signIn, googleLogin } from "../controllers/firebase.js";
+import { register } from './templateRegister.js'
+// import { timeline } from './templateTimeline.js'
 
 export const login = () => {
   const divLogin = document.createElement("div");
@@ -17,7 +19,7 @@ export const login = () => {
                         <h2 class="subtitle">¡Comparte tu receta con nosotros!</h2>
                         </div>
                         <div class="form">
-                        <input type="email" placeholder="Correo electrónico" id="emailA" class="loginInput"/> 
+                        <input type="email" placeholder="Correo electrónico" id="emailA" class="loginInput" required /> 
                         <input type="password" placeholder="Contraseña" id="passwordA" class="loginInput"/>
                         <img src="./img/logoGoogle.png" id="loginGoogleBtn" class="btnGoogleMobile">
                         <button id="loginBtn" class="btnStart">Iniciar sesión</button>
@@ -33,14 +35,27 @@ export const login = () => {
 
   divLogin.innerHTML = viewLogin;
   divLogin.querySelector("#loginBtn").addEventListener("click", () => {
+  
     const emailA = document.getElementById("emailA").value;
     const passwordA = document.getElementById("passwordA").value;
-    signIn(emailA, passwordA);
+    signIn(emailA, passwordA, onSuccess, onError);
+
   });
 
   divLogin.querySelector("#loginGoogleBtn").addEventListener("click", () => {
-    googleLogin();
+    googleLogin(onSuccess, onError);
   });
 
   return divLogin;
 };
+
+const onError  = (error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    alert(errorMessage);
+};
+
+const onSuccess = (response) => {
+    window.location.href = "./index.html#/home"
+    console.log(response.user);
+}

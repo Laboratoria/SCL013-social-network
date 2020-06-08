@@ -1,4 +1,4 @@
-import { createUserWithFirebase } from "../firebase.js";
+import { createUserWithFirebase } from "../controllers/firebase.js";
 
 export const register = () => {
   const divRegister = document.createElement("div");
