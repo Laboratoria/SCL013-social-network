@@ -16,16 +16,17 @@ export const login = () => {
                         <div class="containerColor">
                         <div class="title">
                         <h1 class="firstTitle">¡Bienvenido!</h1>
-                        <h2 class="subtitle">¡Comparte tu receta con nosotros!</h2>
+                        <h2 class="subtitle">Comparte tu receta con nosotros</h2>
                         </div>
                         <div class="form">
                         <input type="email" placeholder="Correo electrónico" id="emailA" class="loginInput" required /> 
                         <input type="password" placeholder="Contraseña" id="passwordA" class="loginInput"/>
-                        <img src="./img/logoGoogle.png" id="loginGoogleBtn" class="btnGoogleMobile">
                         <button id="loginBtn" class="btnStart">Iniciar sesión</button>
-                        <hr size="3px" />
+                        <button id="loginGoogleBtn" class="btnGoogle"><img src="./img/logoGoogle.png" class="btnGoogleMobile">Iniciar sesión</button>
                         </div>
+                        
                         <div>
+                        <hr size="3px" />
                         <p class="titleRegister">¿No tienes cuenta? Regístrate<a href="#/register" id="newAccount" class="signUp"> AQUÍ </a></p>
                         </div>
                         </div>
