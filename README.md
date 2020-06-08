@@ -1,93 +1,56 @@
-# Creando una Red Social
+# Red Social Flavors
 
-## Índice
+## Definicion del producto
 
-* [1. Preámbulo](#1-preámbulo)
-* [2. Resumen del proyecto](#2-resumen-del-proyecto)
-* [3. Objetivos de aprendizaje](#3-objetivos-de-aprendizaje)
-* [4. Consideraciones generales](#4-consideraciones-generales)
-* [5. Criterios de aceptación mínimos del proyecto](#5-criterios-de-aceptación-mínimos-del-proyecto)
-* [6. Hacker edition](#6-hacker-edition)
-* [7. Entrega](#7-entrega)
-* [8. Pistas, tips y lecturas complementarias](#8-pistas-tips-y-lecturas-complementarias)
+Esta es una red social para encontrar y compartir recetas que vayan acorde a nuestros gustos culinarios del dia a dia 
+
+
+### A quien va dirigido
+
+Amantes de la cocina que quieran compartir o buscar recetas y hacer recomendaciones culinarias a otros usuarios.
+
+### Problematica
+
+Muchas veces nos encontramos en situaciones donde no sabemos qué cocinar, queremos compartir con el mundo nuestra creación, o queremos tener una especie de glosario de nuestras recetas que muchas veces se pierden entre papeles o distintos lugares de almacenaje.
+Cómo crees que el producto que estás creando está resolviendo sus problemas:
+A veces uno suele tener recetas predeterminadas en la mente y nunca está de más conocer nuevas formas de probar nuevas técnicas, también puede ser utilizada para almacenar tus recetas y acceder a ellas con facilidad.
+
 
 ***
 
-## 1. Preámbulo
+## Planificación y Diseño
+***
+Para el proceso de planificación y diseño se utilizaron las siguientes herramientas:    
+- Trello: Nos permitió mantener el orden en el proceso de producción, a través del desarrollo de historias de usuario con la determición del criterio de aceptación y la definición de terminado. Puedes ver nuestro Trello pinchando [AQUÍ](https://trello.com/b/idYtfKM1/redsocial)
 
-Instagram, Snapchat, Twitter, Facebook, Twitch, Linkedin, etc. Las redes
-sociales han invadido nuestras vidas. Las amamos u odiamos, y muchos no podemos
-vivir sin ellas.
+- Diagramas de flujo: Diagrama que permitió definir el flujo que debía seguir el usuario al ingresar a la página web.
+- invision: Interfaz de diseno que permitio realizar el prototipo de baja fidelidad.
+- Figma: Interfaz de diseño colaborativa que permitió desarrollar el prototipo de alta fidelidad.
 
-Hay redes sociales de todo tipo y para todo tipo de intereses. Por ejemplo,
-en una ronda de financiamiento con inversionistas, se presentó una red social
-para químicos en la que los usuarios podían publicar artículos sobre sus
-investigaciones, comentar en los artículos de sus colegas, y filtrar artículos
-de acuerdo a determinadas etiquetas o su popularidad, lo más reciente, o lo
-más comentado.
 
-## 2. Resumen del proyecto
+### Historias de usuario
+Utilizamos las historias de usuario como el instrumento principal para identificar los requerimientos de usuario.
 
-En este proyecto construirás una Red Social sobre lo que decidan tú y tu equipo.
-Podría ser, por ejemplo, sobre alimentación saludable, feminismo, educación,
-salud, energías renovables, amantes de las [Empanadas](https://es.wikipedia.org/wiki/Empanada)
-o de los [Tacos de Canasta](https://es.wikipedia.org/wiki/Taco), de la
-[Feijoada](https://es.wikipedia.org/wiki/Feijoada), o de lo que sea.
+__Historia 1__  
 
-Tu Red Social tendrá que permitir a cualquier usuario crear una cuenta de
-acceso y loguearse con ella; crear, editar, borrar y _"likear"_ publicacciones.
+Yo _como_ usuario _quiero_ poder crear una cuenta para _poder_ subir mis recetas.
 
-## 3. Objetivos de aprendizaje
+#### Criterios de aceptación:
+* El usuario puede crearse una cuenta con su correo electrónico o acceder desde una cuenta de google.
+* Solamente se permite el acceso a usuarios con cuentas válidas.
+* El nombre de usuario es único
+* La cuenta de usuario debe ser un correo electrónico válido.
+* Lo que se escriba en el campo (input) de contraseña debe ser secreto.
 
-El objetivo principal de aprendizaje de este proyecto es construir una
-[Single-page Application (SPA)](https://es.wikipedia.org/wiki/Single-page_application)
-[_responsive_](https://github.com/Laboratoria/curricula-js/tree/master/topics/css/02-responsive)
- (con más de una vista / página) en la que podamos **leer y escribir datos.**
+__Historia 2__
 
-### HTML y CSS
+Yo _como_ usuario _quiero_ crear mi perfil para que me reconozcan fácilmente.
 
-* [ ] [HTML semántico](https://developer.mozilla.org/en-US/docs/Glossary/Semantics#Semantics_in_HTML)
-* [ ] [CSS `flexbox`](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
-* [ ] Construir tu aplicación respetando el diseño realizado (maquetación).
+### **Prototipo de Baja Fidelidad**
 
-### DOM y Web APIs
+![Prototipo baja desktop](social-network-desktop.png)
+![Prototipo baja movil](social-network-movil.png)
 
-* [ ] [Manipulación dinámica del DOM](https://developer.mozilla.org/es/docs/Referencia_DOM_de_Gecko/Introducci%C3%B3n)
-* [ ] [History API](https://developer.mozilla.org/es/docs/DOM/Manipulando_el_historial_del_navegador)
-* [ ] [`localStorage`](https://lms.laboratoria.la/cohorts/scl-2020-03-bc-core-scl013/courses/browser/03-browser-apis/03-web-storage)
-
-### Javascript
-
-* [ ] [Uso de callbacks](https://developer.mozilla.org/es/docs/Glossary/Callback_function)
-* [ ] [Consumo de Promesas](https://scotch.io/tutorials/javascript-promises-for-dummies#toc-consuming-promises)
-* [ ] Uso ES modules
-([`import`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)
-| [`export`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export))
-
-### Firebase
-
-* [ ] [Firestore](https://firebase.google.com/docs/firestore)
-* [ ] [Firebase Auth](https://firebase.google.com/docs/auth/web/start)
-* [ ] [Firebase security rules](https://firebase.google.com/docs/rules)
-* [ ] [Uso de onSnapshot](https://firebase.google.com/docs/firestore/query-data/listen)
-| [onAuthStateChanged](https://firebase.google.com/docs/auth/web/start#set_an_authentication_state_observer_and_get_user_data)
-
-### Testing
-
-* [ ] [Testeo de tus funciones](https://jestjs.io/docs/es-ES/getting-started)
-* [ ] [Testeo asíncrono](https://jestjs.io/docs/es-ES/asynchronous)
-* [ ] [Mocking](https://jestjs.io/docs/es-ES/manual-mocks)
-
-### Git y Github
-
-* [ ] Colaboración en Github
-* [ ] Organización en Github
-
-### Buenas prácticas de desarrollo
-
-* [ ] Modularización
-* [ ] Nomenclatura / Semántica
-* [ ] Linting
 
 ***
 
