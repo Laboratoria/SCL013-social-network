@@ -18,18 +18,20 @@ export const initializeFirebase = () => {
 };
 
 // Sign in User
-export const signIn = (emailA, passwordA) => {
+export const signIn = (emailA, passwordA, onSuccess, onErrorMessage) => {
   firebase
     .auth()
     .signInWithEmailAndPassword(emailA, passwordA)
+    .then((response) => {
+        console.log('hola toi probando');
+        onSuccess(response);
+    })
     .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      alert(errorMessage);
+        onErrorMessage(error);
     });
 };
 
-// Area de login
+// Observer
 export const firebaseAuthentication = () => {
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {

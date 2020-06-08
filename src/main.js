@@ -1,4 +1,4 @@
-import { initializeFirebase } from "./firebase.js";
+import { initializeFirebase } from "./controllers/firebase.js";
 import { login } from "./views/templateLogin.js";
 import { changeRoute } from "./router.js";
 
