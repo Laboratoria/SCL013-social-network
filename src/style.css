@@ -264,11 +264,11 @@ hr {
     }
 
     .containerMobile {
-        display: flex;
+        display: fixed;
         background: url(img/img-background.png);
         background-repeat: no-repeat;
         background-size: cover;
-        align-self: auto;
+        /* align-self: auto; */
         width: 100%;
         height: 100vh;
     }
