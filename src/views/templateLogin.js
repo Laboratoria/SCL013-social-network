@@ -1,9 +1,9 @@
-import { signIn, googleLogin } from "../controllers/firebase.js";
-import { register } from './templateRegister.js'
+import { signIn, googleLogin } from '../controllers/firebase.js';
+import { register } from './templateRegister.js';
 
 
 export const login = () => {
-  const divLogin = document.createElement("div");
+  const divLogin = document.createElement('div');
 
   const viewLogin = `
                         <section id="loginPage" class="containerPage">
@@ -35,28 +35,28 @@ export const login = () => {
                         </section>`;
 
   divLogin.innerHTML = viewLogin;
-  divLogin.querySelector("#loginBtn").addEventListener("click", () => {
+  divLogin.querySelector('#loginBtn').addEventListener('click', () => {
   
-    const emailA = document.getElementById("emailA").value;
-    const passwordA = document.getElementById("passwordA").value;
+    const emailA = document.getElementById('emailA').value;
+    const passwordA = document.getElementById('passwordA').value;
     signIn(emailA, passwordA, onSuccess, onError);
-
+  
   });
 
-  divLogin.querySelector("#loginGoogleBtn").addEventListener("click", () => {
+  divLogin.querySelector('#loginGoogleBtn').addEventListener('click', () => {
     googleLogin(onSuccess, onError);
   });
 
   return divLogin;
 };
 
-const onError  = (error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    alert(errorMessage);
+const onError = (error) => {
+  const errorCode = error.code;
+  const errorMessage = error.message;
+  alert(errorMessage);
 };
 
 const onSuccess = (response) => {
-    window.location.href = "./index.html#/home"
-    console.log(response.user);
-}
+  window.location.href = './index.html#/home';
+  console.log(response.user);
+};
