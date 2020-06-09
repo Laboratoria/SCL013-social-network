@@ -1,4 +1,5 @@
-import { createPost } from './CreatePost.js';
+import { createPost } from './createPost.js';
+import { menuToggle } from './templateToggle.js';
 
 export const timeline = () => {
     const divTimeline = document.createElement("div");
@@ -6,7 +7,8 @@ export const timeline = () => {
 
      divTimeline.innerHTML = ``;
 
-     divTimeline.appendChild(createPost());
+     divTimeline.appendChild(menuToggle());
+     //divTimeline.appendChild(createPost());
 
     return divTimeline;
 }
