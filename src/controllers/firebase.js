@@ -87,3 +87,16 @@ export const googleLogin = () => {
       // ...
     });
 };
+
+// Sign Out
+
+export const userSignOut = (callback) => {
+  firebase.auth().signOut()
+  .then(function() {
+    console.log('salir');
+    callback()
+  })
+  .catch(function(error){
+    console.log(error);
+  })
+};
