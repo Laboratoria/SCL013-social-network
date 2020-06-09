@@ -1,4 +1,4 @@
-
+import {userSignOut} from '../controllers/firebase.js';
 export const menuToggle = () => {
     const divToggle = document.createElement("div");
   
@@ -14,7 +14,7 @@ export const menuToggle = () => {
       <li class="listMenu"><a href="#/home">Recetario</a></li>
       <li class="listMenu"><a href="#/sweet">Recetas Dulces</a></li>
       <li class="listMenu"><a href="#/salty">Recetas Saladas</a></li>
-      <li class="listMenu"><a href="#/close">Cerrar Sesión</a></li>
+      <li class="listMenu"><a href="#/login" id="out">Cerrar Sesión</a></li>
     </ul>
   </div>`;
   
@@ -26,6 +26,15 @@ export const menuToggle = () => {
     document.getElementById('sidebar').classList.toggle('active');
     //console.log(divToggle.getElementById('sidebar'))
   });
+
+  divToggle.querySelector('#out').addEventListener('click', () => {
+    userSignOut(goLogin);
+  });
+
     return divToggle;
-  };
+};
+
+const goLogin = () => {
+  window.location.href = './index.html#/login';
+};
   
