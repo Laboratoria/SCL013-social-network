@@ -1,7 +1,7 @@
-import { createUserWithFirebase } from "../controllers/firebase.js";
+import { createUserWithFirebase } from '../controllers/firebase.js';
 
 export const register = () => {
-  const divRegister = document.createElement("div");
+  const divRegister = document.createElement('div');
 
   const viewRegister = `
                           <section id="userRegisterPage" class="containerPage">
@@ -26,10 +26,10 @@ export const register = () => {
 
   divRegister.innerHTML = viewRegister;
   divRegister
-    .querySelector("#userRegisterBtn")
-    .addEventListener("click", () => {
-      const email = document.getElementById("email").value;
-      const pass = document.getElementById("pass").value;
+    .querySelector('#userRegisterBtn')
+    .addEventListener('click', () => {
+      const email = document.getElementById('email').value;
+      const pass = document.getElementById('pass').value;
       createUserWithFirebase(email, pass);
     });
   return divRegister;
