@@ -1,6 +1,6 @@
 export const menu = () => {
-    const viewMenu =  
-     `<div style="display: none;"><ul>
+  const viewMenu = `
+                      <div style="display: none;"><ul>
         <li> 
           <a href="#/login">Login</a>
         </li>
@@ -14,7 +14,7 @@ export const menu = () => {
           <a href="#/home">Recetario</a>
         </li>
       </ul>
-    <div>`
+    <div>`;
     return viewMenu;
 };
   

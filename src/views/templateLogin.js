@@ -56,7 +56,10 @@ const onError = (error) => {
   alert(errorMessage);
 };
 
-const onSuccess = (response) => {
-  window.location.href = './index.html#/home';
-  console.log(response.user);
+const onSuccess = (result) => {
+  if ( result.user.emailVerified === true ) {
+    window.location.href = './index.html#/home';
+  } else {
+    alert('verifique su correo electronico para verificar el registro');
+  }
 };
