@@ -120,3 +120,8 @@ export const userSignOut = (callback) => {
     console.log(error);
   })
 };
+
+initializeFirebase();
+
+export const  db = firebase.firestore();{
+}

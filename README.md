@@ -12,7 +12,9 @@ Amantes de la cocina que quieran compartir o buscar recetas y hacer recomendacio
 ### Problematica
 
 Muchas veces nos encontramos en situaciones donde no sabemos qué cocinar, queremos compartir con el mundo nuestra creación, o queremos tener una especie de glosario de nuestras recetas que muchas veces se pierden entre papeles o distintos lugares de almacenaje.
-Cómo crees que el producto que estás creando está resolviendo sus problemas:
+
+### Cómo crees que el producto que estás creando está resolviendo sus problemas:
+
 A veces uno suele tener recetas predeterminadas en la mente y nunca está de más conocer nuevas formas de probar nuevas técnicas, también puede ser utilizada para almacenar tus recetas y acceder a ellas con facilidad.
 
 

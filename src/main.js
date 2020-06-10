@@ -3,7 +3,7 @@ import { login } from './views/templateLogin.js';
 import { changeRoute } from './router.js';
 
 const init = () => {
-  initializeFirebase();
+  //initializeFirebase();
 
   document.getElementById('root').appendChild(login());
   window.addEventListener('hashchange', () => {
