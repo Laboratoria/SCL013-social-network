@@ -25,12 +25,21 @@ export const register = () => {
                           </section>`;
 
   divRegister.innerHTML = viewRegister;
-  divRegister
-    .querySelector('#userRegisterBtn')
-    .addEventListener('click', () => {
+  divRegister.querySelector('#userRegisterBtn').addEventListener('click', () => {
       const email = document.getElementById('email').value;
       const pass = document.getElementById('pass').value;
-      createUserWithFirebase(email, pass);
+      createUserWithFirebase(email, pass, onSuccess, onError);
     });
   return divRegister;
+};
+
+const onError = (error) => {
+  const errorCode = error.code;
+  const errorMessage = error.message;
+  alert(errorCode);
+};
+
+const onSuccess = (result) => {
+  window.location.href = './index.html#/login';
+  console.log(result.user);
 };

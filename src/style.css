@@ -218,7 +218,7 @@ hr {
 .btnGoogle {
     align-self: center;
     text-decoration: none;
-    border-color: #F9B233;
+    border: 1px solid #F9B233;
     border-radius: 20px;
     margin: 7px;
     padding: 7px;
@@ -230,7 +230,7 @@ hr {
     font-family: 'Comfortaa', cursive;
     -webkit-box-shadow: none;
 	-moz-box-shadow: none;
-	box-shadow: none;
+    box-shadow: none;
 }
 .btnGoogle:link {
     text-decoration: none;

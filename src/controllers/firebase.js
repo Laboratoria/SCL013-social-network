@@ -22,8 +22,8 @@ export const signIn = (emailA, passwordA, onSuccess, onErrorMessage) => {
   firebase
     .auth()
     .signInWithEmailAndPassword(emailA, passwordA)
-    .then((response) => {
-        onSuccess(response);
+    .then((result) => {
+        onSuccess(result);
     })
     .catch((error) => {
         onErrorMessage(error);
@@ -43,30 +43,48 @@ export const firebaseAuthentication = () => {
       const isAnonymous = user.isAnonymous;
       const uid = user.uid;
       const providerData = user.providerData;
+      const verifiedText = "";
+      if (emailVerified === false) {
+        verifiedText = "Email not verified"
+      } else {
+        verifiedText = "Email verified"
+      }
     } else {
     }
   });
 };
 
 // Create user with firebase
-export const createUserWithFirebase = (email, pass) => {
+export const createUserWithFirebase = (email, pass, onSuccess, onError) => {
   firebase
     .auth()
     .createUserWithEmailAndPassword(email, pass)
+    .then((result) => {
+      emailVerification();
+      onSuccess(result)
+    })
     .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      alert(errorCode);
+      onError(error);
     });
 };
 
+const emailVerification = () => {
+  const user = firebase.auth().currentUser;
+    user.sendEmailVerification()
+  .then(() => {
+    alert('hemos enviado un correo de confirmacion a su correo electronico');
+  })
+  .catch((error) => {
+  alert('verifique su correo electronico para verificar el registro');  
+  });
+}
+ 
+
 // Login with Google
-export const googleLogin = () => {
+export const googleLogin = (onSuccess, onError) => {
   const provider = new firebase.auth.GoogleAuthProvider();
 
-  firebase
-    .auth()
-    .signInWithPopup(provider)
+  firebase.auth().signInWithPopup(provider)
     .then((result) => {
       // This gives you a Google Access Token. You can use it to access the Google API.
       const token = result.credential.accessToken;
@@ -74,8 +92,9 @@ export const googleLogin = () => {
       const user = result.user;
       console.log("user", user);
       // ...
+      onSuccess(result)
     })
-    .catch(function (error) {
+    .catch((error) => {
       // Handle Errors here.
       const errorCode = error.code;
       const errorMessage = error.message;
@@ -85,6 +104,7 @@ export const googleLogin = () => {
       const credential = error.credential;
       console.log("error", errorMessage);
       // ...
+      onError(error)
     });
 };
 
@@ -92,11 +112,11 @@ export const googleLogin = () => {
 
 export const userSignOut = (callback) => {
   firebase.auth().signOut()
-  .then(function() {
-    console.log('salir');
-    callback()
+  .then((result) => {
+    console.log('signOut success');
+    callback(result)
   })
-  .catch(function(error){
+  .catch((error) => {
     console.log(error);
   })
 };
