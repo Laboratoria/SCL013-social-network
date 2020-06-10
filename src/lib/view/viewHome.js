@@ -1,12 +1,15 @@
-import {logout} from '../index.js';
-export const home = () => {
-    window.location.hash = '/home';
-    document.getElementById('root').innerHTML = `
-    <header>
-    <button id="btnOut"> salir </button>
-    <img src="./img/logoLadoFondoBlanco.jpg"> <!--Este se debe cambiar a png-->
-    </header>
+import { logout } from '../index.js';
 
+export const home = () => {
+  window.location.hash = '/home';
+  document.getElementById('root').innerHTML = `
+    <header>
+    <div id= "logoLadoHome">
+    </div>
+    </button>
+    </header>
+    <body>
+    <div id="bodyHome">
     <div id="form-save" class="div-post">
     <form id="form-publication" class="padding" maxlength=50 required>
         <textarea placeholder="¿Que quieres compartir?" id="publication" class="textarea-post"></textarea>
@@ -17,11 +20,11 @@ export const home = () => {
                 <input type="text" class="file-name" id="inputval" />
                 <input type="file" class="hide" name="file" value="upload" id="fileButton" />
             </div>
-            <select id="privacidad" class="btn-select" name="select">
-                <option value="publico" selected>Público</option>
-                <option value="privado">Privado</option>
+            <select id="privacity" class="btn-select" name="select">
+                <option value="public" selected>Público</option>
+                <option value="private">Privado</option>
             </select>
-            <input type="button" id="compartir-post" class="btn-share" value="Compartir">
+            <input type="button" id="share-post" class="btn-share" value="Compartir">
         </div>
     </form>
   </div>
@@ -33,31 +36,30 @@ export const home = () => {
     <div class="iconSend"> 
     </div>
     
-    <div id= "editDelete">
+   <!--<div id= "editDelete">
     <img src="icons/delete.png">
     <img src="icons/edit.png">
     </div>
 
     <div id="likeComment">
-    <img src="icons/like.png">
+    <img src="./icons/like.png">
     <img src="icons/comment.png">
-    </div>
+    </div>-->
 
 
 
-      </div>
-      
-     
-    <footer>
-    <img src="icons/profile.png">
-    <img src="icons/friends.png">
-    <img src="icon/notification.png">
-    <img src="icon/post.png">
+     </div>
+     </body>
+    <footer class= 'footerOrder'>
+    <button img id= "profile">
+    <button img id= "friends">
+    <button img id= "notification">
+    <button img id="btnOut">
 
     
     </footer>`;
-     // BOTON QUE CREA CUENTA PARA NUEVO USUARIO
-     document.getElementById('btnOut').addEventListener('click', () => {
-        logout();
-      });
-    };
+  // BOTON QUE CREA CUENTA PARA NUEVO USUARIO
+  document.getElementById('btnOut').addEventListener('click', () => {
+    logout();
+  });
+};

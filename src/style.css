@@ -1,15 +1,355 @@
-#formLogin {
+* {
+  margin: 0;
+  padding: 0;
+}
+body{
+  width: 100%;
+}
+#root{
+  width: 100%;
+}
+
+.viewLoginRegistre{
+  background-color:#FFEEEA;
+  background-size: cover;
+  height: 100vh;
+}
+/* logo hacia el lado 1 */
+.imgLogin{
+  background-image: url('./img/logoconfondo.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 30vh;
+  }
+  .imgWel{
+    background-image: url('./img/welcome.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 20vh;
+    margin-top: -55px;
+  }
+  .formLoginRegistre {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    ;
+    flex-wrap: nowrap;
+}
+.loginForm{
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    margin-top: -30px;
+}
+.inputMailPassName{
+  /* Group 37 */
+    background: #FFFFFF;
+    border: 3px solid #FF8197;
+    border-radius: 20px;
+    width: 228px;
+    height: 36px;
+    left: 119px;
+    top: 246px;
+    font-family: Eczar;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    color: #374B73;
+    line-height: 36px;
+    margin: 10px;
+    text-indent: 5px;
+    text-align: center;
+}
+.btnLoginRegister{
+  background: #FFFFFF;
+  border: 3px solid #FF8197;
+  border-radius: 20px;
+  font-family: Eczar;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 36px;
+  color: #374B73;
+  width: 152px;
+}
+#init{
+  background-image: url('./img/iniciacon.png');
+  background-position: center center;
+    background-repeat: no-repeat;
+    height: 20vh;
+    margin-top: -28px;
+}
+#btnGoFa {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.small-icon{
+  width: 39.06px;
+  padding: 6px;
+  margin-top: -46px;
+}
+#noAcc{
+  background-image: url('/img/notienescuenta.png'); 
+  background-position: center center;
+    background-repeat: no-repeat;
+    height: 20vh;
+    display: flex;
+    flex-direction: column-reverse;
+    margin-top: -29px;
+    align-items: center;
+}
+#imgRegister{
+  background-image: url("./img/registro.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 20vh;
+  display: flex;
+  flex-direction: column-reverse;
+  margin-top: -29px;
+  align-items: center;
+}
+#formTwo {
+  flex-direction: column;
+    align-items: center;
+    display: flex;
+}
+#loginBack{
+  margin-top: 30px;
+    width: 68px;
+    font-size: 18px;
+    background: #ffeeea;
 }
 
 html {
-    font-family: Eczar, Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Eczar, Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.div-post {
+#bodyHome {
+  background-image: url(./img/fondo.jpg);
+  width: 100%;
+  height: 81.5vh;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-size: contain;
+}
+/*
+#bodyHome:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff; /*Capa blanca que puse en el fondo para atenuar el color original 
+  position: absolute;
+  opacity: 0.7;
+  margin: 0;
+  padding: 0;
+}*/
+
+#root {
+  height: 100vh;
+}
+  
+header {
+  position: relative;
+  margin-top: 0rem;
+  height: 13vh;
+  width: 100%;
+  flex-direction: row;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+        #logoLadoHome {
+            background-image: url(./img/logoLadoFondoBlanco.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            height: 100%;
+            width: 100%;
+            margin-top: 0;
+        }
+
+
+          #btnOut {
+          background-image: url(./icons/logOut.png);
+          background-position: center;
+          background-repeat: no-repeat;
+          height: 100%;
+          width: 100%;
+          background-size: contain;
+          background-color: #FFEEEA;
+          border: 2px solid #FF8197;
+          }
+          
+          #out{
+            justify-content: space-between;
+            flex-direction: row;
+            color: #FF8197;
+            align-items: center;
+            margin-left: 60px;
+            font-size: larger;
+            font-family: Eczar, Verdana, Geneva, Tahoma, sans-serif;
+          }
+
+         #form-save {
+            position: relative;
+            font-family: Eczar, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #FFEEEA;
+            border-radius: 10px;
+            border: 2px solid #FF8197;
+            display: flex;
+            align-self: center;
+            width: 300px;
+            margin-top: 1em;
+            margin-bottom: 1rem;
+        }
+
+        #form-publication {
+        position: relative;
+        width: 85%;
+        height: 100%;
+        flex: inherit;
+        margin: 1rem;
+        align-items: center;
+        justify-content: center;
+        
+        }
+
+        #publication {
+        width: 90%;
+        height: 40%;
+        align-items: center;
+        margin: 1rem;
+        justify-content: space-around;
+        }
+
+        
+        #privacity {
+          align-items: center;
+          justify-content: center;
+          border-radius: 10px;
+          background-color: #ffffff;
+          border: solid #FF8197;
+        }
+
+        #share-post {
+          align-items: center;
+          justify-content: center;
+          border-radius: 10px;
+          background-color: #ffffff;
+          border: solid #FF8197;
+        }
+
+ .footerOrder {
+    background-color: #FFEEEA;
+    display: flex;
+    z-index: 2;
+    border: 2px solid #FF8197;
+    height: 5vh;
+    max-width: 100%;
+}
+
+          #profile {
+            background-image: url(./icons/profile.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100%;
+            width: 100%;
+            background-size: contain;
+            background-color: #FFEEEA;
+            border: 2px solid #FF8197;
+          }
+
+          #friends {
+            background-image: url(./icons/friends.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100%;
+            width: 100%;
+            background-size: contain;
+            background-color: #FFEEEA;
+            border: 2px solid #FF8197;
+          }
+
+          #notification {
+            background-image: url(./icons/notification.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100%;
+            width: 100%;
+            background-size: contain;
+            background-color: #FFEEEA;
+            border: 2px solid #FF8197;
+          }
+
+          #post {
+            background-image: url(./icons/post.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100%;
+            width: 100%;
+            background-size: contain;
+            background-color: #FFEEEA;
+            border: 2px solid #FF8197;
+          }
+ 
+#logoLoginPage {
+  position: relative;
+  font-family: Eczar, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #FFEEEA;
+  border-radius: 10px;
+  border: 2px solid #FF8197;
+  width: auto;
+  height: auto;
+}
+
+
+@media screen and (min-width:1440px){
+  #viewLogin{
+    height: 100vh;
+    width: 100%;
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .viewLoginRegistre{
+background-color:white;
+display: flex;
+justify-content: space-between;
+  }
+.imgLogin {
+  background-image:url("./img/logovertical.jpg");
+  background-color: #FFEEEA;;
+  height: 100vh;
+  width: 60%;
+  display: block;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+#init{
+  margin-left: -13px;
+}
+.imgWel{
+background-image: url('./img/welcome.png');
+}
+.formLoginRegistre {
+  align-self: center;
+}
+.viewRegistre{
+  height: 100vh;
+  width: 100%;
+  flex-direction: row;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+
+/*.div-post {
     height: auto;
     border: 2px solid #9da9cf;
     border-radius: 5px;
@@ -104,4 +444,4 @@ html {
   .inputForm1 {
     border: none;
     outline: none;
-  }
+  }*/
