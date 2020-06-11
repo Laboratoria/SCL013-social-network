@@ -21,7 +21,7 @@ export const loginPage = () => {
         </div>
         <div id="btnGoFa" >
          <img id="btnGoogle" src="./img/google.png" class="small-icon" alt="">
-         <img  id="btnFace" src="./icons/facebook4.png" class="small-icon" alt="">
+         <img  id="btnFace" src="./img/facebook.png" class="small-icon" alt="">
         </div>
       <div id="noAcc">
         <button class="btnLoginRegister"   id="registro" type="button">Registrate Aqui</button>
