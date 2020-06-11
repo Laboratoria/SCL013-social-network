@@ -1,4 +1,5 @@
 import { logout } from '../index.js';
+
 export const home = () => {
   window.location.hash = '/home';
   document.getElementById('root').innerHTML = `
@@ -31,6 +32,7 @@ export const home = () => {
   </section>
     <div class="iconSend"> 
     </div>
+
    <!--<div id= "editDelete">
     <img src="icons/delete.png">
     <img src="icons/edit.png">
@@ -39,6 +41,7 @@ export const home = () => {
     <img src="./icons/like.png">
     <img src="icons/comment.png">
     </div>-->
+
      </div>
      </body>
     <footer class= 'footerOrder'>
@@ -46,9 +49,14 @@ export const home = () => {
     <button img id= "friends">
     <button img id= "notification">
     <button img id="btnOut">
+
     </footer>`;
   // BOTON QUE CREA CUENTA PARA NUEVO USUARIO
   document.getElementById('btnOut').addEventListener('click', () => {
     logout();
   });
+
 };
+
+};
+

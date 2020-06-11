@@ -2,7 +2,6 @@ import {
   loginGoogle, loginFacebook, emailLogin, createAccount,
 } from '../index.js';
 
-
 export const loginPage = () => {
   window.location.hash = '/login';
   document.getElementById('root').innerHTML = `
@@ -61,6 +60,13 @@ const buildformRegister = () => {
     window.location.hash = '/register';
     document.getElementById('root').innerHTML = `
             <div id='viewRegistre' class="viewLoginRegistre"> 
+
+              <div class="imgLogin" >
+              </div>
+              <div id="formRegister" class="formLoginRegistre">
+              <div id="imgRegister">
+              </div>
+
             
               <div class="imgLogin" >
                  
@@ -72,6 +78,7 @@ const buildformRegister = () => {
               </div>
                 <div id="formTwo">
               
+
                 <input type="email" id="eMailTwo"  name="eMailTwo" class="inputMailPassName" placeholder="Ingresa E-mail"/>
                 <input type="password"  id="passTwo" name="passTwo" class="inputMailPassName" placeholder="Ingresa Contraseña" minlength="6">
                 <button class="btnLoginRegister" id="btnRegister" >Registrar</button>
@@ -85,6 +92,7 @@ const buildformRegister = () => {
       const email = document.getElementById('eMailTwo').value;
       const password = document.getElementById('passTwo').value;
       createAccount(email, password);
+
     });
     // BÓTÓN DE REGRESO AL LOGIN
     document.getElementById('loginBack').addEventListener('click', () => {
@@ -92,5 +100,17 @@ const buildformRegister = () => {
     });
   });
 };
+/*  export const msj = (msjT) => {
+  document.getElementById("msj").innerHTML = msjT;
+};  */
+
+    });
+    // BÓTÓN DE REGRESO AL LOGIN
+    document.getElementById('loginBack').addEventListener('click', () => {
+      loginPage();
+    });
+  });
+};
+
 
 
