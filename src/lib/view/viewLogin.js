@@ -1,41 +1,50 @@
-import { loginGoogle, loginFacebook, emailLogin } from '../index.js';
-import { loadRegister } from './viewRegister.js';
+import {
+  loginGoogle, loginFacebook, emailLogin, createAccount,
+} from '../index.js';
+
 
 export const loginPage = () => {
   window.location.hash = '/login';
   document.getElementById('root').innerHTML = `
-<div id='viewLogin'>
-<div >
-<img src="./img/logoLadoFondoBlanco.jpg"> <!--Este se debe cambiar a png-->
-  </div>
-  <div>
-  <img src="./img/welcome.png">
-  </div>
-  <div class="formLoginRegistre">
-      <div name="formlogin">
-        <input type="email" id="eMailOne" name="eMailOne" class="inputMailPassName" placeholder="Ingresa E-mail"/>
-        <input type="password" id="passOne" name="passOne"  class="inputMailPassName" placeholder="Ingresa Contraseña" minlength="6">
-        <button class="btnLoginRegistre" id="btnIniciar" type="submit" >Iniciar Sesión</button>
-      </div>
-      <div class="fila">
-        <div>
-          <img src="./img/iniciacon.png">
-        </div>
-        <div>
-          <button href="" id="btnGoogle" ><img src="./img/google.png" class="small-icon" alt=""></button>
-          <button href="" id="btnFace"><img src="./img/facebook.png" class="small-icon" alt=""></button>
-        </div>
-      <div>
-        <img src="./img/notienescuenta.png">
-        <button class="register" id="registro" type="button">Registrate Aqui</button>
-      </div>
-  </div>
-</div>`;
+  <div id='viewLogin' class="viewLoginRegistre">
+    <div class="imgLogin" >
+    </div>
 
-  document.getElementById('registro').addEventListener('click', () => {
-    loadRegister();
+    <div class="formLoginRegistre">
+        <div class ="imgWel">
+        </div>
+        <div class="loginForm" name="formlogin">
+          <input type="email" id="eMailOne" name="eMailOne" class="inputMailPassName" placeholder="Ingresa E-mail"/>
+          <input type="password" id="passOne" name="passOne"  class="inputMailPassName" placeholder="Ingresa Contraseña" minlength="6">
+          <button class="btnLoginRegister" id="btnIniciar" type="submit">Iniciar Sesión</button>
+        </div>
+        
+        <div class="fila">
+          <div id="init">
+          </div>
+          <div id="btnGoFa" >
+            <img id="btnGoogle" src="./icons/goog.png" class="small-icon" alt="">
+            <img id="btnFace" src="./icons/facebook4.png" class="small-icon" alt="">
+          </div>
+          <div id="noAcc">
+            <button class="btnLoginRegister"  id="registro" type="button">Registrate Aqui</button>
+          </div>
+        </div>
+    </div>
+  </div>`;
+
+  buildformRegister();
+};
+
+
+const buildformRegister = () => {
+  const buttonEnter = document.getElementById('btnIniciar');
+  // BOTÓN PARA LOGUEAR CON EMAIL Y PASSWORD
+  buttonEnter.addEventListener('click', () => {
+    const email = document.getElementById('eMailOne').value;
+    const password = document.getElementById('passOne').value;
+    emailLogin(email, password);
   });
-  // buildListenerForm();
 
   const btnGoogle = document.getElementById('btnGoogle');
   btnGoogle.addEventListener('click', () => {
@@ -47,12 +56,41 @@ export const loginPage = () => {
     loginFacebook();
   });
 
+  // BOTÓN CREACIÓN DE CUENTA
+  document.getElementById('registro').addEventListener('click', () => {
+    window.location.hash = '/register';
+    document.getElementById('root').innerHTML = `
+            <div id='viewRegistre' class="viewLoginRegistre"> 
+            
+              <div class="imgLogin" >
+                 
+              </div>
+            
+              <div id="formRegister" class="formLoginRegistre">
+              <div id="imgRegister">
+                
+              </div>
+                <div id="formTwo">
+              
+                <input type="email" id="eMailTwo"  name="eMailTwo" class="inputMailPassName" placeholder="Ingresa E-mail"/>
+                <input type="password"  id="passTwo" name="passTwo" class="inputMailPassName" placeholder="Ingresa Contraseña" minlength="6">
+                <button class="btnLoginRegister" id="btnRegister" >Registrar</button>
+                <button class="btnLoginRegister" id="loginBack">Volver</button>
+                </div>
+              </div>
+            </div>`;
 
-  const buttonEnter = document.getElementById('btnIniciar');
-  // BOTÓN PARA LOGUEAR CON EMAIL Y PASSWORD
-  buttonEnter.addEventListener('click', () => {
-    const email = document.getElementById('eMailOne').value;
-    const password = document.getElementById('passOne').value;
-    emailLogin(email, password);
+    // BOTON QUE CREA CUENTA PARA NUEVO USUARIO
+    document.getElementById('btnRegister').addEventListener('click', () => {
+      const email = document.getElementById('eMailTwo').value;
+      const password = document.getElementById('passTwo').value;
+      createAccount(email, password);
+    });
+    // BÓTÓN DE REGRESO AL LOGIN
+    document.getElementById('loginBack').addEventListener('click', () => {
+      loginPage();
+    });
   });
 };
+
+
