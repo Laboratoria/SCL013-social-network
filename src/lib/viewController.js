@@ -25,3 +25,23 @@ export const loginEmail = ()=>{
     console.log(emailI)
     console.log(passI)
 }
+
+export const cerrarSesion = () => {
+    const btnCerrar = document.querySelector('#btnCerrar')
+    btnCerrar.addEventListener('click', () => {
+        firebase.auth().signOut()
+    })
+}
+
+export const iniciarSesion = () => {
+    const btngoogle = document.querySelector('#btngoogle')
+    btngoogle.addEventListener('click', async () => {
+        console.log('me diste click google')
+        try {
+            const provider = new firebase.auth.GoogleAuthProvider()
+            await firebase.auth().signInWithPopup(provider)
+        } catch (error) {
+            console.log(error)
+        }
+    })
+}  

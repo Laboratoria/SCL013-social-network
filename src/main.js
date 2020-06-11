@@ -2,6 +2,8 @@
 import {myFunction} from "./lib/index.js";
 import {login} from "./lib/view/templateLogin.js";
 import {home} from "./lib/view/templateHome.js";
+import {cerrarSesion} from "./lib/viewController.js";
+import {iniciarSesion} from "./lib/viewController.js";
 
 
 myFunction();
@@ -19,23 +21,6 @@ firebase.auth().onAuthStateChanged((user) => {
     }
 });
  
-const cerrarSesion = () => {
-    const btnCerrar = document.querySelector('#btnCerrar')
-    btnCerrar.addEventListener('click', () => {
-        firebase.auth().signOut()
-    })
-}
-const iniciarSesion = () => {
-    const btngoogle = document.querySelector('#btngoogle')
-    btngoogle.addEventListener('click', async () => {
-        console.log('me diste click google')
-        try {
-            const provider = new firebase.auth.GoogleAuthProvider()
-            await firebase.auth().signInWithPopup(provider)
-        } catch (error) {
-            console.log(error)
-        }
-    })
-}  
+
 
 

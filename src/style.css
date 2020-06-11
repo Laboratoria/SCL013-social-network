@@ -161,72 +161,142 @@ button {
     font-size: 102%;
 }
 
+/*muro general*/
+
 header {
     background: #03293C;
     height: 196px;
 }
 
 #contenedorBotonesMenu {
-
-
     display: flex;
+    margin-top: 27px;
+
 
 }
 
 #logoMenu {
-    height: 133px;
-    width: 157px;
     border-left-width: 1px;
     margin-left: 118px;
+    width: 176px;
+    height: 137px;
 }
 
 .colorUno {
     background: #49BEB7;
+    font-size: 110%;
+    padding-right: 9px;
+    padding-left: 9px;
+    height: 28px;
 }
 
 .colorDos {
     background: #E4C01F;
+    font-size: 110%;
+    padding-right: 9px;
+    padding-left: 9px;
+    height: 28px;
+
 }
 
-
-.contenedorSalida {
-    border-style: solid;
-    border-color: green;
-    background: #03293C;
-    margin-top: 461px;
-    color: white;
+#btnPublicar {
+    width: 412px;
+    background: #00D1CD;
 }
 
+#opcionPublicar {
+    width: 92px;
+    height: 25px;
+    margin-left: 30px;
+}
+
+/*contenedor publicacion*/
 #contenedorPublicacion {
-    border-style: solid;
     border-color: rgba(68, 68, 68, 0.18);
     height: 298px;
     background: rgba(68, 68, 68, 0.18);
     margin-top: 35px;
 }
 
-#nombreParticipantes {
-    border-style: solid;
-    border-color: pink;
-    height: 33px;
+#contenedorIdentidad {
+    display: flex;
+    flex-wrap: wrap;
 }
 
-#interacciones {
-    background: #00D1CD;
-    height: 31px;
-    margin-top: 28px;
+#nombreParticipante {
+
+    height: 47px;
+    font-size: 110%;
 }
 
-#imagenParticipante {
+#fotoParticipante {
     border-style: solid;
+    border-color: red;
+    width: 75px;
+
+}
+
+#imagenPublicacion {
     background: #03293C;
     height: 157px;
     width: 412px;
 }
 
+/*interacciones de la publicacion*/
+#interacciones {
+    background: #00D1CD;
+    height: 31px;
+    margin-top: 0px;
+    width: 422px;
+    margin-right: 6px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#btnCompartir {
+    background-image: url("./image/Vector\ Enviar.png");
+    background-repeat: no-repeat;
+    width: 32px;
+    margin-right: 25px;
+}
+
+#btnRecomiendo {
+    background-image: url("./image/Vector\ Recomiendo.png");
+    background-repeat: no-repeat;
+    width: 32px;
+    margin-right: 25px;
+}
+
 #inputHome {
     height: 83px;
     width: 401px;
+}
+
+/*ultimo ontenedor , para salir o entrar a otra pag*/
+.contenedorSalida {
+    background: #03293C;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 33px;
+    height: 48px;
+}
+
+#btnHome {
+    background-image: url("./image/VectorCasa.png");
+    background-repeat: no-repeat;
+    width: 32px;
+}
+
+#btnCerrar {
+    background-image: url("./image/cerrarSesion.png");
+    background-repeat: no-repeat;
+    width: 32px;
+}
+
+#btnMuroPersonal {
+    background-image: url("./image/Ellipse.png");
+    background-repeat: no-repeat;
+    width: 49px;
 }
 
 @media (min-width: 1440px) and (max-width: 1920px) {
