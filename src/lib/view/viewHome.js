@@ -6,18 +6,16 @@ export const home = () => {
     <header>
     <div id= "logoLadoHome">
     </div>
-    </button>
     </header>
     <body>
     <div id="bodyHome">
-    <div id="form-save" class="div-post">
+    <div id="form-save">
     <form id="form-publication" class="padding" maxlength=50 required>
         <textarea placeholder="¿Que quieres compartir?" id="publication" class="textarea-post"></textarea>
         <div class="flex-bottom-form">
             <div>
                 <label for="fileButton" id="image"><i class="fa fa-picture-o btn-picture"
                         aria-hidden="true"></i></label>
-                <input type="text" class="file-name" id="inputval" />
                 <input type="file" class="hide" name="file" value="upload" id="fileButton" />
             </div>
             <select id="privacity" class="btn-select" name="select">

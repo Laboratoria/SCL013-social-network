@@ -3,12 +3,11 @@
   padding: 0;
 }
 body{
-  width: 100%;
+  max-width: 2560px;
 }
 #root{
-  width: 100%;
+  max-width: 2560px;
 }
-
 .viewLoginRegistre{
   background-color:#FFEEEA;
   background-size: cover;
@@ -70,6 +69,9 @@ body{
   color: #374B73;
   width: 152px;
 }
+.fila {
+  margin-top: 15px;
+}
 #init{
   background-image: url('./img/iniciacon.png');
   background-position: center center;
@@ -128,24 +130,81 @@ html {
   width: 100%;
   height: 81.5vh;
   background-size: cover;
-  position: relative;
+  /* position: relative; */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   background-size: contain;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  text-align: -webkit-center;
 }
-/*
+
 #bodyHome:before {
   content: "";
   width: 100%;
   height: 100%;
-  background-color: #ffffff; /*Capa blanca que puse en el fondo para atenuar el color original 
+  background-color: #ffffff; /*Capa blanca que puse en el fondo para atenuar el color original */
   position: absolute;
   opacity: 0.7;
   margin: 0;
   padding: 0;
-}*/
+}
+
+      #form-save {
+        /* position: relative; */
+        font-family: Eczar, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #FFEEEA;
+        border-radius: 10px;
+        border: 2px solid #FF8197;
+        display: flex;
+        z-index: 5;
+        /* align-self: center; */
+        /* width: 370px; */
+        /* margin-bottom: 1rem; */
+        /* margin-left: 1rem; */
+        align-items: center;
+        /* align-self: flex-start; */
+        /* margin-top: -450px; */
+        margin-top: 1rem;
+      }
+
+          #form-publication {
+            /* position: relative; */
+            /* width: 85%; */
+            /* height: 100%; */
+            /* flex: inherit; */
+            margin: 0.5rem;
+            /* align-items: center; */
+            /* justify-content: center; */
+        }
+
+          #publication {
+            width: 90%;
+            align-items: center;
+            /* margin: 1rem; */
+            /* justify-content: space-around; */
+            border: solid 1px #FF8197;
+            height: 80px;
+            resize: none;
+        }
+
+          #privacity {
+          align-items: center;
+          justify-content: center;
+          border-radius: 10px;
+          background-color: #ffffff;
+          border: solid #FF8197;
+          }
+
+          #share-post {
+          align-items: center;
+          justify-content: center;
+          border-radius: 10px;
+          background-color: #ffffff;
+          border: solid #FF8197;
+          }
 
 #root {
   height: 100vh;
@@ -181,6 +240,7 @@ header {
           background-size: contain;
           background-color: #FFEEEA;
           border: 2px solid #FF8197;
+          z-index: 5;
           }
           
           #out{
@@ -193,54 +253,7 @@ header {
             font-family: Eczar, Verdana, Geneva, Tahoma, sans-serif;
           }
 
-         #form-save {
-            position: relative;
-            font-family: Eczar, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #FFEEEA;
-            border-radius: 10px;
-            border: 2px solid #FF8197;
-            display: flex;
-            align-self: center;
-            width: 300px;
-            margin-top: 1em;
-            margin-bottom: 1rem;
-        }
-
-        #form-publication {
-        position: relative;
-        width: 85%;
-        height: 100%;
-        flex: inherit;
-        margin: 1rem;
-        align-items: center;
-        justify-content: center;
-        
-        }
-
-        #publication {
-        width: 90%;
-        height: 40%;
-        align-items: center;
-        margin: 1rem;
-        justify-content: space-around;
-        }
-
-        
-        #privacity {
-          align-items: center;
-          justify-content: center;
-          border-radius: 10px;
-          background-color: #ffffff;
-          border: solid #FF8197;
-        }
-
-        #share-post {
-          align-items: center;
-          justify-content: center;
-          border-radius: 10px;
-          background-color: #ffffff;
-          border: solid #FF8197;
-        }
+         
 
  .footerOrder {
     background-color: #FFEEEA;
@@ -249,7 +262,7 @@ header {
     border: 2px solid #FF8197;
     height: 5vh;
     max-width: 100%;
-}
+  }
 
           #profile {
             background-image: url(./icons/profile.png);
@@ -260,6 +273,7 @@ header {
             background-size: contain;
             background-color: #FFEEEA;
             border: 2px solid #FF8197;
+            z-index: 5;
           }
 
           #friends {
@@ -271,6 +285,7 @@ header {
             background-size: contain;
             background-color: #FFEEEA;
             border: 2px solid #FF8197;
+            z-index: 5;
           }
 
           #notification {
@@ -282,6 +297,7 @@ header {
             background-size: contain;
             background-color: #FFEEEA;
             border: 2px solid #FF8197;
+            z-index: 5;
           }
 
           #post {
@@ -306,7 +322,7 @@ header {
 }
 
 
-@media screen and (min-width:1440px){
+@media screen and (min-width:1920px){
   #viewLogin{
     height: 100vh;
     width: 100%;
@@ -315,37 +331,16 @@ header {
     flex-wrap: wrap;
     justify-content: space-between;
   }
-  .viewLoginRegistre{
-background-color:white;
-display: flex;
-justify-content: space-between;
+  .formLoginRegistre {
+    align-self: center;
+    margin-right: 900px;
   }
-.imgLogin {
-  background-image:url("./img/logovertical.jpg");
-  background-color: #FFEEEA;;
-  height: 100vh;
-  width: 60%;
-  display: block;
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-position: 50%;
+  .imgLogin {
+    width: 50%;
 }
-#init{
-  margin-left: -13px;
+.imgWel {
+  height: 20vh;
 }
-.imgWel{
-background-image: url('./img/welcome.png');
-}
-.formLoginRegistre {
-  align-self: center;
-}
-.viewRegistre{
-  height: 100vh;
-  width: 100%;
-  flex-direction: row;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
 }
 
 
