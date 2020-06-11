@@ -30,21 +30,17 @@ export const home = () => {
     <ul id="notes-list" class="ul-parent">
     </ul>
   </section>
-    
     <div class="iconSend"> 
     </div>
-    
+
    <!--<div id= "editDelete">
     <img src="icons/delete.png">
     <img src="icons/edit.png">
     </div>
-
     <div id="likeComment">
     <img src="./icons/like.png">
     <img src="icons/comment.png">
     </div>-->
-
-
 
      </div>
      </body>
@@ -54,10 +50,13 @@ export const home = () => {
     <button img id= "notification">
     <button img id="btnOut">
 
-    
     </footer>`;
   // BOTON QUE CREA CUENTA PARA NUEVO USUARIO
   document.getElementById('btnOut').addEventListener('click', () => {
     logout();
   });
+
 };
+
+};
+

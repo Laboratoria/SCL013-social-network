@@ -1,3 +1,4 @@
+
 * {
   margin: 0;
   padding: 0;
@@ -8,6 +9,24 @@ body{
 #root{
   max-width: 2560px;
 }
+
+
+* {
+  margin: 0;
+  padding: 0;
+  
+}
+body{
+  max-width: 2560px;
+}
+#root{
+  
+  max-width: 2560px;
+}
+
+
+
+
 .viewLoginRegistre{
   background-color:#FFEEEA;
   background-size: cover;
@@ -15,10 +34,15 @@ body{
 }
 /* logo hacia el lado 1 */
 .imgLogin{
+
+
+
+
   background-image: url('./img/logoconfondo.png');
   background-position: center center;
   background-repeat: no-repeat;
   height: 30vh;
+
   }
   .imgWel{
     background-image: url('./img/welcome.png');
@@ -27,6 +51,7 @@ body{
     height: 20vh;
     margin-top: -55px;
   }
+
   .formLoginRegistre {
     display: flex;
     flex-direction: column;
@@ -40,9 +65,18 @@ body{
 }
 .inputMailPassName{
   /* Group 37 */
+
     background: #FFFFFF;
     border: 3px solid #FF8197;
     border-radius: 20px;
+
+  
+    background: #FFFFFF;
+    border: 3px solid #FF8197;
+ 
+    border-radius: 20px;
+
+
     width: 228px;
     height: 36px;
     left: 119px;
@@ -68,10 +102,12 @@ body{
   line-height: 36px;
   color: #374B73;
   width: 152px;
+
 }
 .fila {
   margin-top: 15px;
 }
+
 #init{
   background-image: url('./img/iniciacon.png');
   background-position: center center;
@@ -100,6 +136,7 @@ body{
     align-items: center;
 }
 #imgRegister{
+
   background-image: url("./img/registro.png");
   background-position: center center;
   background-repeat: no-repeat;
@@ -109,16 +146,19 @@ body{
   margin-top: -29px;
   align-items: center;
 }
+
 #formTwo {
   flex-direction: column;
     align-items: center;
     display: flex;
 }
+
 #loginBack{
   margin-top: 30px;
     width: 68px;
     font-size: 18px;
     background: #ffeeea;
+
 }
 html {
   font-family: Eczar, Verdana, Geneva, Tahoma, sans-serif;
@@ -307,6 +347,7 @@ header {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+
   }
   .viewLoginRegistre{
 background-color:white;
@@ -329,10 +370,20 @@ justify-content: space-between;
 .imgWel{
 background-image: url('./img/welcome.png');
 }
+
 .formLoginRegistre {
   align-self: center;
   margin-right: 216px;
 }
+
+
+.formLoginRegistre {
+  
+  align-self: center;
+  margin-right: 216px;
+}
+
+
 .viewRegistre{
   height: 100vh;
   width: 100%;
@@ -343,6 +394,8 @@ background-image: url('./img/welcome.png');
 }
 }
 @media screen and (min-width:1920px){
+
+
   #viewLogin{
     height: 100vh;
     width: 100%;
@@ -350,6 +403,7 @@ background-image: url('./img/welcome.png');
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+
   }
   .formLoginRegistre {
     align-self: center;
@@ -357,8 +411,26 @@ background-image: url('./img/welcome.png');
   }
   .imgLogin {
     width: 50%;
+
+
+  }
+  .formLoginRegistre {
+  
+    align-self: center;
+    margin-right: 510px;
+  }
+
+  .imgLogin {
+  
+    width: 50%;
+  
+
 }
 .imgWel {
   height: 20vh;
 }
+
 }
+
+}
+

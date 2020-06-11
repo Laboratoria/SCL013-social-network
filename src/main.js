@@ -1,11 +1,9 @@
 import { loginPage } from './lib/view/viewLogin.js';
 import { home } from './lib/view/viewHome.js';
 
-// #Observador de autenticación
-
-
 export const stateObserved = () => {
   firebase.auth().onAuthStateChanged((user) => {
+
     if (user) {
       home();
       // User is signed in.
@@ -20,6 +18,12 @@ export const stateObserved = () => {
     } else {
       loginPage();
       // ...
+
+    if (user && user.emailVerified) {
+      home();
+    } else {
+      loginPage();
+
     }
   });
 };
