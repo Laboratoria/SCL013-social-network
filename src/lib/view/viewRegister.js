@@ -1,3 +1,8 @@
+
+/*  import { loginPage } from './viewLogin.js';
+
+import { createAccount } from '../index.js';  */
+
 /* import { loginPage } from './viewLogin.js';
 import { createAccount } from '../index.js';
 
@@ -39,3 +44,4 @@ export const buildformRegister = () => {
 export const loadRegister = () => {
   buildformRegister();
 }; */
+

@@ -1,4 +1,4 @@
-/*const firebaseConfig = {
+/*  const firebaseConfig = {
     apiKey: "AIzaSyDPMtGl6DmY3tN6iF14A1pjD9YhIkMseMM",
     authDomain: "social-network-36db2.firebaseapp.com",
     databaseURL: "https://social-network-36db2.firebaseio.com",
@@ -8,6 +8,5 @@
     appId: "1:102856671384:web:f6a2082be415523dc150ed",
     measurementId: "G-4S7MSW126G"
   };
-  
   // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);*/
+  firebase.initializeApp(firebaseConfig); */
