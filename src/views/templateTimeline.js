@@ -8,7 +8,7 @@ export const timeline = () => {
   divTimeline.innerHTML = ``;
 
      divTimeline.appendChild(menuToggle());
-     //divTimeline.appendChild(createPost());
+     divTimeline.appendChild(createPost());
      divTimeline.appendChild(editProfile());
 
     return divTimeline;
