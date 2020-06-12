@@ -19,6 +19,9 @@ const showTemplate = (hash) => {
     case '#/home':
       containerRoot.appendChild(timeline());
     break;
+    case '#/profile':
+      containerRoot.appendChild(editProfile());
+    break;
     default:
       containerRoot.innerHTML = `<h2>No existe :c</h2>`;
   }
@@ -30,6 +33,8 @@ export const changeRoute = (hash) => {
   } else if (hash === '#/register') {
     return showTemplate(hash);
   } else if (hash === '#/home') {
+    return showTemplate(hash);
+  } else if (hash === '#/profile') {
     return showTemplate(hash);
   } else {
     return showTemplate(hash);
