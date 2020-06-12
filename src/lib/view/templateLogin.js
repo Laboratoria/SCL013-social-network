@@ -95,14 +95,11 @@ document.getElementById('root').innerHTML =  /*html*/ `
    registro();  
  }) 
 
-<<<<<<< HEAD
 
  const passOlvido = document.getElementById('textoOlvido');
  passOlvido.addEventListener("click", () => {
   Rpassword(); 
  }) 
-=======
->>>>>>> 7287f08e229587e5e7f7b94b1d0c2dad33504903
   var slideIndex = 0;
 
 
@@ -126,12 +123,7 @@ const showSlides = ()=> {
     setTimeout(showSlides, 7000);
 }  
 showSlides();
-<<<<<<< HEAD
 
 }
 
 
-=======
-}
-
->>>>>>> 7287f08e229587e5e7f7b94b1d0c2dad33504903
