@@ -11,7 +11,7 @@ export const menuToggle = () => {
         <img src="img/logo.png" alt="flavors" class="logoToggle">
       </li>
       <li class="listMenu"><a href="#/profile">Mi Perfil</a></li>
-      <li class="listMenu"><a href="#/home">Recetario</a></li>
+      <li class="listMenu"><a href="#/home" id="home">Recetario</a></li>
       <li class="listMenu"><a href="#/sweet">Recetas Dulces</a></li>
       <li class="listMenu"><a href="#/salty">Recetas Saladas</a></li>
       <li class="listMenu"><a href="#/login" id="out">Cerrar Sesión</a></li>
@@ -29,6 +29,9 @@ export const menuToggle = () => {
 
   divToggle.querySelector('#out').addEventListener('click', () => {
     userSignOut(goLogin);
+  });
+  divToggle.querySelector('#home').addEventListener('click', () => {
+    window.location.href = './index.html#/home';
   });
 
     return divToggle;
