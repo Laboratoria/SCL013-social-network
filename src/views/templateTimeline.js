@@ -9,7 +9,7 @@ export const timeline = () => {
 
      divTimeline.appendChild(menuToggle());
      divTimeline.appendChild(createPost());
-    //  divTimeline.appendChild(editProfile());
+     divTimeline.appendChild(editProfile());
 
     return divTimeline;
 };
