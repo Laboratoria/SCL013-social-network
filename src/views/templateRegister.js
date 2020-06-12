@@ -14,6 +14,8 @@ export const register = () => {
                           <div class="title">
                           <h1 class="userRegisterTitle">¡Regístrate!</h1>
                           </div>
+                          <p id="email-error" class="email-error"></p>
+                          <p id="pwd-error" class="pwd-error"></p>
                           <i class="fas fa-user"><input type="text" placeholder="Nombre" id="name" class="userRegisterInput"/></i>
                           <i class="fas fa-envelope"><input type="email" placeholder="Correo electrónico" id="email" class="userRegisterInput"/></i> 
                           <i class="fas fa-unlock"><input type="password" placeholder="Contraseña" id="pass" class="userRegisterInput"/></i>
