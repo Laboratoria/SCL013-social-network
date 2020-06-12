@@ -24,7 +24,6 @@ document.getElementById('root').innerHTML =  /*html*/ `
           <p class="parrafoUno">Publica tus</p>
           <p class="parrafoUno">mejores picadas</p>
         </div>
-<<<<<<< HEAD
       </div>
     </div>
 
@@ -37,20 +36,6 @@ document.getElementById('root').innerHTML =  /*html*/ `
       </div>
     </div>
 
-=======
-      </div>
-    </div>
-
-    <div class="carrusel">
-      <div id="imagenTres">
-        <div class="textoInicial">
-          <p class="parrafoUno">Conoce a otros </p>
-          <p class="parrafoUno">viajeros</p>
-        </div>
-      </div>
-    </div>
-
->>>>>>> 7287f08e229587e5e7f7b94b1d0c2dad33504903
 
     <div class="carrusel">
       <div id="imagenCuatro">
@@ -78,7 +63,7 @@ document.getElementById('root').innerHTML =  /*html*/ `
       <input class="contraseña" id="passIngreso" placeholder="Contraseña" type="password">
       <button class="iniciar" id="iniciarSesion">Iniciar sesion</button>
       <button id="btngoogle"><img id="iconoGoogle"/> sesión con Google</button> 
-      <a href="#"id="textoOlvido">Recuperar Contraseña </a>
+      <p id="textoOlvido">Recuperar Contraseña </p>
       <p id="pTres">¿Aún no eres parte?</p>
       <button id="botonRegistrate"> Registrate</button>
     </div>

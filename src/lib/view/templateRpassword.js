@@ -1,6 +1,7 @@
 import {restablecerContrasena} from "../viewController.js";
 export const Rpassword = () => {
-    window.location.hash = '/recuperar'
+    window.location.hash = '/recuperar';
+
     document.getElementById('root').innerHTML = /*html*/`
     
     <div class="contenedorRegistro" id="cont-recuperar">
