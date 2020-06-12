@@ -57,6 +57,7 @@ export const iniciarSesion = () => {
             console.log(error)
         }
     })
+<<<<<<< HEAD
 }  
 
 
@@ -80,3 +81,6 @@ export const restablecerContrasena = () => {
   }
   
   
+=======
+}  
+>>>>>>> 7287f08e229587e5e7f7b94b1d0c2dad33504903

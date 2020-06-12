@@ -24,6 +24,7 @@ document.getElementById('root').innerHTML =  /*html*/ `
           <p class="parrafoUno">Publica tus</p>
           <p class="parrafoUno">mejores picadas</p>
         </div>
+<<<<<<< HEAD
       </div>
     </div>
 
@@ -36,6 +37,20 @@ document.getElementById('root').innerHTML =  /*html*/ `
       </div>
     </div>
 
+=======
+      </div>
+    </div>
+
+    <div class="carrusel">
+      <div id="imagenTres">
+        <div class="textoInicial">
+          <p class="parrafoUno">Conoce a otros </p>
+          <p class="parrafoUno">viajeros</p>
+        </div>
+      </div>
+    </div>
+
+>>>>>>> 7287f08e229587e5e7f7b94b1d0c2dad33504903
 
     <div class="carrusel">
       <div id="imagenCuatro">
@@ -80,11 +95,14 @@ document.getElementById('root').innerHTML =  /*html*/ `
    registro();  
  }) 
 
+<<<<<<< HEAD
 
  const passOlvido = document.getElementById('textoOlvido');
  passOlvido.addEventListener("click", () => {
   Rpassword(); 
  }) 
+=======
+>>>>>>> 7287f08e229587e5e7f7b94b1d0c2dad33504903
   var slideIndex = 0;
 
 
@@ -108,7 +126,12 @@ const showSlides = ()=> {
     setTimeout(showSlides, 7000);
 }  
 showSlides();
+<<<<<<< HEAD
 
 }
 
 
+=======
+}
+
+>>>>>>> 7287f08e229587e5e7f7b94b1d0c2dad33504903
