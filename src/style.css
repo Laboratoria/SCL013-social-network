@@ -58,7 +58,7 @@
     z-index: 1;
 }
 
-#contenedorIngreso {
+.contenedorIngreso {
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -75,6 +75,13 @@
     left: 10px;
 }
 
+#cont-recuperar{
+    background-image: url(./image/login/fRecuperar.jpg);
+    background-repeat: no-repeat;
+    overflow: hidden;
+    width: 100%;
+
+}
 
 input {
     background: #FFFFFF;
@@ -166,6 +173,8 @@ button {
 header {
     background: #03293C;
     height: 196px;
+    position: fixed;
+    top: 0;
 }
 
 #contenedorBotonesMenu {
@@ -199,8 +208,6 @@ header {
 
 }
 
-#contenedorEscribir {}
-
 #btnPublicar {
     width: 412px;
     background: #00D1CD;
@@ -210,6 +217,10 @@ header {
     width: 92px;
     height: 25px;
     margin-left: 30px;
+}
+
+#contenedorEscribir{
+    margin-top: 47%;
 }
 
 /*contenedor publicacion*/
@@ -279,8 +290,10 @@ header {
     background: #03293C;
     display: flex;
     justify-content: space-between;
-    margin-top: 33px;
     height: 48px;
+    position: fixed;
+    bottom: 0;
+    width: 100%
 }
 
 #btnHome {
