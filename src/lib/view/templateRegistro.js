@@ -7,7 +7,7 @@ export const registro = () => {
   <div id="contenedorGeneralRegistro" class="contenedorRegistro">
     <img id="logo" src="./image/logo.jpg">
    
-    <div id="contenedorIngreso" >
+    <div class="contenedorIngreso" >
       <input class="email" id="emailRegistro" placeholder="Correo electronico" type="email">
       <input class="contraseña" id="passRegistro" placeholder="Contraseña" type="password">
       <input class="usuario" id="usuarioRegistro" placeholder="Nombre de usuario" type="text">
