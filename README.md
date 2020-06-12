@@ -46,7 +46,26 @@ Yo _como_ usuario _quiero_ poder crear una cuenta para _poder_ subir mis recetas
 
 __Historia 2__
 
-Yo _como_ usuario _quiero_ crear mi perfil para que me reconozcan fácilmente.
+
+Yo _como_ usuario _quiero_ ver un menú donde pueda desplazarme fácilmente _para_ acceder a las diferentes pantallas de la red social.
+
+#### Criterios de aceptación:
+
+* El usuario puede acceder a un menú desplegable
+* Debe contar con las opciones de mi perfil, recetario, cerrar sesion y filtros
+* Definición de terminado:
+
+#### Definicion de terminado:
+
+* Debe ser una SPA.
+* Debe ser responsive.
+* Deben haber recibido code review de al menos una compañera de otro equipo.
+* Hicieron los test unitarios
+* Testearon manualmente buscando errores e imperfecciones simples.
+* Hicieron pruebas de usabilidad e incorporaron el feedback de los usuarios como mejoras.
+* Desplegaron su aplicación y etiquetaron la versión.
+ 
+
 
 ### **Prototipo de Baja Fidelidad**
 
