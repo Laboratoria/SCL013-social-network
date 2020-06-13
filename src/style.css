@@ -389,22 +389,211 @@ border: none;
 
 /*---------------------------------------POST-----------------------*/
 
+.create-post{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
 .newPost{
-    background-color: pink;
+    background-color: white;
+    border: 2px solid #e5e5e5;
+    box-sizing: border-box;
+    box-shadow: 2px 3px 4px #e5e5e5;
+    border-radius: 7px;
+    width: 700px;
+    height: 250px;
+    margin-top:60px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    left: 28.4%;
+    top: 65%;
+}
+
+.likeComent {
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: flex-end;
+    align-content: flex-end;
+    
+}
+.like{
+  max-width: 35px;
+  margin-right: 5px;
+  margin-bottom: -4px;
+}
+
+.likeComent i{
+    text-decoration: none;
+    color: #F9B233;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+
+.create-post-div {
+    background-color: white;
     border: 2px solid #F9B233;
     box-sizing: border-box;
     box-shadow: 2px 3px 4px #F9B233;
     border-radius: 7px;
     width: 700px;
     height: 250px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
+    margin-top: 120px;
     left: 28.4%;
-    top: 65%;
-
+    top: 15%;
 }
+.writeRecipe {
+    width: 550px;
+    height: 100px;
+    border: none;
+    margin: 2px 0px 0px 70px;
+}
+.writeRecipe:focus {
+    outline: none;
+}
+.writeRecipe::placeholder {
+    font-size: 18px;
+    font-family: Comfortaa;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.create-post-options {
+    display: flex;
+    margin: 20px;
+}
+
+.upload-btn {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    margin-left: 50px;
+  }
+  
+  .btnPost {
+    background: #F9B233;
+    width: 112px;
+    height: 35px;
+    border-radius: 20px;
+    cursor: pointer;
+    border: none;
+  }
+
+  .recipePost{ 
+    background: #F9B233;
+    padding: 12px;
+    height: 35px;
+    border-radius: 20px; 
+    cursor: pointer;
+    border: none;
+  }  
+  
+  .upload-btn input[type=file] {
+    font-size: 100px;
+    opacity: 0;
+  }
+
+  .selectRecipe{
+    background: #F9B233;
+    width: 112px;
+    height: 35px;
+    border-radius: 20px;
+    margin-right: 300px;
+    cursor: pointer;
+    border: none;
+  }
+
+  .showRecipe{
+    width: 627px;
+    height: 100px;
+    border: none;
+    margin: 20px 0px 70px;
+  }
+
+ 
+
+
+.userName {
+    align-self: flex-start;
+    margin-left: 10%;
+    margin-top: 5%;
+    font-family: Comfortaa;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 22px;
+    border: none;
+}
+.writeRecipe {
+    width: 550px;
+    height: 100px;
+    border: none;
+    margin: 2px 0px 0px 70px;
+}
+.writeRecipe:focus {
+    outline: none;
+}
+.writeRecipe::placeholder {
+    font-size: 18px;
+    font-family: Comfortaa;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.create-post-options {
+    display: flex;
+    margin: 20px;
+}
+
+.upload-btn {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    margin-left: 50px;
+  }
+  
+  .btnPost {
+    background: #F9B233;
+    width: 112px;
+    height: 35px;
+    border-radius: 20px;
+    cursor: pointer;
+    border: none;
+  }
+
+  .recipePost{ 
+    background: #F9B233;
+    padding: 12px;
+    height: 35px;
+    border-radius: 20px; 
+    cursor: pointer;
+    border: none;
+  }  
+  
+  .upload-btn input[type=file] {
+    font-size: 100px;
+    opacity: 0;
+  }
+
+  .selectRecipe{
+    background: #F9B233;
+    width: 112px;
+    height: 35px;
+    border-radius: 20px;
+    margin-right: 300px;
+    cursor: pointer;
+    border: none;
+  }
+
+  .showRecipe{
+    width: 627px;
+    height: 100px;
+    border: none;
+    margin: 20px 0px 70px;
+  }
+
+ 
+
 
 @media screen and (max-width: 576px) {
 
@@ -513,76 +702,3 @@ border: none;
     }
 
 }
-/* Create Post */
-
-.create-post-div {
-    background-color: white;
-    border: 2px solid #F9B233;
-    box-sizing: border-box;
-    box-shadow: 2px 3px 4px #F9B233;
-    border-radius: 7px;
-    width: 700px;
-    height: 250px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    left: 28.4%;
-    top: 15%;
-}
-
-#userName {
-    align-self: flex-start;
-    margin-left: 10%;
-    margin-top: 5%;
-    font-family: Comfortaa;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 20px;
-    line-height: 22px;
-}
-.textarea {
-    width: 550px;
-    height: 100px;
-    margin-top: 2%;
-    border: none;
-}
-.textarea:focus {
-    outline: none;
-}
-.textarea::placeholder {
-    font-size: 18px;
-    font-family: Comfortaa;
-    font-style: normal;
-    font-weight: normal;
-}
-
-.create-post-options {
-    margin-top: 4%;
-    display: flex;
-    margin: 20px;
-}
-
-.upload-btn {
-    position: relative;
-    overflow: hidden;
-    display: inline-block;
-  }
-  
-  .btnPost {
-    background: #F9B233;
-    width: 112px;
-    height: 35px;
-    border-radius: 10px;
-    cursor: pointer;
-    border: none;
-    margin: 0px 112px;
-  }
-  
-  .upload-btn input[type=file] {
-    font-size: 100px;
-    position: absolute;
-    left: 0;
-    top: 0;
-    opacity: 0;
-  }
