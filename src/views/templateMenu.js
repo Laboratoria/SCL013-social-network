@@ -8,7 +8,7 @@ export const menu = () => {
           <a href="#/register">Register</a>
         </li>
         <li>
-          <a href="#/perfil">Perfil</a>
+          <a href="#/profile">Perfil</a>
         <li>
         <li>
           <a href="#/home">Recetario</a>

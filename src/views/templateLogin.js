@@ -35,6 +35,23 @@ export const login = () => {
                         </section>`;
 
   divLogin.innerHTML = viewLogin;
+
+  // Firebase callback
+  const onSuccess = (result) => {
+    if ( result.user.emailVerified === true ) {
+      window.location.href = './index.html#/home';
+    } else {
+      alert('verifique su correo electronico para verificar el registro');
+    }
+  };
+
+  const onError = (error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    alert(errorMessage);
+  };
+  
+  // Login with access
   divLogin.querySelector('#loginBtn').addEventListener('click', () => {
   
     const emailA = document.getElementById('emailA').value;
@@ -43,23 +60,10 @@ export const login = () => {
   
   });
 
+  // Login with google
   divLogin.querySelector('#loginGoogleBtn').addEventListener('click', () => {
     googleLogin(onSuccess, onError);
   });
 
   return divLogin;
-};
-
-const onError = (error) => {
-  const errorCode = error.code;
-  const errorMessage = error.message;
-  alert(errorMessage);
-};
-
-const onSuccess = (result) => {
-  if ( result.user.emailVerified === true ) {
-    window.location.href = './index.html#/home';
-  } else {
-    alert('verifique su correo electronico para verificar el registro');
-  }
 };

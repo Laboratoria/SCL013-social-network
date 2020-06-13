@@ -123,5 +123,57 @@ export const userSignOut = (callback) => {
 
 initializeFirebase();
 
-export const  db = firebase.firestore();{
+const db = firebase.firestore();
+
+/* 
+Descripcion: Funcion generica que guarda un objeto en una coleccion de firebase, si no existe colection, crea una nueva
+Parametros: 
+      collection: coleccion almacenada firebase 
+      object: objeto para guardar en firebase
+      onSuccess: lo que sucede si el evento es correcto
+      onError: Errores
+*/
+
+const post = (collection, object, onSuccess, onError) => {
+
+  db.collection(collection).add(object)
+
+  .then((docRef) => {
+    onSuccess(docRef)
+  })
+  .catch((error) => {
+    onError(error)
+  });
+}
+
+// Funcion que crea guarda la coleccion con sus reespectivos parametros en firebase, luego se utiliza en createPost.js
+
+export const postRecipe = (recipeName, content, photoURL, onSuccess, onError) => {
+  let userName = firebase.auth().currentUser.displayName
+  
+  const recipe = {
+      username: userName,
+      recipeName: recipeName,
+      recipeContent: content,
+      photoURL: photoURL
+  }
+
+    post('recipeList', recipe, onSuccess, onError)
+}
+
+/* Funcion que trae la coleccion de firebase para luego imprimirla en pantalla al crear post 
+    onSuccess: Muestra la lista completa de los post
+    onError: Error
+*/
+
+export const getRecipeList = (onSuccess, onError) => {
+
+  db.collection("recipeList").get()
+  .then((recipeList) => {
+    onSuccess(recipeList);
+  })
+  .catch((error) => {
+      onError(error);
+      console.log("Error getting documents: ", error);
+  });
 }
