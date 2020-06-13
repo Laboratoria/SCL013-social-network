@@ -72,8 +72,17 @@ Yo _como_ usuario _quiero_ ver un menú donde pueda desplazarme fácilmente _par
 ![Prototipo baja desktop](social-network-desktop.png)
 ![Prototipo baja movil](social-network-movil.png)
 
+***
+
+### **Prototipo de Alta Fidelidad**
+
+![Prototipo alta desktop](login.png)
+![Prototipo alta desktop](registrate.png)
+![Prototipo alta desktop](perfil.png)
+![Prototipo alta movil](loginmobile.png)
 
 ***
+
 
 ## 4. Consideraciones generales
 
