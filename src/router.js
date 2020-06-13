@@ -2,6 +2,8 @@ import { login } from './views/templateLogin.js';
 import { menu } from './views/templateMenu.js';
 import { register } from './views/templateRegister.js';
 import { timeline } from './views/templateTimeline.js';
+import { editProfile } from './views/templateEditProfile.js';
+import { home } from './views/templateHome.js';
 
 const showTemplate = (hash) => {
   const containerRoot = document.getElementById('root');
@@ -17,10 +19,10 @@ const showTemplate = (hash) => {
       containerRoot.appendChild(register());
       break;
     case '#/home':
-      containerRoot.appendChild(timeline());
+      containerRoot.appendChild(home(timeline()));
     break;
     case '#/profile':
-      containerRoot.appendChild(editProfile());
+      containerRoot.appendChild(home(editProfile()));
     break;
     default:
       containerRoot.innerHTML = `<h2>No existe :c</h2>`;
