@@ -389,6 +389,11 @@ border: none;
 
 /*---------------------------------------POST-----------------------*/
 
+.create-post{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
 .newPost{
     background-color: white;
     border: 2px solid #e5e5e5;
@@ -397,14 +402,12 @@ border: none;
     border-radius: 7px;
     width: 700px;
     height: 250px;
+    margin-top:60px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    position: absolute;
     left: 28.4%;
     top: 65%;
-    z-index: -1;
-    opacity: 20%;
 }
 
 .likeComent {
@@ -435,13 +438,9 @@ border: none;
     border-radius: 7px;
     width: 700px;
     height: 250px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
+    margin-top: 120px;
     left: 28.4%;
     top: 15%;
-    z-index: -1;
 }
 
 .userName {
@@ -458,9 +457,7 @@ border: none;
 .writeRecipe {
     width: 550px;
     height: 100px;
-   
     border: none;
-
     margin: 2px 0px 0px 70px;
 }
 .writeRecipe:focus {
@@ -474,7 +471,6 @@ border: none;
 }
 
 .create-post-options {
-    margin-top: 4%;
     display: flex;
     margin: 20px;
 }
@@ -490,17 +486,22 @@ border: none;
     background: #F9B233;
     width: 112px;
     height: 35px;
-    border-radius: 10px;
+    border-radius: 20px;
     cursor: pointer;
     border: none;
-    margin: 0px 112px;
   }
+
+  .recipePost{ 
+    background: #F9B233;
+    padding: 12px;
+    height: 35px;
+    border-radius: 20px; 
+    cursor: pointer;
+    border: none;
+  }  
   
   .upload-btn input[type=file] {
     font-size: 100px;
-    position: absolute;
-    left: 0;
-    top: 0;
     opacity: 0;
   }
 
@@ -508,13 +509,14 @@ border: none;
     background: #F9B233;
     width: 112px;
     height: 35px;
-    border-radius: 10px;
+    border-radius: 20px;
+    margin-right: 300px;
     cursor: pointer;
     border: none;
   }
 
   .showRecipe{
-    width: 550px;
+    width: 627px;
     height: 100px;
     border: none;
     margin: 20px 0px 70px;
