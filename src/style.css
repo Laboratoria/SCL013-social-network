@@ -442,6 +442,76 @@ border: none;
     left: 28.4%;
     top: 15%;
 }
+.writeRecipe {
+    width: 550px;
+    height: 100px;
+    border: none;
+    margin: 2px 0px 0px 70px;
+}
+.writeRecipe:focus {
+    outline: none;
+}
+.writeRecipe::placeholder {
+    font-size: 18px;
+    font-family: Comfortaa;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.create-post-options {
+    display: flex;
+    margin: 20px;
+}
+
+.upload-btn {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    margin-left: 50px;
+  }
+  
+  .btnPost {
+    background: #F9B233;
+    width: 112px;
+    height: 35px;
+    border-radius: 20px;
+    cursor: pointer;
+    border: none;
+  }
+
+  .recipePost{ 
+    background: #F9B233;
+    padding: 12px;
+    height: 35px;
+    border-radius: 20px; 
+    cursor: pointer;
+    border: none;
+  }  
+  
+  .upload-btn input[type=file] {
+    font-size: 100px;
+    opacity: 0;
+  }
+
+  .selectRecipe{
+    background: #F9B233;
+    width: 112px;
+    height: 35px;
+    border-radius: 20px;
+    margin-right: 300px;
+    cursor: pointer;
+    border: none;
+  }
+
+  .showRecipe{
+    width: 627px;
+    height: 100px;
+    border: none;
+    margin: 20px 0px 70px;
+  }
+
+ 
+
 
 .userName {
     align-self: flex-start;
