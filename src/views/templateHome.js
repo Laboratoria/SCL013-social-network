@@ -1,4 +1,3 @@
-
 import { menuToggle } from './templateToggle.js';
 
 export const home = (contentView) => {
