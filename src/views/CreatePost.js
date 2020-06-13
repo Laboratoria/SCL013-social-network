@@ -8,7 +8,6 @@ export const createPost = () => {
                           <div class="create-post-div">
                               <div class="textarea-div">
                               <input type="text" placeholder="Nombre" id="nameUserPost" class="userName"/>
-                              
                               <input type="text" placeholder="Escribe tu receta aqui" id="recipe" class="writeRecipe"/>
                               </div>
                               <div class="create-post-options">
@@ -16,14 +15,12 @@ export const createPost = () => {
                               <button class="btnPost">Sube una foto</button>
                               <input type="file" name="myfile" />
                               </div>
-                                 
                                   <select name="recipe-option" id="button" class="selectRecipe">
                                       <option value="typeRecipe" selected>Tu receta es</option>
                                       <option value="sweet">Receta dulce</option>
                                       <option value="salad">Receta salada</option>
                                   </select>
-                                  
-                                  <button class="btnPost" type="submit" id="recipeToPost">Publicar</button>
+                                  <button class="recipePost" type="submit" id="recipeToPost">Publicar</button>
                                   </div>
                           </div>`;
 
@@ -59,17 +56,14 @@ db.collection("post").onSnapshot((querySnapshot) => {
       console.log(`${doc.id} => ${doc.data().name} ${doc.data().recipe}`);
       createPostSection.innerHTML += `
       <div class="newPost">
-      <tr>
-      <th scope="row"></th>
-      
-      <td><span id="userName" class="userName">${doc.data().name}</span></td>
-      <td><span id="userRecipe" class="showRecipe">${doc.data().recipe}</span></td>
-      
+      <th scope="row">
+      <span id="userName" class="userName">${doc.data().name}</span>
+      <span id="userRecipe" class="showRecipe">${doc.data().recipe}</span>
        <div class="likeComent">
        <a href="#"><img src="./img/orange.png" class="like"></a>
        <a href="#"><i class="fas fa-comment fa-2x" class="coment"></i></a>      
       </div>
-      </tr>
+      </th>
       </div>`;
   });
  });
