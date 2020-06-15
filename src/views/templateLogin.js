@@ -21,7 +21,7 @@ export const login = () => {
                         <div class="form">
                         <input type="email" placeholder="Correo electrónico" id="emailA" class="loginInput" required /> 
                         <input type="password" placeholder="Contraseña" id="passwordA" class="loginInput"/>
-                        <button id="loginBtn" class="btnStart">Iniciar sesión</button>
+                        <button id="loginBtn" class="btnStart" type="submit">Iniciar sesión</button>
                         <button id="loginGoogleBtn" class="btnGoogle"><img src="./img/logoGoogle.png" class="btnGoogleMobile">Iniciar sesión</button>
                         </div>
                         

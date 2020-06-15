@@ -1,4 +1,5 @@
 import {userSignOut} from '../controllers/firebase.js';
+
 export const menuToggle = () => {
     const divToggle = document.createElement("div");
   
@@ -30,6 +31,7 @@ export const menuToggle = () => {
   divToggle.querySelector('#out').addEventListener('click', () => {
     userSignOut(goLogin);
   });
+
   divToggle.querySelector('#home').addEventListener('click', () => {
     window.location.href = './index.html#/home';
   });

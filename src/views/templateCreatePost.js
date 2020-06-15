@@ -8,8 +8,10 @@ export const createPost = () => {
   const createPostView = `
                           <div class="create-post-div">
                               <div class="textarea-div">
-                              <input type="text" placeholder="Nombre" id="nameUserPost" class="userName"/>
-                              <input type="text" placeholder="Escribe tu receta aqui" id="recipe" class="writeRecipe"/>
+                              <input type="text" placeholder="Nombre de la receta" id="nameUserPost" class="userName"/>
+                              
+                              <textarea placeholder="Ingredientes" id="ingredients" class="writeIngredients" cols="30" rows="6"></textarea>
+                              <input type="text" placeholder="Escribe tu receta aqui" cols="30" rows="6" id="recipe" class="writeRecipe" />
                               </div>
                               <div class="create-post-options">
                               <div class="upload-btn">
@@ -33,8 +35,12 @@ export const createPost = () => {
   // esta es una nueva coleccion para guardar los datos del post
   createPostSection.querySelector('#recipeToPost').addEventListener('click', () => { 
 
+    
+
     const namePost = document.querySelector('#nameUserPost').value;
+    const recipeIngredients = document.querySelector('#ingredients').value;
     const recipePost = document.querySelector('#recipe').value;
+    
     const photoURL = '';
 
     const onSuccess = (docRef) => {
@@ -54,9 +60,10 @@ export const createPost = () => {
     }
 
     // Crea la nueva coleccion, donde se agrega la nueva receta
-    postRecipe(namePost, recipePost, photoURL, onSuccess, onError);
-
+    postRecipe(namePost, recipeIngredients, recipePost, photoURL, onSuccess, onError);
+    
   });
   
   return createPostSection;
 };
+
