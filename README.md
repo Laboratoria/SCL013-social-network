@@ -59,3 +59,24 @@ puede ser profesionales del rubro o amateur.
 4. Yo como usuario usuario fan de RRSS me gustaria poder compartir mis proyectos a traves de una nueva publicacion.
 
 5. Yo como usuario medianamente aficionado del diseño y decoracion me gustaria ver las publicaciones de otra personas y dar like.
+
+#### Testeo
+
+1.- Uno de los primeros testeos de usuarios que realizamos fue utilizando figma, en donde se nos indica que el fondo 
+que estamos utilizando contenia mucha informacion visual
+
+![imagen a mostrar](/src/img/fondoantiguo.jpg)
+
+Por lo cual decidimos cambiarlo, utilizamos otra imagen mas atenuada 
+
+![imagen a mostrar](/src/img/nuevofondo.jpg)
+
+2.- Tambien se nos indico que los iconos para iniciar sesion con Google o Facebook podrian ir en los colores
+ originales .
+
+ 
+![imagen a mostrar](/src/img/iconosrosados.jpg)
+
+Se cambian por iconos con los colores originales
+
+![imagen a mostrar](/src/img/iconosoriginales.jpg)
