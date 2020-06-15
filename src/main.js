@@ -20,6 +20,7 @@ myFunction();
 
 //funcion que verifica si hay un usuario registrado
 firebase.auth().onAuthStateChanged((user) => {
+
     if (user) {
         console.log('usar ok')
         home();
@@ -30,17 +31,3 @@ firebase.auth().onAuthStateChanged((user) => {
         iniciarSesion()
     }
 });
-
-var db = firebase.firestore();
-db.collection("users").add({
-        first: "Ada",
-        last: "Lovelace",
-        born: 1900,
-        hijos: 2,
-    })
-    .then(function (docRef) {
-        console.log("Document written with ID: ", docRef.id);
-    })
-    .catch(function (error) {
-        console.error("Error adding document: ", error);
-    });

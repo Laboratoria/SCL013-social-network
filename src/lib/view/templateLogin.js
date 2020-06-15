@@ -1,10 +1,16 @@
-import {loginEmail} from "../viewController.js" ;
-import {registro} from "./templateRegistro.js";
-import {Rpassword} from "./templateRpassword.js";
+import {
+  loginEmail
+} from "../viewController.js";
+import {
+  registro
+} from "./templateRegistro.js";
+import {
+  Rpassword
+} from "./templateRpassword.js";
 
 export const login = () => {
-window.location.hash = '/login';
-document.getElementById('root').innerHTML =  /*html*/ `
+  window.location.hash = '/login';
+  document.getElementById('root').innerHTML = /*html*/ `
   
 <div id="contenedorGeneral">
     <img id="logo" src="./image/logo.jpg">
@@ -70,45 +76,43 @@ document.getElementById('root').innerHTML =  /*html*/ `
   </div>
     `;
 
- const botonIngreso = document.getElementById('iniciarSesion');
- botonIngreso.addEventListener("click", () => {
-   loginEmail(); 
- }) 
+  const botonIngreso = document.getElementById('iniciarSesion');
+  botonIngreso.addEventListener("click", () => {
+    loginEmail();
+  })
 
- const botonRegistrate = document.getElementById('botonRegistrate');
- botonRegistrate.addEventListener("click", () => {
-   registro();  
- }) 
+  const botonRegistrate = document.getElementById('botonRegistrate');
+  botonRegistrate.addEventListener("click", () => {
+    registro();
+  })
 
 
- const passOlvido = document.getElementById('textoOlvido');
- passOlvido.addEventListener("click", () => {
-  Rpassword(); 
- }) 
+  const passOlvido = document.getElementById('textoOlvido');
+  passOlvido.addEventListener("click", () => {
+    Rpassword();
+  })
   var slideIndex = 0;
 
 
-const showSlides = ()=> {
+  const showSlides = () => {
     let i;
     let slides = document.getElementsByClassName("carrusel");
     let dots = document.getElementsByClassName("dot");
     for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
+      slides[i].style.display = "none";
 
     }
     slideIndex++;
     if (slideIndex > slides.length) {
-        slideIndex = 1
+      slideIndex = 1
     }
     for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
+      dots[i].className = dots[i].className.replace(" active", "");
     }
     slides[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].className += " active";
     setTimeout(showSlides, 7000);
-}  
-showSlides();
+  }
+  showSlides();
 
 }
-
-

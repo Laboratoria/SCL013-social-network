@@ -75,7 +75,7 @@
     left: 10px;
 }
 
-#cont-recuperar{
+#cont-recuperar {
     background-image: url(./image/login/fRecuperar.jpg);
     background-repeat: no-repeat;
     overflow: hidden;
@@ -219,16 +219,23 @@ header {
     margin-left: 30px;
 }
 
-#contenedorEscribir{
+#contenedorEscribir {
     margin-top: 47%;
 }
 
 /*contenedor publicacion*/
 #contenedorPublicacion {
-    border-color: rgba(68, 68, 68, 0.18);
+    border-style: solid;
+    border-color: green;
+    /*border-color: rgba(68, 68, 68, 0.18);*/
     height: 298px;
     background: rgba(68, 68, 68, 0.18);
     margin-top: 35px;
+}
+
+#textoPublicacion {
+    border-style: solid;
+    border-color: red;
 }
 
 #contenedorIdentidad {
@@ -291,7 +298,6 @@ header {
     display: flex;
     justify-content: space-between;
     height: 48px;
-    position: fixed;
     bottom: 0;
     width: 100%
 }
