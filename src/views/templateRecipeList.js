@@ -13,6 +13,10 @@ export const recipeList = () => {
             const recipeHTML = ` <div class="newPost">
                                     <th scope="row">
                                         <span id="userName" class="userName">${recipe.data().recipeName}</span>
+                                        <label for="recipeIngredients" class="labelNewPost">Ingredientes</label>
+                                        <span id="recipeIngredients" class="showRecipe">${recipe.data().recipeIngredients}</span>
+                                        <br>
+                                        <label for="userRecipe" class="labelNewPost">Preparación</label>
                                         <span id="userRecipe" class="showRecipe">${recipe.data().recipeContent}</span>
                                         <div class="likeComent">
                                             <a href="#"><img src="./img/orange.png" class="like"></a>

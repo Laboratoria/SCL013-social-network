@@ -35,13 +35,14 @@ export const register = () => {
   return divRegister;
 };
 
+const onSuccess = (result) => {
+  window.location.href = './index.html#/login';
+  console.log(result.user);
+};
+
 const onError = (error) => {
   const errorCode = error.code;
   const errorMessage = error.message;
   alert(errorCode);
 };
 
-const onSuccess = (result) => {
-  window.location.href = './index.html#/login';
-  console.log(result.user);
-};

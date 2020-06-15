@@ -1,3 +1,4 @@
+'use strict';
 // Your web app's Firebase configuration
 export const firebaseConfig = {
   apiKey: "AIzaSyCo-cBiuxP8b51DfUrnZ6nhh5GnEmTTfOU",
@@ -148,12 +149,13 @@ const post = (collection, object, onSuccess, onError) => {
 
 // Funcion que crea guarda la coleccion con sus reespectivos parametros en firebase, luego se utiliza en createPost.js
 
-export const postRecipe = (recipeName, content, photoURL, onSuccess, onError) => {
-  let userName = firebase.auth().currentUser.displayName
+export const postRecipe = (recipeName, ingredients, content, photoURL, onSuccess, onError) => {
+  // let userName = firebase.auth().currentUser.displayName
   
   const recipe = {
       username: userName,
       recipeName: recipeName,
+      recipeIngredients: ingredients,
       recipeContent: content,
       photoURL: photoURL
   }
