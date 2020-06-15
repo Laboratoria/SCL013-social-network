@@ -320,7 +320,7 @@ header {
             border: 2px solid #FF8197;
             z-index: 5;
           }
-          #post {
+          /*#post {
             background-image: url(./icons/post.png);
             background-position: center;
             background-repeat: no-repeat;
@@ -329,7 +329,7 @@ header {
             background-size: contain;
             background-color: #FFEEEA;
             border: 2px solid #FF8197;
-          }
+          }*/
 #logoLoginPage {
   position: relative;
   font-family: Eczar, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
