@@ -1,4 +1,4 @@
-import { postRecipe } from '../controllers/firebase.js';
+import { postRecipe, currentUser } from '../controllers/firebase.js';
 import { recipeList } from './templateRecipeList.js';
 
 export const createPost = () => {
@@ -58,9 +58,8 @@ export const createPost = () => {
     const onError = (error) => {
       console.error("Error adding document: ", error);
     }
-
     // Crea la nueva coleccion, donde se agrega la nueva receta
-    postRecipe(namePost, recipeIngredients, recipePost, photoURL, onSuccess, onError);
+    postRecipe(currentUser().displayName, namePost, recipeIngredients, recipePost, photoURL, onSuccess, onError);
     
   });
   
