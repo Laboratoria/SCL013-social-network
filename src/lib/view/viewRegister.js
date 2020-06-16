@@ -12,7 +12,7 @@ export const buildformRegister = () => {
 // BOTÓN CREACIÓN DE CUENTA
   window.location.hash = '/register';
   document.getElementById('root').innerHTML = `
-          <div id='viewRegistre' class="viewLoginRegistre"> 
+          <div id='viewRegistre' class="viewLoginRegistre">
             <div>
                 <img src="./img/SoloLogo.png">
             </div>
@@ -21,8 +21,8 @@ export const buildformRegister = () => {
             </div>
             <div id="formRegister" class="formLoginRegistre">
               <div >
-   <input type="email" id="eMailTwo"  name="eMailTwo" class="inputMailPassName" placeholder="Ingresa E-mail"/>
-              <input type="password"  id="passTwo" name="passTwo" class="inputMailPassName" placeholder="Ingresa Contraseña" minlength="6">
+<input type="email" id="eMailTwo" name="eMailTwo" class="inputMailPassName" placeholder="Ingresa E-mail"/>
+<input type="password" id="passTwo" name="passTwo" class="inputMailPassName" placeholder="Ingresa Contraseña" minlength="6">
               <button class="btnLoginRegister" id="btnRegister" >Registrar</button>
               <button id="loginBack">Volver</button>
               </div>

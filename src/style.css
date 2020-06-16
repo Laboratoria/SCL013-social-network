@@ -34,16 +34,12 @@ body{
 }
 /* logo hacia el lado 1 */
 .imgLogin{
-
-
-
-
   background-image: url('./img/logoconfondo.png');
   background-position: center center;
   background-repeat: no-repeat;
   height: 30vh;
-
   }
+
   .imgWel{
     background-image: url('./img/welcome.png');
     background-position: center center;
@@ -164,9 +160,9 @@ html {
   font-family: Eczar, Verdana, Geneva, Tahoma, sans-serif;
 }
 #bodyHome {
-  background-image: url(./img/fondo.jpg);
+  background: url(./img/fondo.jpg);
   width: 100%;
-  height: 81.5vh;
+  height: 100vh ;
   background-size: cover;
   /* position: relative; */
   display: flex;
@@ -177,8 +173,11 @@ html {
   flex-wrap: nowrap;
   justify-content: flex-start;
   text-align: -webkit-center;
+  background-attachment: fixed;
+  overflow-y: scroll;
 }
-/*#bodyHome:before {
+
+#bodyHome:before {
   content: "";
   width: 100%;
   height: 100%;
@@ -187,7 +186,51 @@ html {
   opacity: 0.7;
   margin: 0;
   padding: 0;
-}*/
+}
+
+.profileBar {
+  background-color: #FFEEEA;
+  display: flex;
+  z-index: 2;
+  border: 2px solid #FF8197;
+  height: 5vh;
+  width: 100%;
+}
+        #profile {
+          background-image: url(./icons/profile.png);
+          background-position: center;
+          background-repeat: no-repeat;
+          height: 100%;
+          width: 100%;
+          background-size: contain;
+          background-color: #FFEEEA;
+          border: 2px solid #FF8197;
+          z-index: 5;
+        }
+        #friends {
+          background-image: url(./icons/friends.png);
+          background-position: center;
+          background-repeat: no-repeat;
+          height: 100%;
+          width: 100%;
+          background-size: contain;
+          background-color: #FFEEEA;
+          border: 2px solid #FF8197;
+          z-index: 5;
+        }
+        #notification {
+          background-image: url(./icons/notification.png);
+          background-position: center;
+          background-repeat: no-repeat;
+          height: 100%;
+          width: 100%;
+          background-size: contain;
+          background-color: #FFEEEA;
+          border: 2px solid #FF8197;
+          z-index: 5;
+        }
+
+
       #form-save {
         /* position: relative; */
         font-family: Eczar, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -204,15 +247,20 @@ html {
         /* align-self: flex-start; */
         /* margin-top: -450px; */
         margin-top: 1rem;
+        flex-direction: column;
+        justify-content: space-around;
+
       }
+
           #form-publication {
             /* position: relative; */
             /* width: 85%; */
             /* height: 100%; */
             /* flex: inherit; */
-            margin: 0.5rem;
+            margin: 1rem;
             /* align-items: center; */
             /* justify-content: center; */
+            
         }
           #publication {
             width: 90%;
@@ -237,6 +285,37 @@ html {
           background-color: #ffffff;
           border: solid #FF8197;
           }
+
+          #post {
+            background-position: center;
+            font-size: 16px;
+            align-items: center;
+            height: 10000%;
+            background-size: contain;
+            display: flex;     
+            flex-direction: column;
+            z-index: 5;
+            width: 90%;
+          }
+
+          .mystyle {
+            margin: 0.5rem;
+            border-radius: 10px;
+            border: solid 2px #FF8197;
+            background-color: #FFEEEA;
+            width: 88%;
+            height: 150%;
+            opacity: 0.7;
+          }
+
+          .textAreaContent {
+            font-size: large;
+            font-family: Eczar, Verdana, Geneva, Tahoma, sans-serif;
+            text-align: center;
+            height: 100%;
+            filter: alpha(opacity=100);
+          }
+
 #root {
   height: 100vh;
 }
@@ -279,57 +358,6 @@ header {
             font-size: larger;
             font-family: Eczar, Verdana, Geneva, Tahoma, sans-serif;
           }
- .footerOrder {
-    background-color: #FFEEEA;
-    display: flex;
-    z-index: 2;
-    border: 2px solid #FF8197;
-    height: 5vh;
-    max-width: 100%;
-  }
-          #profile {
-            background-image: url(./icons/profile.png);
-            background-position: center;
-            background-repeat: no-repeat;
-            height: 100%;
-            width: 100%;
-            background-size: contain;
-            background-color: #FFEEEA;
-            border: 2px solid #FF8197;
-            z-index: 5;
-          }
-          #friends {
-            background-image: url(./icons/friends.png);
-            background-position: center;
-            background-repeat: no-repeat;
-            height: 100%;
-            width: 100%;
-            background-size: contain;
-            background-color: #FFEEEA;
-            border: 2px solid #FF8197;
-            z-index: 5;
-          }
-          #notification {
-            background-image: url(./icons/notification.png);
-            background-position: center;
-            background-repeat: no-repeat;
-            height: 100%;
-            width: 100%;
-            background-size: contain;
-            background-color: #FFEEEA;
-            border: 2px solid #FF8197;
-            z-index: 5;
-          }
-          /*#post {
-            background-image: url(./icons/post.png);
-            background-position: center;
-            background-repeat: no-repeat;
-            height: 100%;
-            width: 100%;
-            background-size: contain;
-            background-color: #FFEEEA;
-            border: 2px solid #FF8197;
-          }*/
 #logoLoginPage {
   position: relative;
   font-family: Eczar, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

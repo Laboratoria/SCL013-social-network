@@ -73,7 +73,6 @@ export const home = () => {
       });
       return get;
       buildListPost();
-
   });
 };
 const buildListPost = () => {
@@ -101,12 +100,10 @@ const buildListPost = () => {
         posts.appendChild(divList);
         document.getElementById(divID).innerHTML = `
         <p id= "${pnom}"></p>
-        <textarea id="${tArea}" class="textAreaContent">${post.data.publication} </textarea>
+        <textarea id="${tArea}" class="textAreaContent" readonly="readonly">${post.data.publication} </textarea>
         <button id="${btnDel}">Eliminar</button>
         <button id="${btnEdit}">Editar</button>
         `
-        
-        
                /*
        ` <div class="post-footer">
        <button id="likes-${id}" class="buttons btn-likes">

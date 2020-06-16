@@ -1,13 +1,12 @@
 export const loginGoogle = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
-  return  firebase.auth().signInWithPopup(provider)
+  return firebase.auth().signInWithPopup(provider)
 
     .then((result) => {
       // This gives you a Google Access Token. You can use it to access the Google API.
       const token = result.credential.accessToken;
       // The signed-in user info.
       const user = result.user;
-      
       // ...
     }).catch((error) => {
       // Handle Errors here.
@@ -28,7 +27,6 @@ export const loginFacebook = () => {
 };
 
 const veriFyUser = () => {
-
   firebase.auth().currentUser.sendEmailVerification().then(() => {
     alert('Email sent!');
   })
@@ -41,7 +39,7 @@ export const createAccount = (email, password) => {
     .then(() => {
       veriFyUser();
       alert('User account created');
-   })
+    })
     .catch((error) => {
     // Handle Errors here.
       const errorCode = error.code;
@@ -57,12 +55,12 @@ export const createAccount = (email, password) => {
 export const emailLogin = (email, password) => {
   event.preventDefault();
   firebase.auth().signInWithEmailAndPassword(email, password)
-.then( function onSuccess() {
+    .then(function onSuccess() {
       var user = firebase.auth().currentUser;
      
       if (user != null) {
         if (user.emailVerified === false) {
-          alert("email no verificado");
+          alert('email no verificado');
         }
       }
     })
@@ -84,7 +82,7 @@ export const emailLogin = (email, password) => {
 export const logout = () => {
   firebase.auth().signOut().then(() => {
     alert('sesión cerrada con éxito');
-    location.reload(); 
+    location.reload();
   })
     .catch((error) => {
     // An error happened.
