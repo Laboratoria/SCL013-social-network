@@ -297,7 +297,6 @@ html {
             z-index: 5;
             width: 90%;
           }
-
           .mystyle {
             margin: 0.5rem;
             border-radius: 10px;
@@ -309,6 +308,7 @@ html {
             
           }
 
+
           .words {
             color: #374B73;
             margin: 0.5rem;
@@ -318,10 +318,12 @@ html {
             display: flex;
            }
 
+
           .textAreaContent {
             font-size: large;
             font-family: Eczar, Verdana, Geneva, Tahoma, sans-serif;
             text-align: center;
+
             height: 19vh;
             width: 50vw;
             margin-top: 0.5rem;
@@ -354,6 +356,13 @@ html {
 
 
 
+
+
+            height: 20vh;
+            width: 62vw;
+            margin-top: 0.5rem;
+            resize: none;
+          } 
 
 #root {
   height: 100vh;

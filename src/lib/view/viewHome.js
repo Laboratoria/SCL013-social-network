@@ -54,14 +54,17 @@ export const home = () => {
     // BOTÓN PARA POSTEAR
     document.getElementById('sharePost').addEventListener('click', () => {
       const user = firebase.auth().currentUser;
+      console.log(user);
       const uid = user.uid;
       let username = user.displayName;
       const mail = user.email;
       const publication = document.getElementById('publication').value;
       const typePublication = document.getElementById('typePublication').value;
+
       if(username === undefined || username === null) {
       username = mail;
       }
+
       document.getElementById('publication').value = '';
       const get = firebase.firestore().collection('posts').add({
         uid,
@@ -87,7 +90,7 @@ const buildListPost = () => {
       });
       const posts = document.getElementById('post');
       arr.forEach((post) => {
-        console.log(post);
+       // console.log(post);
         let divID = 'div-'+post.idpost;
         let pnom = 'p'+post.idpost;
         let tArea = 'pub'+post.idpost;
@@ -98,8 +101,10 @@ const buildListPost = () => {
         divList.classList = 'mystyle';
         posts.appendChild(divList);
         document.getElementById(divID).innerHTML = `
+
         <p id= "${pnom}" class="words">${post.data.author}</p>
         <div id = "onlyTextImg">
+
         <textarea id="${tArea}" class="textAreaContent" readonly="readonly">${post.data.publication} </textarea>
         <div id= "onlyButton">
         <img id="${btnDel}" src="icons/delete.png" class ="deleteEdit scaled"></img>
