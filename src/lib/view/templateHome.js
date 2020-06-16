@@ -1,14 +1,21 @@
-import {guardar} from "../viewController.js";
-
-import {mostrarPublicacionHome} from "../viewController.js";
+import {
+  guardar
+} from "../viewController.js";
+import {
+  editar
+} from "../viewController.js";
+import {
+  mostrarPublicacionHome
+} from "../viewController.js";
 
 export const home = () => {
 
-    window.location.hash = '/home';
-    //leer documentos
+  window.location.hash = '/home';
+  //leer documentos
 
-    document.getElementById('root').innerHTML =
-        /*html*/ `
+  document.getElementById('root').innerHTML =
+    /*html*/
+    `
   <header>
   <img id="logoMenu" src="./image/logo.jpg">
   <div id="contenedorBotonesMenu">
@@ -36,6 +43,7 @@ export const home = () => {
 
  
   <button id="btnPublicar"> Publicar</button>
+  <button id="btnEditar"> Editar</button>
    </div>
 
 <div id="contenedorMayor">
@@ -48,10 +56,10 @@ export const home = () => {
 </div>
   `
 
-    const botonPublicar = document.getElementById('btnPublicar');
-    botonPublicar.addEventListener("click", () => {
-        guardar();
-    });
-mostrarPublicacionHome()
+  const botonPublicar = document.getElementById('btnPublicar');
+  botonPublicar.addEventListener("click", () => {
+    guardar();
+  });
+  mostrarPublicacionHome()
 
 }
