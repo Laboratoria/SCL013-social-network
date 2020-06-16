@@ -6,7 +6,9 @@ export const registrar = () => {
   const pass = document.querySelector('#passRegistro').value;
   const usuario = document.querySelector('#usuarioRegistro').value;
   firebase.auth().createUserWithEmailAndPassword(email, pass).then(function (data) {
+    console.log("ingreso a registrar")
     enviarCorreo()
+    guardarUsuario()
   }).catch(function (error) {
     // Handle Errors here.
     var errorCode = error.code;
@@ -81,6 +83,28 @@ export const restablecerContrasena = () => {
 
 //leer data
 var db = firebase.firestore();
+//guardar Usuario
+/*guardar usuarios nuevos en la base de datos*/
+export const guardarUsuario = () => {
+  console.log("ingreso a guardar usuario")
+  const nombre = document.getElementById('usuarioRegistro').value;
+  const correo = document.getElementById('emailRegistro').value;
+  const password = document.getElementById('passRegistro').value;
+  db.collection('usuarios').add({
+
+    nombre: nombre,
+    correo: correo,
+    password: password
+  }).then(function (docRef) {
+    console.log("usuario registrado: ", docRef);
+    console.log(nombre, correo, password)
+  }).catch(function (error) {
+    console.error("Errod al agregar user: ", error);
+  })
+}
+
+
+
 
 export const guardar = () => {
 
@@ -103,6 +127,9 @@ export const guardar = () => {
     });
   mostrarPublicacionHome();
 }
+
+
+
 
 //imprimir publicacion
 export const mostrarPublicacionHome = () => {
@@ -181,6 +208,7 @@ export const editar = (id) => {
     document.getElementById("opcionPublicar").value = doc.data().tipo;
   })
   const botonEditar = document.getElementById("btnEditar");
+
   botonEditar.onclick = function () {
     const editando = db.collection("pruebaGenesis").doc(id);
     const post = document.getElementById("inputHome").value
