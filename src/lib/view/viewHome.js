@@ -41,13 +41,8 @@ export const home = () => {
   </section>
     <div class="iconSend"> 
     </div>
-   <!--<div id= "editDelete">
-    <img src="icons/delete.png">
-    <img src="icons/edit.png">
-    </div>
+   <!--
     <div id="likeComment">
-    <img src="./icons/like.png">
-    <img src="icons/comment.png">
     </div>-->
      </div>
      </body>`;
@@ -60,9 +55,13 @@ export const home = () => {
     document.getElementById('sharePost').addEventListener('click', () => {
       const user = firebase.auth().currentUser;
       const uid = user.uid;
-      const username = user.displayName;
+      let username = user.displayName;
+      const mail = user.email;
       const publication = document.getElementById('publication').value;
       const typePublication = document.getElementById('typePublication').value;
+      if(username === undefined || username === null) {
+      username = mail;
+      }
       document.getElementById('publication').value = '';
       const get = firebase.firestore().collection('posts').add({
         uid,
@@ -99,19 +98,19 @@ const buildListPost = () => {
         divList.classList = 'mystyle';
         posts.appendChild(divList);
         document.getElementById(divID).innerHTML = `
-        <p id= "${pnom}"></p>
+        <p id= "${pnom}" class="words">${post.data.author}</p>
+        <div id = "onlyTextImg">
         <textarea id="${tArea}" class="textAreaContent" readonly="readonly">${post.data.publication} </textarea>
-        <button id="${btnDel}">Eliminar</button>
-        <button id="${btnEdit}">Editar</button>
-        `
-               /*
-       ` <div class="post-footer">
-       <button id="likes-${id}" class="buttons btn-likes">
-       </button>
-       <span class="post-counter" id="likes-count-${id}"></span>
-       <span class="post-date">${date} - ${hour}</span>
-       </div>`
-*/
+        <div id= "onlyButton">
+        <img id="${btnDel}" src="icons/delete.png" class ="deleteEdit scaled"></img>
+        <img id="${btnEdit}" src="icons/edit.png" class = "deleteEdit scaled"></img>
+        </div>
+        </div>
+        <div id = "likeComment">
+        <img class= "likeCommentButton scaled" src="./icons/like.png">
+        <img class = "likeCommentButton scaled" src="icons/comment.png">
+        </div>`
+        
         document.getElementById(btnEdit).addEventListener('click', function(event) {
           let idDoc = post.idpost;
           let text = document.getElementById(tArea).value;

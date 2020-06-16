@@ -290,7 +290,7 @@ html {
             background-position: center;
             font-size: 16px;
             align-items: center;
-            height: 10000%;
+            height: 100%;
             background-size: contain;
             display: flex;     
             flex-direction: column;
@@ -303,18 +303,57 @@ html {
             border-radius: 10px;
             border: solid 2px #FF8197;
             background-color: #FFEEEA;
-            width: 88%;
-            height: 150%;
+            width: 67vw;
+            height: 100%;
             opacity: 0.7;
+            
           }
+
+          .words {
+            color: #374B73;
+            margin: 0.5rem;
+           }
+
+           #onlyTextImg {
+            display: flex;
+           }
 
           .textAreaContent {
             font-size: large;
             font-family: Eczar, Verdana, Geneva, Tahoma, sans-serif;
             text-align: center;
-            height: 100%;
-            filter: alpha(opacity=100);
+            height: 19vh;
+            width: 50vw;
+            margin-top: 0.5rem;
+            resize: none;
+            float: left;
+            margin-left: 1rem;
+            /*color: chartreuse;*/
           }
+
+          #onlyButton{
+            display: grid;
+          }
+          .deleteEdit {
+             flex-direction: column;
+          }
+        
+        #likeComment{
+          display: flex;
+        }
+        
+        .likeCommentButton {
+          display: flex;
+          margin-left: 0.5rem;
+          margin-top: -24px;
+        }
+      
+          .scaled {
+            transform: scale(0.5, 0.5);
+          }
+
+
+
 
 #root {
   height: 100vh;
