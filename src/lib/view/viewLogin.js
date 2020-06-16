@@ -55,6 +55,8 @@ const buildformRegister = () => {
     loginFacebook();
   });
 
+
+
   // BOTÓN CREACIÓN DE CUENTA
   document.getElementById('registro').addEventListener('click', () => {
     window.location.hash = '/register';

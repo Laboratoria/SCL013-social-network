@@ -57,6 +57,7 @@ export const emailLogin = (email, password) => {
   firebase.auth().signInWithEmailAndPassword(email, password)
     .then(function onSuccess() {
       var user = firebase.auth().currentUser;
+     
       if (user != null) {
         if (user.emailVerified === false) {
           alert('email no verificado');

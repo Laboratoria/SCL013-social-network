@@ -1,4 +1,5 @@
 import { logout } from '../index.js';
+import {subirImagen} from '../controladores/uploadimage.js';
 
 export const home = () => {
   window.location.hash = '/home';
@@ -22,7 +23,7 @@ export const home = () => {
             <div>
                 <label for="fileButton" id="image"><i class="fa fa-picture-o btn-picture"
                         aria-hidden="true"></i></label>
-                <input type="file" class="hide" name="file" value="upload" id="fileButton" />
+                <input type="file" class="hide" name="file" value="upload" id="imagen" />
             </div>
             <select id="typePublication" class="btn-select" name="select">
                 <option value="public" selected>Público</option>
@@ -33,7 +34,6 @@ export const home = () => {
     </form>
  </div>     
  <div id="post"></div>
-
   <br>
   <section>
     <ul id="notes-list" class="ul-parent">
@@ -122,6 +122,7 @@ const buildListPost = () => {
         deletePost(id);
        });
       });
+     
     });
 };
 // Cambia el contenido de un post
