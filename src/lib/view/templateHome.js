@@ -39,11 +39,9 @@ export const home = () => {
       <option>Transporte </option>
       <option> Tour</option>
 
-       </select>
+      </select>
+         <button id="btnPublicar"> Publicar</button>
 
- 
-  <button id="btnPublicar"> Publicar</button>
-  <button id="btnEditar"> Editar</button>
    </div>
 
 <div id="contenedorMayor">
