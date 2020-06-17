@@ -1,3 +1,5 @@
+import { updateProfile } from '../controllers/firebase.js'; 
+
 export const editProfile = () => {
     const divEditProfile = document.createElement('div');
   
@@ -21,32 +23,26 @@ export const editProfile = () => {
     divEditProfile.innerHTML = viewEditProfile;
 
     divEditProfile.querySelector('#profileBtn').addEventListener('click', () => {
-  
-      const  db = firebase.firestore();{
+
 
         const nameProfile = document.querySelector('#name').value;
         const specialty = document.querySelector('#specialty').value;
+        // const photoURL = '';
 
-        db.collection("users").add({
-          name: nameProfile,
-          specialty: specialty
-          //born: 1815
-        })
-        .then(function(docRef) {
+        const onSuccess = (docRef) => {
+          document.querySelector('#name').value = '';
+          document.querySelector('#specialty').value = '';
           console.log("Document written with ID: ", docRef.id);
-          //document.querySelector('#name').value="";
-          //document.querySelector('#specialty').value="";
-        })
-        .catch(function(error) {
-          console.error("Error adding document: ", error);
-        });
-      
-      
-      }
+        }
 
-    
+        const onError = (error) => {
+          console.error("Error adding document: ", error);
+        }
+        
+        updateProfile(nameProfile, specialty, onSuccess, onError);
+  
     });
 
     return divEditProfile;
-  };
+};
   

@@ -45,11 +45,6 @@ export const firebaseAuthentication = () => {
       const uid = user.uid;
       const providerData = user.providerData;
       const verifiedText = "";
-      if (emailVerified === false) {
-        verifiedText = "Email not verified"
-      } else {
-        verifiedText = "Email verified"
-      }
     } else {
     }
   });
@@ -62,6 +57,7 @@ export const createUserWithFirebase = (email, pass, onSuccess, onError) => {
     .createUserWithEmailAndPassword(email, pass)
     .then((result) => {
       emailVerification();
+
       onSuccess(result)
     })
     .catch((error) => {
@@ -69,6 +65,7 @@ export const createUserWithFirebase = (email, pass, onSuccess, onError) => {
     });
 };
 
+// Email verification
 const emailVerification = () => {
   const user = firebase.auth().currentUser;
     user.sendEmailVerification()
@@ -108,9 +105,23 @@ export const googleLogin = (onSuccess, onError) => {
       onError(error)
     });
 };
+// Edit profile
+export const updateProfile = (username, specialty, onSuccess, onError) => {
+  
+  const user = firebase.auth().currentUser;
+  
+  user.updateProfile({
+    displayName: username,
+    specialty: specialty
+  })
+  .then((result) => {
+    onSuccess(result)
+  }).catch((error) => {
+    onError(error);
+  });
+}
 
 // Sign Out
-
 export const userSignOut = (callback) => {
   firebase.auth().signOut()
   .then((result) => {
@@ -148,12 +159,12 @@ const post = (collection, object, onSuccess, onError) => {
 }
 
 // Funcion que crea guarda la coleccion con sus reespectivos parametros en firebase, luego se utiliza en createPost.js
+const date = new Date ()
+export const postRecipe = (displayName, recipeName, ingredients, content, photoURL, onSuccess, onError) => {
 
-export const postRecipe = (recipeName, ingredients, content, photoURL, onSuccess, onError) => {
-  // let userName = firebase.auth().currentUser.displayName
-  
   const recipe = {
-      username: userName,
+      date: date.toLocaleString(),
+      userName: displayName,
       recipeName: recipeName,
       recipeIngredients: ingredients,
       recipeContent: content,
@@ -168,14 +179,14 @@ export const postRecipe = (recipeName, ingredients, content, photoURL, onSuccess
     onError: Error
 */
 
-export const getRecipeList = (onSuccess, onError) => {
-
-  db.collection("recipeList").get()
-  .then((recipeList) => {
+export const getRecipeList = (onSuccess) => {
+  console.log('esto es un console');
+  db.collection("recipeList").orderBy('date','desc').onSnapshot((recipeList) => {
     onSuccess(recipeList);
-  })
-  .catch((error) => {
-      onError(error);
-      console.log("Error getting documents: ", error);
   });
+}
+
+export const currentUser = () => {
+  const user = firebase.auth().currentUser;
+  return user
 }

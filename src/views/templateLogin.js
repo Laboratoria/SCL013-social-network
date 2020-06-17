@@ -1,6 +1,4 @@
 import { signIn, googleLogin } from '../controllers/firebase.js';
-import { register } from './templateRegister.js';
-
 
 export const login = () => {
   const divLogin = document.createElement('div');

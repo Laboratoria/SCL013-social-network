@@ -1,4 +1,4 @@
-import { createUserWithFirebase } from '../controllers/firebase.js';
+import { createUserWithFirebase, updateProfile } from '../controllers/firebase.js';
 
 export const register = () => {
   const divRegister = document.createElement('div');
@@ -28,15 +28,19 @@ export const register = () => {
 
   divRegister.innerHTML = viewRegister;
   divRegister.querySelector('#userRegisterBtn').addEventListener('click', () => {
+      
       const email = document.getElementById('email').value;
       const pass = document.getElementById('pass').value;
       createUserWithFirebase(email, pass, onSuccess, onError);
-    });
+  });
   return divRegister;
 };
 
 const onSuccess = (result) => {
+  const name = document.getElementById('name').value;
+  updateProfile(name, '', ()=>{}, ()=>{} )
   window.location.href = './index.html#/login';
+
   console.log(result.user);
 };
 
