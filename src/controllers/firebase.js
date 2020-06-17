@@ -190,3 +190,19 @@ export const currentUser = () => {
   const user = firebase.auth().currentUser;
   return user
 }
+
+//Función borrar post
+/*export const deletePost = (id,onSuccess, onError) =>{ 
+
+  db.collection("recipeList").doc(id).delete()
+  
+  .then((recipeList) => {
+   onSuccess(recipeList);
+   console.log('2',recipe.id)
+   console.log("Document successfully deleted!");
+ }).catch((error) => {
+   onError(error);
+   console.error("Error removing document: ", error);
+ });
+ 
+  }*/

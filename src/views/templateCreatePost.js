@@ -25,7 +25,8 @@ export const createPost = () => {
                                   </select>
                                   <button class="recipePost" type="submit" id="recipeToPost">Publicar</button>
                                   </div>
-                          </div>`;
+                          </div>
+                          <h1 class="titlePost">Recetario</h1>`;
 
   createPostSection.innerHTML = createPostView;
 
