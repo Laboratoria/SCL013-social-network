@@ -22,7 +22,7 @@ export const recipeList = () => {
                             <label for="userRecipe" class="labelNewPost">Preparación</label>
                             <span id="userRecipe" class="showRecipe">${recipe.data().recipeContent}</span>
                             <div class="likeComent">
-                            <i class="fas fa-trash-alt fa-2x"></i>
+                            <button class = "btnDelete" data-id="${recipe.id}"><i class="fas fa-trash-alt fa-2x"></i></button>
                                 <a href="#"><img src="./img/orange.png" class="like"></a>
                                 <a href="#"><i class="fas fa-comment fa-2x" class="coment"></i></a>      
                             </div>
