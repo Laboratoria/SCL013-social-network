@@ -7,17 +7,17 @@ export const recipeList = () => {
     allRecipeInList.className = "recipe-list";
 
     const onSuccess = (recipeList) => {
-        
+        console.log('voy a mostrar la', recipeList)
         recipeList.forEach(recipe => {
-            
                 const recipeHTML =
                  ` <div class="newPost">
                      <tr>
                         <th scope="row">
-                            <span id="username" class="userName">${currentUser().displayName}</span>
-                            <span id="userName" class="userName">${recipe.data().recipeName}</span>
+                            <span class="userName">${recipe.data().userName}</span>
+                            <span class="userName">${recipe.data().date}</span>
+                            <span class="userName">${recipe.data().recipeName}</span>
                             <label for="recipeIngredients" class="labelNewPost">Ingredientes</label>
-                            <span id="recipeIngredients" class="showRecipe">${recipe.data().recipeIngredients}</span>
+                            <span class="showRecipe">${recipe.data().recipeIngredients}</span>
                             <br>
                             <label for="userRecipe" class="labelNewPost">Preparación</label>
                             <span id="userRecipe" class="showRecipe">${recipe.data().recipeContent}</span>
@@ -27,18 +27,14 @@ export const recipeList = () => {
                             </div>
                         </th>
                     </div>`;
-        
+                
                 allRecipeInList.innerHTML += recipeHTML;
                 
         });  
     }
 
-    const onError = (error) => {
-        console.log(error)
-    }
-
     // Llamo a la funcion que obtiene la coleccion a traves de firebase
-    getRecipeList(onSuccess, onError);
+    getRecipeList(onSuccess);
 
     return allRecipeInList;
 }

@@ -38,7 +38,7 @@ export const editProfile = () => {
         const onError = (error) => {
           console.error("Error adding document: ", error);
         }
-      
+        
         updateProfile(nameProfile, specialty, onSuccess, onError);
   
     });

@@ -120,8 +120,8 @@ export const updateProfile = (username, specialty, onSuccess, onError) => {
     onError(error);
   });
 }
-// Sign Out
 
+// Sign Out
 export const userSignOut = (callback) => {
   firebase.auth().signOut()
   .then((result) => {
@@ -159,10 +159,11 @@ const post = (collection, object, onSuccess, onError) => {
 }
 
 // Funcion que crea guarda la coleccion con sus reespectivos parametros en firebase, luego se utiliza en createPost.js
-
+const date = new Date ()
 export const postRecipe = (displayName, recipeName, ingredients, content, photoURL, onSuccess, onError) => {
 
   const recipe = {
+      date: date.toLocaleString(),
       userName: displayName,
       recipeName: recipeName,
       recipeIngredients: ingredients,
@@ -178,15 +179,10 @@ export const postRecipe = (displayName, recipeName, ingredients, content, photoU
     onError: Error
 */
 
-export const getRecipeList = (onSuccess, onError) => {
-
-  db.collection("recipeList").get()
-  .then((recipeList) => {
+export const getRecipeList = (onSuccess) => {
+  console.log('esto es un console');
+  db.collection("recipeList").orderBy('date','desc').onSnapshot((recipeList) => {
     onSuccess(recipeList);
-  })
-  .catch((error) => {
-      onError(error);
-      console.log("Error getting documents: ", error);
   });
 }
 
@@ -194,5 +190,3 @@ export const currentUser = () => {
   const user = firebase.auth().currentUser;
   return user
 }
-
-    

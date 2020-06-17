@@ -32,7 +32,7 @@ export const register = () => {
       const email = document.getElementById('email').value;
       const pass = document.getElementById('pass').value;
       createUserWithFirebase(email, pass, onSuccess, onError);
-    });
+  });
   return divRegister;
 };
 
