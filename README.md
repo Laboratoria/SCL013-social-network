@@ -5,11 +5,11 @@
 
 ##  Preámbulo
 
-Actualmente por la pandemia hemos tenido tiempo para estar mas en nuestro hogar y surgen 
-las ideas de ¿Como quedaria la habitacion si cambio los muebles de lugar? o ¿Donde podria encontrar
-la pintura mas barata? o ¿Que podria hacer con estos pallet de madera? por esto hemos creado nuestra red
-social llamada Home Desing: Decoracion para tu vida.
-Donde podras interactuar a traves de publicaciones con diferentes usuarios , podras hacer tus preguntas, 
+Actualmente por la pandemia hemos tenido tiempo para estar más en nuestro hogar y surgen 
+las ideas de ¿Cómo quedaría la habitación si cambio los muebles de lugar? o ¿Dónde podría encontrar
+la pintura más barata? o ¿Qué podría hacer con estos pallet de madera?. Quizás cuantas preguntas más se nos pasan por la cabeza,
+por esto hemos creado nuestra Red Social llamada Home Desing: Decoración para tu vida.
+Donde podrás interactuar a través de publicaciones con diferentes usuarios , podrás hacer tus preguntas, 
 dar datos sobre ofertas o dar tips para realizar tus propios proyectos.
 
 ## Flujograma
@@ -38,27 +38,27 @@ Creamos prototipo de alta fidelidad en Figma para Desktop como para Movil
 ![imagen a mostrar](/src/img/protoaltadest.jpg)
 
 
-#### Movil
+#### Móvil
 
-Nuestra red social esta pensada principalmente en el uso a traves de un dispositivo movil.
+Nuestra red social esta pensada principalmente en el uso a través de un dispositivo móvil.
 
 ![imagen a mostrar](/src/img/protoaltamovil.jpg)
 
 ## Usuarios
 
-Nuestra red Social a punta a cualquier usuario que sepa utilizar un dispositivo movil o pc,
-de cualquier edad que este interesado en la decoracion del hogar sea de interiores/exteriores,
+Nuestra Red Social a punta a cualquier usuario que sepa utilizar un dispositivo móvil o pc,
+de cualquier edad que este interesado en la decoración del hogar sea de interiores/exteriores,
 puede ser profesionales del rubro o amateur.
 
 #### Historias de Usuarios 
 
-1. Yo como usuario aficionado, me gustaria, registrarme con nombre, contraseña y correo para generar, una red con los mismos gustos y preferencias.
+1. Yo como usuario aficionado, me gustaría, registrarme con nombre, contraseña y correo para generar, una red con los mismos gustos y preferencias.
 
-2. Yo como usuario medianamente aficionado  me gustaría loguearme con facebook, o google, para un acceso mas rapido
+2. Yo como usuario medianamente aficionado  me gustaría loguearme con facebook, o google, para un acceso más rápido
 
-4. Yo como usuario usuario fan de RRSS me gustaria poder compartir mis proyectos a traves de una nueva publicacion.
+4. Yo como usuario usuario fan de RRSS me gustaría poder compartir mis proyectos a través de una nueva publicación.
 
-5. Yo como usuario medianamente aficionado del diseño y decoracion me gustaria ver las publicaciones de otra personas y dar like.
+5. Yo como usuario medianamente aficionado del diseño y decoración me gustaría ver las publicaciones de otra personas y dar like.
 
 #### Testeo
 
@@ -71,7 +71,7 @@ Por lo cual decidimos cambiarlo, utilizamos otra imagen mas atenuada
 
 ![imagen a mostrar](/src/img/nuevofondo.jpg)
 
-2.- Tambien se nos indico que los iconos para iniciar sesion con Google o Facebook podrian ir en los colores
+2.- También se nos indicó que los iconos para iniciar sesión con Google o Facebook podrían ir en los colores
  originales .
 
  
