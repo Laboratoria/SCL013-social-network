@@ -91,8 +91,10 @@ const buildListPost = () => {
         divList.classList = 'mystyle';
         posts.appendChild(divList);
         document.getElementById(divID).innerHTML = `
+
         <p id= "${pnom}" class="words">${post.data.author}</p>
         <div id = "onlyTextImg">
+
         <textarea id="${tArea}" class="textAreaContent" readonly="readonly">${post.data.publication} </textarea>
         <div id= "onlyButton">
         <img id="${btnDel}" src="icons/delete.png" class ="deleteEdit scaled"></img>
