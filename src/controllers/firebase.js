@@ -135,7 +135,7 @@ export const userSignOut = (callback) => {
 
 initializeFirebase();
 
-const db = firebase.firestore();
+export const db = firebase.firestore();
 
 /* 
 Descripcion: Funcion generica que guarda un objeto en una coleccion de firebase, si no existe colection, crea una nueva
@@ -164,6 +164,7 @@ export const postRecipe = (displayName, recipeName, ingredients, content, photoU
 
   const recipe = {
       date: date.toLocaleString(),
+      uid: currentUser().uid,
       userName: displayName,
       recipeName: recipeName,
       recipeIngredients: ingredients,
@@ -179,14 +180,18 @@ export const postRecipe = (displayName, recipeName, ingredients, content, photoU
     onError: Error
 */
 
-export const getRecipeList = (onSuccess) => {
-  console.log('esto es un console');
-  db.collection("recipeList").orderBy('date','desc').onSnapshot((recipeList) => {
-    onSuccess(recipeList);
-  });
-}
-
 export const currentUser = () => {
   const user = firebase.auth().currentUser;
   return user
+}
+
+//Función borrar post
+export const deletePost = (id) =>{ 
+  db.collection("recipeList").doc(id).delete()
+  .then((recipeList) => {
+   console.log("Document successfully deleted!", recipeList);
+ }).catch((error) => {
+   onError(error);
+   console.error("Error removing document: ", error);
+ });
 }
