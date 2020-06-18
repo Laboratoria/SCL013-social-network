@@ -46,6 +46,8 @@ export const createAccount = (email, password) => {
       const errorMessage = error.message;
       if (errorCode === 'auth/email-already-in-use') {
         alert('Email ya está registrado');
+      } else {
+        alert('Todos los campos son obligatorios');
       }
     });
 };
@@ -56,8 +58,7 @@ export const emailLogin = (email, password) => {
   event.preventDefault();
   firebase.auth().signInWithEmailAndPassword(email, password)
     .then(function onSuccess() {
-      var user = firebase.auth().currentUser;
-     
+      const user = firebase.auth().currentUser;
       if (user != null) {
         if (user.emailVerified === false) {
           alert('email no verificado');

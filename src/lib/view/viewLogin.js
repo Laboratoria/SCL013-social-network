@@ -55,8 +55,6 @@ const buildformRegister = () => {
     loginFacebook();
   });
 
-
-
   // BOTÓN CREACIÓN DE CUENTA
   document.getElementById('registro').addEventListener('click', () => {
     window.location.hash = '/register';
@@ -73,7 +71,7 @@ const buildformRegister = () => {
               </div>
                 <div id="formTwo">
               
-                <input type="email" id="eMailTwo"  name="eMailTwo" class="inputMailPassName" placeholder="Ingresa E-mail"/>
+                <input type="email" id="eMailTwo"  name="eMailTwo" class="inputMailPassName" placeholder="Ingresa E-mail ">
                 <input type="password"  id="passTwo" name="passTwo" class="inputMailPassName" placeholder="Ingresa Contraseña" minlength="6">
                 <button class="btnLoginRegister" id="btnRegister" >Registrar</button>
                 <button class="btnLoginRegister" id="loginBack">Volver</button>
