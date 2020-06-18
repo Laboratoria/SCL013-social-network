@@ -159,10 +159,10 @@ export const mostrarPublicacionHome = () => {
           <a id="btnCompartir"></a>
           <a id="btnRecomiendo"></a>
         </div>
-        <div id="contenedorBtnEdicion"> 
+        <div class="contenedorBtnEdicion"> 
          <button class="btnEliminar">Eliminar  </button> 
-        <button class="btnEditar">Editar  </button>
-         </div>
+         <button class="btnEditar">Editar  </button>
+        </div>
       
       </div>
       </div>
@@ -172,9 +172,21 @@ export const mostrarPublicacionHome = () => {
       botonEliminar.forEach(btn => {
         console.log("ingresoooooooooo eliminar")
         btn.addEventListener("click", (e) => {
-          let idPublicacion = e.target.parentElement.parentElement.getAttribute("data-publicacion");
-          eliminar(idPublicacion);
-          console.log("borraaaaarrrrrrrrrr")
+          const eliminarConfirmado = () => {
+            let idPublicacion = e.target.parentElement.parentElement.getAttribute("data-publicacion");
+            eliminar(idPublicacion);
+            console.log("borraaaaarrrrrrrrrr")
+          }
+          let texto;
+          if (confirm("¿segura de eliminar?")) {
+            texto = "eliminar!";
+            eliminarConfirmado();
+          } else {
+            texto = "cancelar";
+            console.log("cancelar")
+          }
+
+
         });
       })
       //editar publicacion
@@ -185,6 +197,9 @@ export const mostrarPublicacionHome = () => {
         btn.addEventListener("click", (event) => {
 
           let idPublicacion = event.target.parentElement.parentElement.parentElement.getAttribute("data-publicacionEditar");
+
+
+
           console.log(idPublicacion);
           editar(idPublicacion);
 
@@ -206,6 +221,7 @@ const eliminar = (id) => {
 
 //editar publicacion
 export const editar = (id) => {
+
   console.log("ingreso a la funcion editarrrr")
   //editado con lore
   db.collection("pruebaGenesis").doc(id).get().then(doc => {
@@ -220,13 +236,13 @@ export const editar = (id) => {
   //se trae el ID de contenedor de botones 
   //para crear el boton publicar edicion
 
-  const contenedorPublicarEdicion = document.getElementById("contenedorBtnEdicion")
+  const contenedorPublicarEdicion = document.getElementsByClassName("contenedorBtnEdicion")
   contenedorPublicarEdicion.innerHTML = "";
   const botonPublicar = document.createElement("button");
-  botonPublicar.setAttribute("id", "botonPublicarEdicion")
+  botonPublicar.setAttribute("class", "botonPublicarEdicion")
   botonPublicar.innerHTML = "Publicar Edicion"
-  contenedorPublicarEdicion.appendChild(botonPublicar);
 
+  contenedorPublicarEdicion.appendChild = (botonPublicar);
 
 
   //cambiamos de <P> a <Input>
