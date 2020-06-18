@@ -14,8 +14,6 @@ export const firebaseConfig = {
 // Initialize Firebase
 export const initializeFirebase = () => {
   firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
-  firebaseAuthentication();
 };
 
 // Sign in User
@@ -31,24 +29,7 @@ export const signIn = (emailA, passwordA, onSuccess, onErrorMessage) => {
     });
 };
 
-// Observer
-export const firebaseAuthentication = () => {
-  firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-      // User is signed in.
-      console.log("user", user);
-      const displayName = user.displayName;
-      const email = user.email;
-      const emailVerified = user.emailVerified;
-      const photoURL = user.photoURL;
-      const isAnonymous = user.isAnonymous;
-      const uid = user.uid;
-      const providerData = user.providerData;
-      const verifiedText = "";
-    } else {
-    }
-  });
-};
+
 
 // Create user with firebase
 export const createUserWithFirebase = (email, pass, onSuccess, onError) => {
@@ -174,11 +155,6 @@ export const postRecipe = (displayName, recipeName, ingredients, content, photoU
 
     post('recipeList', recipe, onSuccess, onError)
 }
-
-/* Funcion que trae la coleccion de firebase para luego imprimirla en pantalla al crear post 
-    onSuccess: Muestra la lista completa de los post
-    onError: Error
-*/
 
 export const currentUser = () => {
   const user = firebase.auth().currentUser;
