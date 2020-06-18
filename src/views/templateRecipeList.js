@@ -1,59 +1,61 @@
-import { getRecipeList, currentUser } from "../controllers/firebase.js";
+import { db, deletePost } from "../controllers/firebase.js";
+
 
 export const recipeList = () => {
-
     const allRecipeInList = document.createElement("section");
     allRecipeInList.innerHTML = '';
     allRecipeInList.className = "recipe-list";
 
-    const onSuccess = (recipeList) => {
-        console.log('voy a mostrar la', recipeList)
-        recipeList.forEach(recipe => {
-                const recipeHTML =
-                 ` <div class="newPost">
-                     <tr>
-                        <th scope="row">
-                            <span class="userName">${recipe.data().userName}</span>
-                            <span class="dateNewPost">${recipe.data().date}</span>
-                            <span class="userName">${recipe.data().recipeName}</span>
-                            <label for="recipeIngredients" class="labelNewPost">Ingredientes</label>
-                            <span class="showRecipe">${recipe.data().recipeIngredients}</span>
-                            <br>
-                            <label for="userRecipe" class="labelNewPost">Preparación</label>
-                            <span id="userRecipe" class="showRecipe">${recipe.data().recipeContent}</span>
-                            <div class="likeComent">
-                            <button class = "btnDelete" data-id="${recipe.id}"><i class="fas fa-trash-alt fa-2x"></i></button>
-                                <a href="#"><img src="./img/orange.png" class="like"></a>
-                                <a href="#"><i class="fas fa-comment fa-2x" class="coment"></i></a>      
-                            </div>
-                        </th>
-                    </div>`;
+    db.collection("recipeList").orderBy('date','desc').onSnapshot((recipeList) => {
+        allRecipeInList.innerHTML = '';
+
+        recipeList.docs.forEach((recipe) => {
+            
+            const recipeHTML =
+             ` <div class="newPost" data-id="${recipe.id}">
+                 <tr>
+                    <th scope="row">
+                        <span class="userName">${recipe.data().userName}</span>
+                        <span class="userName">${recipe.data().date}</span>
+                        <span class="userName">${recipe.data().recipeName}</span>
+                        <label for="recipeIngredients" class="labelNewPost">Ingredientes</label>
+                        <span class="showRecipe">${recipe.data().recipeIngredients}</span>
+                        <br>
+                        <label for="userRecipe" class="labelNewPost">Preparación</label>
+                        <span id="userRecipe" class="showRecipe">${recipe.data().recipeContent}</span>
+                        <div class="likeComent">
+                            <i id="deleteBtn" class="fas fa-trash-alt fa-2x"></i>
+                            <a href="#"><img src="./img/orange.png" class="like"></a>
+                            <a href="#"><i class="fas fa-comment fa-2x" class="comment"></i></a>      
+                        </div>
+                    </th>
+                </div>`;
+
+             
+                allRecipeInList.innerHTML += recipeHTML
+
+        })
+
+        
+        let deleteButton = document.querySelectorAll('#deleteBtn')
+
+        deleteButton.forEach((deleteBtn) => {
+       
+            deleteBtn.addEventListener('click', (e) => {
+
+                e.preventDefault()
                 
-                allRecipeInList.innerHTML += recipeHTML;
-                /*let clickDelete = allRecipeInList.getElementsByClassName("fas fa-trash-alt fa-2x");
-                for(let i=0; i<clickDelete.length; i++){
-                    allRecipeInList.innerHTML = '';
-                    allRecipeInList.innerHTML += recipeHTML;
-                    let btnDelete = clickDelete[i];
-                    btnDelete.addEventListener('click', () => { //cambioooo
-                        const onSuccess = () => {
-                             console.log("Document successfully deleted!");
-                         }
-                         const onError = (error) => {
-                             console.log(error)
-                         }
-                      console.log("1",recipe.id)
-                         deletePost(recipe.id,onSuccess, onError);
+                // Target retorna el elemento que dispara el evento, en este caso el data-id
+                let postId = e.target.parentElement.parentElement.getAttribute('data-id');
+
+                deletePost(postId)
+            })
+        })
+
     
-                         });
-                }*/
-
-        });  
-    }
-
-    // Llamo a la funcion que obtiene la coleccion a traves de firebase
-    getRecipeList(onSuccess);
-
+    })
     return allRecipeInList;
 }
+
+
 
