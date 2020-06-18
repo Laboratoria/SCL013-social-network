@@ -19,10 +19,9 @@ export const home = () => {
     <div id="form-save">
     <form id="form-publication" class="padding" maxlength=50 required>
         <textarea placeholder="¿Que quieres compartir?" id="publication" class="textarea-post"></textarea>
-        <div class="flex-bottom-form">
+        <div>
             <div>
-                <label for="fileButton" id="image"><i class="fa fa-picture-o btn-picture"
-                        aria-hidden="true"></i></label>
+                <label for="fileButton" id="image"></label>
                 <input type="file" class="hide" name="file" value="upload" id="imagen" />
             </div>
             <select id="typePublication" class="btn-select" name="select">
@@ -35,15 +34,8 @@ export const home = () => {
  </div>     
  <div id="post"></div>
   <br>
-  <section>
-    <ul id="notes-list" class="ul-parent">
-    </ul>
-  </section>
     <div class="iconSend"> 
     </div>
-   <!--
-    <div id="likeComment">
-    </div>-->
      </div>
      </body>`;
   buildListPost();
@@ -139,7 +131,9 @@ export const deletePost = (uid) => {
     .then(() => {
       let divId = 'div-' + uid;
       removeElement(divId);
-    }).catch((error) => {
+    })
+    .catch((error) => {
+
     });
 };
 function removeElement(elementId) {
@@ -148,3 +142,20 @@ function removeElement(elementId) {
     element.parentNode.removeChild(element);
   }
 }
+
+const btnLikeComment = (id) => {
+  const likeCount = async () => {
+    const gettingInfo = await firebase.firestore().collection('posts').doc(`${id}`).get();
+    const likeCounter = gettingInfo.data().reactionlike;
+    document.getElementById(`likes-count-${id}`).innerHTML = likeCounter;
+  };
+  // Añade like a un post
+  const addLikes = async (uid) => {
+    await firebase.firestore().collection('post').doc(`${uid}`).update({
+      reactionlike: firebase.firestore.FieldValue.increment(1),
+    });
+    const gettingInfo = await firebase.firestore().collection('post').doc(`${uid}`).get();
+    const likeCount = gettingInfo.data().btnLike;
+    return likeCount;
+  };
+};

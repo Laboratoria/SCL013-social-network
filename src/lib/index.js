@@ -49,6 +49,9 @@ export const createAccount = (email, password) => {
       } else {
         alert('Todos los campos son obligatorios');
       }
+      else {
+        alert('Todos los campos son obligatorios');
+      }
     });
 };
 

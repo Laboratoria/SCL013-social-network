@@ -18,7 +18,7 @@ export const loginPage = () => {
           <button class="btnLoginRegister" id="btnIniciar" type="submit">Iniciar Sesión</button>
         </div>
         
-        <div class="fila">
+        <div class= "row">
           <div id="init">
           </div>
           <div id="btnGoFa" >
@@ -26,7 +26,7 @@ export const loginPage = () => {
             <img id="btnFace" src="./icons/facebook4.png" class="small-icon" alt="">
           </div>
           <div id="noAcc">
-            <button class="btnLoginRegister"  id="registro" type="button">Registrate Aqui</button>
+            <button class="btnLoginRegister"  id="registerOne" type="button">Registrate Aqui</button>
           </div>
         </div>
     </div>
@@ -56,7 +56,7 @@ const buildformRegister = () => {
   });
 
   // BOTÓN CREACIÓN DE CUENTA
-  document.getElementById('registro').addEventListener('click', () => {
+  document.getElementById('registerOne').addEventListener('click', () => {
     window.location.hash = '/register';
     document.getElementById('root').innerHTML = `
             <div id='viewRegistre' class="viewLoginRegistre"> 
