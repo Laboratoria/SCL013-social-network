@@ -1,5 +1,5 @@
 import { logout } from '../index.js';
-import {subirImagen} from '../controladores/uploadimage.js';
+import { subirImagen } from '../controladores/uploadimage.js';
 
 export const home = () => {
   window.location.hash = '/home';
@@ -19,10 +19,9 @@ export const home = () => {
     <div id="form-save">
     <form id="form-publication" class="padding" maxlength=50 required>
         <textarea placeholder="¿Que quieres compartir?" id="publication" class="textarea-post"></textarea>
-        <div class="flex-bottom-form">
+        <div>
             <div>
-                <label for="fileButton" id="image"><i class="fa fa-picture-o btn-picture"
-                        aria-hidden="true"></i></label>
+                <label for="fileButton" id="image"></label>
                 <input type="file" class="hide" name="file" value="upload" id="imagen" />
             </div>
             <select id="typePublication" class="btn-select" name="select">
@@ -35,15 +34,8 @@ export const home = () => {
  </div>     
  <div id="post"></div>
   <br>
-  <section>
-    <ul id="notes-list" class="ul-parent">
-    </ul>
-  </section>
     <div class="iconSend"> 
     </div>
-   <!--
-    <div id="likeComment">
-    </div>-->
      </div>
      </body>`;
   buildListPost();
@@ -51,48 +43,49 @@ export const home = () => {
   document.getElementById('btnOut').addEventListener('click', () => {
     logout();
   });
-    // BOTÓN PARA POSTEAR
-    document.getElementById('sharePost').addEventListener('click', () => {
-      const user = firebase.auth().currentUser;
-      const uid = user.uid;
-      let username = user.displayName;
-      const mail = user.email;
-      const publication = document.getElementById('publication').value;
-      const typePublication = document.getElementById('typePublication').value;
-      if(username === undefined || username === null) {
+  //  BOTÓN PARA POSTEAR
+  document.getElementById('sharePost').addEventListener('click', () => {
+    const user = firebase.auth().currentUser;
+    const uid = user.uid;
+    let username = user.displayName;
+    const mail = user.email;
+    const publication = document.getElementById('publication').value;
+    const typePublication = document.getElementById('typePublication').value;
+    if (username === undefined || username === null) {
       username = mail;
-      }
-      document.getElementById('publication').value = '';
-      const get = firebase.firestore().collection('posts').add({
-        uid,
-        date: new Date(),
-        publication: publication,
-        typePublication: typePublication,
-        author: username,
-      });
-      return get;
-      buildListPost();
+    }
+    document.getElementById('publication').value = '';
+    const get = firebase.firestore().collection('posts').add({
+      uid,
+      date: new Date(),
+      publication: publication,
+      typePublication: typePublication,
+      author: username,
+    });
+    return get;
+    buildListPost();
   });
 };
 const buildListPost = () => {
- const id = firebase.auth().currentUser.uid;
+  const id = firebase.auth().currentUser.uid;
   firebase.firestore().collection('posts').orderBy('date', 'desc')
     .onSnapshot((querySnapshot) => {
       const arr = [];
       querySnapshot.forEach((doc) => {
-        removeElement("div-"+doc.id);
-        //if (id === doc.data().uid || doc.data().public === true) {
-          arr.push({ data: doc.data(), idpost: doc.id });
-        //}
+        removeElement('div-' + doc.id);
+        // if (id === doc.data().uid || doc.data().public === true) {
+        arr.push({ data: doc.data(), idpost: doc.id });
+        // }
       });
       const posts = document.getElementById('post');
       arr.forEach((post) => {
         console.log(post);
-        let divID = 'div-'+post.idpost;
-        let pnom = 'p'+post.idpost;
-        let tArea = 'pub'+post.idpost;
-        let btnDel = 'del'+post.idpost;
-        let btnEdit = 'edit'+post.idpost;
+        let divID = 'div-' + post.idpost;
+        let pnom = 'p' + post.idpost;
+        let tArea = 'pub' + post.idpost;
+        let btnDel = 'del' + post.idpost;
+        let btnEdit = 'edit' + post.idpost;
+        let btnLike = 'like' + post.idpost;
         let divList = document.createElement('div'); 
         divList.id = divID;
         divList.classList = 'mystyle';
@@ -107,21 +100,20 @@ const buildListPost = () => {
         </div>
         </div>
         <div id = "likeComment">
-        <img class= "likeCommentButton scaled" src="./icons/like.png">
-        <img class = "likeCommentButton scaled" src="icons/comment.png">
-        </div>`
-        
+        <img id="${btnLike}" src="./icons/like.png" class= "likeCommentButton scaled" >
+        <img id="btnComment" src="./icons/comment.png" class = "likeCommentButton scaled">
+        </div>
+        `;
         document.getElementById(btnEdit).addEventListener('click', function(event) {
           let idDoc = post.idpost;
           let text = document.getElementById(tArea).value;
-          editTextPost(idDoc,text);
+          editTextPost(idDoc, text);
         });
-      document.getElementById(btnDel).addEventListener('click', function(event) {
-        let id = post.idpost;
-        deletePost(id);
-       });
+        document.getElementById(btnDel).addEventListener('click', function(event) {
+          let id = post.idpost;
+          deletePost(id);
+        });
       });
-     
     });
 };
 // Cambia el contenido de un post
@@ -129,21 +121,40 @@ const editTextPost = (uid, text) => {
   firebase.firestore().collection('posts').doc(`${uid}`).update({
     publication: text,
   });
-  /*const gettingInfo = await firebase.firestore().collection('posts').doc(`${uid}`).get();
+  /* const gettingInfo = await firebase.firestore().collection('posts').doc(`${uid}`).get();
   const postTextContent = gettingInfo.data().content;
-  return postTextContent;*/
+  return postTextContent; */
 };
 export const deletePost = (uid) => {
   firebase.firestore().collection('posts').doc(`${uid}`).delete()
     .then(() => {
-      let divId = 'div-'+uid;
+      let divId = 'div-' + uid;
       removeElement(divId);
-    }).catch((error) => {
+    })
+    .catch((error) => {
+
     });
 };
 function removeElement(elementId) {
-  if (document.getElementById(elementId)) { 
+  if (document.getElementById(elementId)) {
     let element = document.getElementById(elementId);
     element.parentNode.removeChild(element);
   }
 }
+
+const btnLikeComment = (id) => {
+  const likeCount = async () => {
+    const gettingInfo = await firebase.firestore().collection('posts').doc(`${id}`).get();
+    const likeCounter = gettingInfo.data().reactionlike;
+    document.getElementById(`likes-count-${id}`).innerHTML = likeCounter;
+  };
+  // Añade like a un post
+  const addLikes = async (uid) => {
+    await firebase.firestore().collection('post').doc(`${uid}`).update({
+      reactionlike: firebase.firestore.FieldValue.increment(1),
+    });
+    const gettingInfo = await firebase.firestore().collection('post').doc(`${uid}`).get();
+    const likeCount = gettingInfo.data().btnLike;
+    return likeCount;
+  };
+};

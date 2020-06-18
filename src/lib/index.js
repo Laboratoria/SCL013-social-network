@@ -47,6 +47,9 @@ export const createAccount = (email, password) => {
       if (errorCode === 'auth/email-already-in-use') {
         alert('Email ya está registrado');
       }
+      else {
+        alert('Todos los campos son obligatorios');
+      }
     });
 };
 
