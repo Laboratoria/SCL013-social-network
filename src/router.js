@@ -11,7 +11,9 @@ export const showTemplate = (hash) => {
   const containerRoot = document.getElementById('root');
   containerRoot.innerHTML = menu();
   switch (hash) {
-
+    case '':
+      containerRoot.appendChild(login());
+      break;
     case '#/login':
       containerRoot.appendChild(login());
       break;
@@ -32,17 +34,17 @@ export const showTemplate = (hash) => {
 
 export const changeRoute = (hash) => {
 
-  if (currentUser()) {
+ if (currentUser()) {
       if (hash === '#/home') {
       return showTemplate(hash);
     } else if (hash === '#/profile') {
       return showTemplate(hash);
     } 
   } else {
-  if (hash === '#/register') {
+    if (hash === '#/register') {
     return showTemplate(hash);
-  } else if (hash === '#/login'){
-    return showTemplate(hash);
+  } else if(hash === '#/login') {
+    return showTemplate('#/login');
+  } 
   }
-}
 };
