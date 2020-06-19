@@ -33,15 +33,16 @@ export const showTemplate = (hash) => {
 export const changeRoute = (hash) => {
 
   if (currentUser()) {
-     if (hash === '#/register') {
-      return showTemplate(hash);
-    } else if (hash === '#/home') {
+      if (hash === '#/home') {
       return showTemplate(hash);
     } else if (hash === '#/profile') {
       return showTemplate(hash);
     } 
   } else {
-    return showTemplate('#/login');
+  if (hash === '#/register') {
+    return showTemplate(hash);
+  } else if (hash === '#/login'){
+    return showTemplate(hash);
   }
+}
 };
-
