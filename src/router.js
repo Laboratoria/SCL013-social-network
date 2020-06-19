@@ -34,7 +34,7 @@ export const showTemplate = (hash) => {
 
 export const changeRoute = (hash) => {
 
-  if (currentUser()) {
+ if (currentUser()) {
       if (hash === '#/home') {
       return showTemplate(hash);
     } else if (hash === '#/profile') {
@@ -48,4 +48,3 @@ export const changeRoute = (hash) => {
   } 
   }
 };
-
