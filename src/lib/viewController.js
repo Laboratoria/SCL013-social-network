@@ -103,18 +103,22 @@ export const guardarUsuario = () => {
   })
 }
 
-
-
-
 export const guardar = () => {
 
   const post = document.getElementById("inputHome").value;
   const tipo = document.getElementById("opcionPublicar").value;
-  db.collection("pruebaGenesis").add({
-
+  const date = new Date();
+  const user = firebase.auth().currentUser;
+  db.collection("publicaciones").add({
+      uid: user.uid,
+      nombre: user.displayName,
+      fotoperfil: user.photoURL,
       post: post,
-      foto: "",
-      tipo: tipo
+      foto: '',
+      tipo: tipo,
+      likes: [],
+      photo: '',
+      date,
 
     })
     .then(function (docRef) {
@@ -128,12 +132,9 @@ export const guardar = () => {
   mostrarPublicacionHome();
 }
 
-
-
-
 //imprimir publicacion
 export const mostrarPublicacionHome = () => {
-  db.collection("pruebaGenesis").onSnapshot((querySnapshot) => {
+  db.collection("publicaciones").orderBy('date', 'desc').onSnapshot((querySnapshot) => {
 
     //tabla.innerHTML = "";
     const idPublicacion = document.getElementById("contenedorMayor")
@@ -145,8 +146,8 @@ export const mostrarPublicacionHome = () => {
       <div id="contenedorPublicacionEditar "data-publicacionEditar='${doc.id}'> 
     <div id="contenedorPublicacion "data-publicacion="${doc.id}" > 
       <div id="contenedorIdentidad"> 
-        <img id="fotoParticipante" scr="./image/Ellipse.png"/>
-        <p id="nombreUser"></p>
+        <img id="fotoParticipante" src="${doc.data().fotoperfil}"/>
+        <p id="nombreUser"> ${doc.data().nombre}</p>
       </div>
       <div id="imagenPublicacion"> </div>
       
@@ -159,9 +160,10 @@ export const mostrarPublicacionHome = () => {
           <a id="btnCompartir"></a>
           <a id="btnRecomiendo"></a>
         </div>
-        <div class="contenedorBtnEdicion"> 
+        <div id="contenedorBtnEdicion" data-publicacionContenedor='${doc.id}'> 
          <button class="btnEliminar">Eliminar  </button> 
          <button class="btnEditar">Editar  </button>
+         <button id="botonGuardarEdicion">Guardar edicion</button>
         </div>
       
       </div>
@@ -172,6 +174,7 @@ export const mostrarPublicacionHome = () => {
       botonEliminar.forEach(btn => {
         console.log("ingresoooooooooo eliminar")
         btn.addEventListener("click", (e) => {
+
           const eliminarConfirmado = () => {
             let idPublicacion = e.target.parentElement.parentElement.getAttribute("data-publicacion");
             eliminar(idPublicacion);
@@ -190,28 +193,44 @@ export const mostrarPublicacionHome = () => {
         });
       })
       //editar publicacion
-      let botonEditar = document.querySelectorAll(".btnEditar")
+      const botonEditar = document.querySelectorAll(".btnEditar")
       botonEditar.forEach(btn => {
 
         console.log("ingreso al query de EDITAR")
-        btn.addEventListener("click", (event) => {
+        btn.addEventListener("click", (e) => {
+          let idPublicacion = e.target.parentElement.parentElement.getAttribute("data-publicacion");
 
-          let idPublicacion = event.target.parentElement.parentElement.parentElement.getAttribute("data-publicacionEditar");
+          //crea el boton Gurdar Edicion
+
+          //  const contenedorPublicarEdicion = document.getElementById("contenedorBtnEdicion")
+          //contenedorPublicarEdicion.forEach(btn => {
+          //btn.innerHTML += `<button id="botonGuardarEdicion">Guardar edicion</button>`;
+          //})
+          //   contenedorPublicarEdicion.innerHTML = "";
+
+          //  const click = document.getElementById("botonGuardarEdicion");
 
 
+          //cambiamos de <P> a <Input>
+          const parrafoPublicacion = document.getElementById("contenedorPubli");
+          parrafoPublicacion.innerHTML = "";
+          parrafoPublicacion.innerHTML = `<input class="inputReescribir">`;
 
           console.log(idPublicacion);
+
           editar(idPublicacion);
 
         })
+
       })
+
     })
   });
 };
 
 const eliminar = (id) => {
   console.log("ingresooo a eliminar ")
-  db.collection("pruebaGenesis").doc(id).delete().then(function () {
+  db.collection("publicaciones").doc(id).delete().then(function () {
     console.log("Document successfully deleted!");
 
   }).catch(function (error) {
@@ -221,13 +240,12 @@ const eliminar = (id) => {
 
 //editar publicacion
 export const editar = (id) => {
-
   console.log("ingreso a la funcion editarrrr")
   //editado con lore
-  db.collection("pruebaGenesis").doc(id).get().then(doc => {
+  db.collection("publicaciones").doc(id).get().then(doc => {
 
     console.log(doc.data().post);
-    document.getElementById("inputReescribir").value = doc.data().post;
+    document.querySelector('.inputReescribir').value = doc.data().post;
     document.getElementById("opcionPublicar").value = doc.data().tipo;
   })
 
@@ -236,28 +254,13 @@ export const editar = (id) => {
   //se trae el ID de contenedor de botones 
   //para crear el boton publicar edicion
 
-  const contenedorPublicarEdicion = document.getElementsByClassName("contenedorBtnEdicion")
-  contenedorPublicarEdicion.innerHTML = "";
-  const botonPublicar = document.createElement("button");
-  botonPublicar.setAttribute("class", "botonPublicarEdicion")
-  botonPublicar.innerHTML = "Publicar Edicion"
 
-  contenedorPublicarEdicion.appendChild = (botonPublicar);
+  const botonPublicar = document.querySelector('#botonGuardarEdicion');
 
-
-  //cambiamos de <P> a <Input>
-  const parrafoPublicacion = document.getElementById("contenedorPubli");
-  parrafoPublicacion.innerHTML = "";
-  const inputReescribir = document.createElement("input");
-  inputReescribir.setAttribute("id", "inputReescribir");
-  inputReescribir.innerHTML = "";
-  parrafoPublicacion.appendChild(inputReescribir);
-
-
-  botonPublicar.onclick = function () {
-    const editando = db.collection("pruebaGenesis").doc(id);
-    const post = document.getElementById("inputReescribir").value
-    const tipo = document.getElementById("opcionPublicar").value
+  botonPublicar.addEventListener("click", () => {
+    const editando = db.collection("publicaciones").doc(id);
+    const post = document.querySelector('.inputReescribir').value;
+    const tipo = document.getElementById("opcionPublicar").value;
 
     return editando.update({
         post: post,
@@ -266,15 +269,12 @@ export const editar = (id) => {
       })
       .then(function () {
         console.log("Document successfully updated!");
-        //  botonEditar.innerHTML = "Publicacion Editada";
-        const post = document.getElementById("inputReescribir").value = "";
-        const tipo = document.getElementById("opcionPublicar").value = "";
-
 
       })
       .catch(function (error) {
         // The document probably doesn't exist.
         console.error("Error updating document: ", error);
       });
-  }
+  })
+
 }
