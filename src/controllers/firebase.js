@@ -51,10 +51,10 @@ const emailVerification = () => {
   const user = firebase.auth().currentUser;
     user.sendEmailVerification()
   .then(() => {
-    alert('hemos enviado un correo de confirmacion a su correo electronico');
+    alert('hemos enviado un correo de confirmacion a su correo electrónico');
   })
   .catch((error) => {
-  alert('verifique su correo electronico para verificar el registro');  
+  alert('verifique su correo electrónico para verificar el registro');  
   });
 }
  
