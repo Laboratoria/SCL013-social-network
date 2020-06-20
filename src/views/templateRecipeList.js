@@ -25,8 +25,8 @@ export const recipeList = () => {
                             <br>
                             <label for="userRecipe" id="recipeLabel" class="labelNewPost">Preparación</label>
                             <span id="userRecipe" class="showRecipe">${recipe.data().recipeContent}</span>
-                        <div class="likeComent">
-                            <button id="btnEdit">Editar</button>
+                        <div class="editDelete">
+                            <i id="btnEdit" class="fas fa-edit"></i>
                             <i id="deleteBtn" class="fas fa-trash-alt fa-2x"></i>     
                         </div>
                     </th>
@@ -95,13 +95,15 @@ const editPost = (uid) => {
                                         <textarea placeholder="Ingredientes" id="ingredients" class="writeIngredients" cols="30" rows="6">${recipeIngredients.innerHTML}</textarea>
                                         <label for="recipe" id="recipeLabel" class="labelNewPost">Preparación</label>
                                         <textarea placeholder="Escribe tu receta aqui" cols="30" rows="6" id="recipe" class="writeRecipe">${recipeContent.innerHTML}</textarea>
-                                        <button id="btnSave">Save</button>
-                                        <button id="btnCancel">Cancelar</button>
+                                        <div class="saveCancel">
+                                        <i id ="btnSave" class="fas fa-save"></i>
+                                        <i id="btnCancel" class="fas fa-window-close"></i>
+                                        </div>
                                     </div>`
 
             let buttonSave = editPost.querySelector("#btnSave");
             let buttonCancel = editPost.querySelector("#btnCancel");
-
+            
             buttonCancel.addEventListener('click', (e) => {
     
                 editPost.innerHTML = '';
@@ -111,6 +113,7 @@ const editPost = (uid) => {
                 deleteBtn.style.display = "block";
                 ingredientsLabel.style.display = "block";
                 recipeLabel.style.display = "block";
+                editPostButton.style.display = "block";
             })
            
             buttonSave.addEventListener('click', (e) => {
