@@ -6,7 +6,6 @@ export const registrar = () => {
   const pass = document.querySelector('#passRegistro').value;
   const usuario = document.querySelector('#usuarioRegistro').value;
   firebase.auth().createUserWithEmailAndPassword(email, pass).then(function (data) {
-    console.log("ingreso a registrar")
     enviarCorreo()
     guardarUsuario()
   }).catch(function (error) {
@@ -86,7 +85,6 @@ var db = firebase.firestore();
 //guardar Usuario
 /*guardar usuarios nuevos en la base de datos*/
 export const guardarUsuario = () => {
-  console.log("ingreso a guardar usuario")
   const nombre = document.getElementById('usuarioRegistro').value;
   const correo = document.getElementById('emailRegistro').value;
   const password = document.getElementById('passRegistro').value;
@@ -153,17 +151,19 @@ export const mostrarPublicacionHome = () => {
       
       <div id="contenedorPubli"> 
       <p id="textoPublicacion"> ${doc.data().post}</p>
+  
       </div> 
        
         <p id="tipoPublicacion"> ${doc.data().tipo}</p>
+       
         <div id="interacciones">
           <a id="btnCompartir"></a>
           <a id="btnRecomiendo"></a>
         </div>
         <div id="contenedorBtnEdicion" data-publicacionContenedor='${doc.id}'> 
-         <button class="btnEliminar">Eliminar  </button> 
-         <button class="btnEditar">Editar  </button>
-         <button id="botonGuardarEdicion">Guardar edicion</button>
+         <button class="btnEliminar"  id="btnEliminarId">Eliminar  </button> 
+         <button class="btnEditar"  id="btnEditarId" > Editar</button>
+       
         </div>
       
       </div>
@@ -172,13 +172,12 @@ export const mostrarPublicacionHome = () => {
       //borrar publicaciones
       let botonEliminar = document.querySelectorAll(".btnEliminar")
       botonEliminar.forEach(btn => {
-        console.log("ingresoooooooooo eliminar")
         btn.addEventListener("click", (e) => {
 
           const eliminarConfirmado = () => {
             let idPublicacion = e.target.parentElement.parentElement.getAttribute("data-publicacion");
             eliminar(idPublicacion);
-            console.log("borraaaaarrrrrrrrrr")
+
           }
           let texto;
           if (confirm("¿segura de eliminar?")) {
@@ -186,66 +185,47 @@ export const mostrarPublicacionHome = () => {
             eliminarConfirmado();
           } else {
             texto = "cancelar";
-            console.log("cancelar")
+
           }
 
 
         });
       })
       //editar publicacion
-      const botonEditar = document.querySelectorAll(".btnEditar")
+
+      const botonEditar = document.querySelectorAll('#btnEditarId');
+
       botonEditar.forEach(btn => {
-
-        console.log("ingreso al query de EDITAR")
         btn.addEventListener("click", (e) => {
+          window.scrollTo(0, 0);
           let idPublicacion = e.target.parentElement.parentElement.getAttribute("data-publicacion");
-
-          //crea el boton Gurdar Edicion
-
-          //  const contenedorPublicarEdicion = document.getElementById("contenedorBtnEdicion")
-          //contenedorPublicarEdicion.forEach(btn => {
-          //btn.innerHTML += `<button id="botonGuardarEdicion">Guardar edicion</button>`;
-          //})
-          //   contenedorPublicarEdicion.innerHTML = "";
-
-          //  const click = document.getElementById("botonGuardarEdicion");
-
-
-          //cambiamos de <P> a <Input>
-          const parrafoPublicacion = document.getElementById("contenedorPubli");
-          parrafoPublicacion.innerHTML = "";
-          parrafoPublicacion.innerHTML = `<input class="inputReescribir">`;
-
-          console.log(idPublicacion);
-
+          document.getElementById('botonGuardarEdicion').style.display = "block";
+          document.getElementById('btnPublicar').style.display = "none";
+          document.getElementById('btnEditarId').style.display = "none";
+          document.getElementById('btnEliminarId').style.display = "none";
           editar(idPublicacion);
 
         })
-
       })
-
     })
   });
 };
 
 const eliminar = (id) => {
-  console.log("ingresooo a eliminar ")
+
   db.collection("publicaciones").doc(id).delete().then(function () {
     console.log("Document successfully deleted!");
 
   }).catch(function (error) {
-    console.error("Error removing document: ", error);
+
   });
 }
 
 //editar publicacion
 export const editar = (id) => {
-  console.log("ingreso a la funcion editarrrr")
   //editado con lore
   db.collection("publicaciones").doc(id).get().then(doc => {
-
-    console.log(doc.data().post);
-    document.querySelector('.inputReescribir').value = doc.data().post;
+    document.querySelector('#inputHome').value = doc.data().post;
     document.getElementById("opcionPublicar").value = doc.data().tipo;
   })
 
@@ -259,7 +239,7 @@ export const editar = (id) => {
 
   botonPublicar.addEventListener("click", () => {
     const editando = db.collection("publicaciones").doc(id);
-    const post = document.querySelector('.inputReescribir').value;
+    const post = document.querySelector('#inputHome').value;
     const tipo = document.getElementById("opcionPublicar").value;
 
     return editando.update({
@@ -268,7 +248,12 @@ export const editar = (id) => {
 
       })
       .then(function () {
+
         console.log("Document successfully updated!");
+        document.getElementById('botonGuardarEdicion').style.display = 'none';
+        document.getElementById('btnPublicar').style.display = 'block';
+        document.getElementById('btnEditarId').style.display = 'block';
+        document.getElementById('btnEliminarId').style.display = 'block';
 
       })
       .catch(function (error) {

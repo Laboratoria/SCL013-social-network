@@ -8,6 +8,12 @@ import {
   mostrarPublicacionHome
 } from "../viewController.js";
 
+import {
+  mostrarFiltros
+} from "./filtros/mostrarFiltros.js";
+
+
+
 export const home = () => {
 
   window.location.hash = '/home';
@@ -17,22 +23,24 @@ export const home = () => {
     /*html*/
     `
   <header>
+  
   <img id="logoMenu" src="./image/logo.jpg">
   <div id="contenedorBotonesMenu">
-      <div class="colorUno">Ruta</div> 
-      <div class="colorDos">Hospedaje</div>
-      <div class="colorUno">Comida</div>
-      <div class="colorDos">Clima</div>
-      <div class="colorUno">Transporte</div>
-      <div class="colorDos">Tour</div>
+  
+      <div class="colorUno" id="ruta">Ruta</div> 
+      <div class="colorDos" id="hospedaje">Hospedaje</div>
+      <div class="colorUno" id="comida">Comida</div>
+      <div class="colorDos" id="clima">Clima</div>
+      <div class="colorUno" id="transporte">Transporte</div>
+      <div class="colorDos" id="tour">Tour</div>
   </div>
   </header>
   <div id="contenedorEscribir">
       <input id="inputHome" type="text" placeholder="¿Cual es tu pica'?">
       <input type="file"> 
-      <select id="opcionPublicar">
-
-      <option>Ruta </option>
+      <select id="opcionPublicar"  >
+      <option value="" disabled selected >Categoria </option>
+      <option >Ruta </option>
       <option> Hospedaje</option>
       <option>Comida </option>
       <option>Clima </option>
@@ -40,7 +48,8 @@ export const home = () => {
       <option> Tour</option>
 
       </select>
-         <button id="btnPublicar"> Publicar</button>
+         <button id="btnPublicar" style="display: block" > Publicar</button>
+         <button id="botonGuardarEdicion"  style="display: none" >Guardar edicion </button>
 
    </div>
 
@@ -53,11 +62,48 @@ export const home = () => {
   <a  id="btnCerrar"></a>
 </div>
   `
+  const alternLogoMenu = document.querySelector('#logoMenu');
+  alternLogoMenu.addEventListener('click', () => {
+    window.location.reload();
+  });
 
   const botonPublicar = document.getElementById('btnPublicar');
-  botonPublicar.addEventListener("click", () => {
+  botonPublicar.addEventListener('click', () => {
     guardar();
   });
   mostrarPublicacionHome()
+
+  const botonRuta = document.getElementById('ruta');
+  botonRuta.addEventListener('click', () => {
+    mostrarFiltros('Ruta');
+
+  })
+
+  const botonHospedaje = document.getElementById('hospedaje');
+  botonHospedaje.addEventListener('click', () => {
+
+    mostrarFiltros('Hospedaje');
+  });
+
+  const botonComida = document.getElementById('comida');
+  botonComida.addEventListener('click', () => {
+
+    mostrarFiltros('Comida');
+  });
+
+  const botonClima = document.getElementById('clima');
+  botonClima.addEventListener('click', () => {
+    mostrarFiltros('Clima');
+  });
+
+  const botonTransporte = document.getElementById('transporte');
+  botonTransporte.addEventListener('click', () => {
+    mostrarFiltros('Transporte');
+  });
+
+  const botonTour = document.getElementById('tour');
+  botonTour.addEventListener('click', () => {
+    mostrarFiltros('Tour');
+  });
 
 }
