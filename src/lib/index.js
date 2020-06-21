@@ -1,22 +1,9 @@
 export const loginGoogle = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
   return firebase.auth().signInWithPopup(provider)
-
-    .then((result) => {
-      // This gives you a Google Access Token. You can use it to access the Google API.
-      const token = result.credential.accessToken;
-      // The signed-in user info.
-      const user = result.user;
-      // ...
-    }).catch((error) => {
-      // Handle Errors here.
-      const errorCode = error.code;
+    .catch((error) => {
       const errorMessage = error.message;
-      // The email of the user's account used.
-      const email = error.email;
-      // The firebase.auth.AuthCredential type that was used.
-      const credential = error.credential;
-      // ...
+      alert(errorMessage);
     });
 };
 
@@ -43,13 +30,9 @@ export const createAccount = (email, password) => {
     .catch((error) => {
     // Handle Errors here.
       const errorCode = error.code;
-      const errorMessage = error.message;
       if (errorCode === 'auth/email-already-in-use') {
         alert('Email ya está registrado');
       } else {
-        alert('Todos los campos son obligatorios');
-      }
-      else {
         alert('Todos los campos son obligatorios');
       }
     });
@@ -58,9 +41,8 @@ export const createAccount = (email, password) => {
 
 // LOGIN CON EMAIL Y PWD
 export const emailLogin = (email, password) => {
-  event.preventDefault();
   firebase.auth().signInWithEmailAndPassword(email, password)
-    .then(function onSuccess() {
+    .then(() => {
       const user = firebase.auth().currentUser;
       if (user != null) {
         if (user.emailVerified === false) {
@@ -70,8 +52,6 @@ export const emailLogin = (email, password) => {
     })
     .catch((error) => {
       const errorCode = error.code;
-      // const errorMessage = error.message;
-
       if (errorCode === 'auth/wrong-password') {
         alert('Contraseña Incorrecta');
       } else if (errorCode === 'auth/user-not-found') {
@@ -86,10 +66,9 @@ export const emailLogin = (email, password) => {
 export const logout = () => {
   firebase.auth().signOut().then(() => {
     alert('sesión cerrada con éxito');
-    location.reload();
+    window.location.reload();
   })
-    .catch((error) => {
-    // An error happened.
+    .catch(() => {
       alert('Ocurrió un error inesperado');
     });
 };

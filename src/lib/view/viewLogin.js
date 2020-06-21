@@ -1,40 +1,7 @@
+/* eslint-disable eol-last */
 import {
   loginGoogle, loginFacebook, emailLogin, createAccount,
 } from '../index.js';
-
-
-export const loginPage = () => {
-  window.location.hash = '/login';
-  document.getElementById('root').innerHTML = `
-  <div id='viewLogin' class="viewLoginRegistre">
-    <div class="imgLogin" >
-    </div>
-    <div class="formLoginRegistre">
-        <div class ="imgWel">
-        </div>
-        <div class="loginForm" name="formlogin">
-          <input type="email" id="eMailOne" name="eMailOne" class="inputMailPassName" placeholder="Ingresa E-mail"/>
-          <input type="password" id="passOne" name="passOne"  class="inputMailPassName" placeholder="Ingresa Contraseña" minlength="6">
-          <button class="btnLoginRegister" id="btnIniciar" type="submit">Iniciar Sesión</button>
-        </div>
-        
-        <div class= "row">
-          <div id="init">
-          </div>
-          <div id="btnGoFa" >
-            <img id="btnGoogle" src="./icons/goog.png" class="small-icon" alt="">
-            <img id="btnFace" src="./icons/facebook4.png" class="small-icon" alt="">
-          </div>
-          <div id="noAcc">
-            <button class="btnLoginRegister"  id="registerOne" type="button">Registrate Aqui</button>
-          </div>
-        </div>
-    </div>
-  </div>`;
-
-  buildformRegister();
-};
-
 
 const buildformRegister = () => {
   const buttonEnter = document.getElementById('btnIniciar');
@@ -87,7 +54,40 @@ const buildformRegister = () => {
     });
     // BÓTÓN DE REGRESO AL LOGIN
     document.getElementById('loginBack').addEventListener('click', () => {
-      loginPage();
+      window.location.reload();
     });
   });
+};
+
+
+export const loginPage = () => {
+  window.location.hash = '/login';
+  document.getElementById('root').innerHTML = `
+  <div id='viewLogin' class="viewLoginRegistre">
+    <div class="imgLogin" >
+    </div>
+    <div class="formLoginRegistre">
+        <div class ="imgWel">
+        </div>
+        <div class="loginForm" name="formlogin">
+          <input type="email" id="eMailOne" name="eMailOne" class="inputMailPassName" placeholder="Ingresa E-mail"/>
+          <input type="password" id="passOne" name="passOne"  class="inputMailPassName" placeholder="Ingresa Contraseña" minlength="6">
+          <button class="btnLoginRegister" id="btnIniciar" type="submit">Iniciar Sesión</button>
+        </div>
+        
+        <div class= "row">
+          <div id="init">
+          </div>
+          <div id="btnGoFa" >
+            <img id="btnGoogle" src="./icons/goog.png" class="small-icon" alt="">
+            <img id="btnFace" src="./icons/facebook4.png" class="small-icon" alt="">
+          </div>
+          <div id="noAcc">
+            <button class="btnLoginRegister"  id="registerOne" type="button">Registrate Aqui</button>
+          </div>
+        </div>
+    </div>
+  </div>`;
+
+  buildformRegister();
 };
