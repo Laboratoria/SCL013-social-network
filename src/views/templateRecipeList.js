@@ -48,14 +48,17 @@ export const recipeList = () => {
                 // Target retorna el elemento que dispara el evento, en este caso el data-id
                 let postId = e.target.parentElement.parentElement.getAttribute('data-id');
 
-                deletePost(postId)
+                 // Ventana emergente
+                 let confirmDelete = window.confirm('¿Quieres eliminar este post?'); 
+                 if (confirmDelete){
+                     deletePost(postId);
+                 }else{
+                 }
             })
         })
     })
     return allRecipeInList;
 }
-
-
 
 const editPost = (uid) => {
 
