@@ -1,8 +1,14 @@
-// importamos la funcion que vamos a testear
-import { myFunction } from "../src/lib/index";
+/* eslint-disable eol-last */
+import { emailLogin, createAccount, loginGoogle } from '../src/lib/index';
 
-describe('myFunction', () => {
-  it('debería ser una función', () => {
-    expect(typeof myFunction).toBe('function');
-  });
+test('emailLogin debería ser una función', () => {
+  expect(typeof emailLogin).toBe('function');
+});
+
+test('createAccount debería ser una función', () => {
+  expect(typeof createAccount).toBe('function');
+});
+
+test('loginGoogle debería ser una función', () => {
+  expect(typeof loginGoogle).toBe('function');
 });

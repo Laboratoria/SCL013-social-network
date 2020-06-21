@@ -1,5 +1,13 @@
-// Este es el punto de entrada de tu aplicacion
+import { loginPage } from './lib/view/viewLogin.js';
+import { home } from './lib/view/viewHome.js';
 
-import { myFunction } from './lib/index.js';
-
-myFunction();
+export const stateObserved = () => {
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user && user.emailVerified) {
+      home();
+    } else {
+      loginPage();
+    }
+  });
+};
+stateObserved();
