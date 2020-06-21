@@ -229,12 +229,22 @@ header {
     height: 28px;
 }
 
+.colorUno:hover {
+
+    height: 40px;
+}
+
 .colorDos {
     background: #E4C01F;
     font-size: 110%;
     padding-right: 9px;
     padding-left: 9px;
     height: 28px;
+}
+
+.colorDos:hover {
+
+    height: 40px;
 }
 
 #btnPublicar {
@@ -258,7 +268,9 @@ header {
     height: 298px;
     background: rgba(68, 68, 68, 0.18);
     margin-top: 35px;
+
 }
+
 
 #contenedorIdentidad {
     display: flex;
@@ -314,12 +326,21 @@ header {
     width: 401px;
 }
 
+
 .btnEditar {
-    width: 231px;
+    width: 54px;
+    background-image: url(./image/editar.png);
+    background-size: 24px;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .btnEliminar {
-    width: 186px;
+    width: 54px;
+    background-image: url(./image/basura.png);
+    background-size: 27px;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 #inputReescribir {

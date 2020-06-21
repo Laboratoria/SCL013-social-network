@@ -161,8 +161,8 @@ export const mostrarPublicacionHome = () => {
           <a id="btnRecomiendo"></a>
         </div>
         <div id="contenedorBtnEdicion" data-publicacionContenedor='${doc.id}'> 
-         <button class="btnEliminar"  id="btnEliminarId">Eliminar  </button> 
-         <button class="btnEditar"  id="btnEditarId" > Editar</button>
+         <button class="btnEliminar"  id="btnEliminarId"> </button> 
+         <button class="btnEditar"  id="btnEditarId" ></button>
        
         </div>
       
