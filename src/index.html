@@ -1,12 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-</head>
+  <link rel="stylesheet" href="style.css" />
+  <title>El Trueke</title>
+</head> 
+
 <body>
-  <script type="module" src="main.js"></script>
+  <div id="root"></div>
+<script type="module" src="main.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-firestore.js"></script>
+
+<script>
+  var firebaseConfig = {
+    apiKey: "AIzaSyB6PF4N0aAzpfXvVSq36sxn-Tus351zmDI",
+    authDomain: "el-trueke.firebaseapp.com",
+    databaseURL: "https://el-trueke.firebaseio.com",
+    projectId: "el-trueke",
+    storageBucket: "el-trueke.appspot.com",
+    messagingSenderId: "71095432017",
+    appId: "1:71095432017:web:673702cd565f52bb689970"
+  };
+  firebase.initializeApp(firebaseConfig);
+  
+</script>
 </body>
 </html>
+

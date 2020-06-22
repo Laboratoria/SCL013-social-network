@@ -1,5 +1,14 @@
-// Este es el punto de entrada de tu aplicacion
+import { menu } from './view/menu.js';
+import { changeRoute } from './lib/router.js';
 
-import { myFunction } from './lib/index.js';
+const init = () => {
+  document.getElementById('root').innerHTML = menu();
 
-myFunction();
+  window.addEventListener('hashchange', () => {
+    changeRoute(window.location.hash);
+  });
+  firebase.auth().onAuthStateChanged(() => {
+    changeRoute(window.location.hash);
+  });
+};
+window.addEventListener('load', init);
