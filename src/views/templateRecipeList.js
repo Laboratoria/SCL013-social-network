@@ -91,13 +91,13 @@ export const recipeListView = () => {
                              <tr>
                                 <th scope="row">
                                     <span class="userName">${recipe.data().userName}</span>
-                                    <span class="userName">${recipe.data().date}</span>
+                                    <span class="date">${recipe.data().date}</span>
                                     <div id="edit-post" style="display: none";>
                                     </div>
                                     <hr size="3px" />
-                                        <span id="recipeName" class="userName">${recipe.data().recipeName}</span>
+                                        <span id="recipeName" class="titleRecipe">${recipe.data().recipeName}</span>
                                         <label for="recipeIngredients" id="ingredientsLabel" class="labelNewPost">Ingredientes</label>
-                                        <span id="recipeIngredients" class="showRecipe">${recipe.data().recipeIngredients}</span>
+                                        <span id="recipeIngredients" class="showIngredients">${recipe.data().recipeIngredients}</span>
                                         <br>
                                         <hr size="3px" />
                                         <label for="userRecipe" id="recipeLabel" class="labelNewPost">Preparación</label>
