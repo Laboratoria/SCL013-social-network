@@ -1,0 +1,842 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Comfortaa', cursive;
+    background-color: whitesmoke;
+}
+
+.containerPage {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+.containerLeft {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(img/img-background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-self: auto;
+    width: 100%;
+    height: 100vh;
+    background-color: whitesmoke;
+    background-position: 50% 50%;
+}
+
+.containerRight {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    height: 100vh;
+    background-color: whitesmoke;
+}
+
+.logo {
+    width: 400px;
+}
+
+.firstTitle {
+    text-align: center;
+    font-size: 48px;
+    padding: 7px;
+
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 20px;
+    margin: 15px;
+    padding: 7px;
+
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+
+}
+
+.loginInput {
+    border: none;
+    font-family: 'Comfortaa', cursive;
+    text-align: center;
+    border-radius: 0px;
+    margin: 7px;
+    width: 360px;
+    height: 42.06px;
+    left: 936px;
+    top: 396.94px;
+    background: rgba(196, 196, 196, 0.12);
+}
+
+.loginInput:focus,
+.userRegisterInput {
+    outline-color: #F9B233;
+}
+
+.btnStart:focus,
+.btnGoogle:focus {
+    outline: none;
+}
+
+.btnStart {
+    align-self: center;
+    border: none;
+    border-radius: 20px;
+    margin: 7px;
+    padding: 7px;
+    width: 331px;
+    height: 42px;
+    left: 943px;
+    top: 529px;
+    cursor: pointer;
+    font-family: 'Comfortaa', cursive;
+    background-color: #F9B233;
+}
+
+.btnStart:hover {
+    background-color: rgba(253, 199, 105, 0.966);
+}
+
+.titleRegister {
+    color: black;
+    text-align: center;
+    margin: 7px;
+    padding: 7px;
+}
+
+.signUp {
+    color: #F9B233;
+    text-decoration: none;
+}
+
+hr {
+    margin: 10px;
+}
+
+/*---------User Register Page---------*/
+
+.userRegisterTitle {
+    text-align: left;
+    font-weight: lighter;
+    font-size: 36px;
+    margin: 30px 0px;
+    padding: 7px;
+
+}
+
+.userRegisterform {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    width: 420px;
+    height: 480px;
+    left: 836px;
+    top: 186px;
+    background: rgb(250, 240, 222);
+    border-radius: 22px;
+}
+
+.userRegisterform i {
+    font-size: 25px;
+    margin: 7px;
+    padding: 7px;
+    color: #F9B233;
+}
+
+.userRegisterInput {
+    border: none;
+    font-family: 'Comfortaa', cursive;
+    border-radius: 5px;
+    margin: 7px 0px 7px 30px;
+    padding: 15px;
+    width: 255px;
+    height: 42px;
+    left: 980px;
+    top: 531px;
+    background: rgb(255, 255, 255);
+    border-radius: 5px;
+}
+
+.Allbtn {
+    border: none;
+    border-radius: 20px;
+    margin: 10px 0px;
+    padding: 7px;
+    width: 420px;
+    height: 42px;
+    left: 943px;
+    top: 529px;
+    cursor: pointer;
+    font-family: 'Comfortaa', cursive;
+    background-color: #F9B233;
+}
+
+.Allbtn:hover {
+    background-color: rgba(253, 199, 105, 0.966);
+}
+
+
+/*---------MOBILE---------*/
+
+.containerMobile {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.containerColor {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.logoMobile {
+    display: none;
+    align-content: center;
+    width: 300px;
+}
+
+.logoUserMobile {
+    display: none;
+    align-content: flex-start;
+    justify-content: center;
+    width: 35%;
+    margin: 15px;
+}
+
+.btnGoogle {
+    align-self: center;
+    text-decoration: none;
+    border: 1px solid #F9B233;
+    border-radius: 20px;
+    margin: 7px;
+    padding: 7px;
+    width: 331px;
+    height: 42px;
+    left: 943px;
+    top: 529px;
+    cursor: pointer;
+    font-family: 'Comfortaa', cursive;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+.btnGoogle:link {
+    text-decoration: none;
+}
+
+.btnGoogle:hover {
+    background-color: rgba(253, 199, 105, 0.966);
+}
+
+.btnGoogleMobile {
+    display: flex;
+    max-width: 10%;
+    margin: -6px 0px -24px 12px;
+    align-self: center;
+    cursor: pointer;
+}
+
+
+/*---------SIDEBAR---------*/
+
+#sidebar {
+    display: flex;
+    position: fixed;
+    width: 250px;
+    height: 100%;
+    /* background: #FFF7E9; */
+    box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
+    left: -200px;
+    transition: all 500ms linear;
+    background: url(img/img-background.png);
+    align-items: flex-start;
+}
+
+#sidebar.active {
+    left: 0px;
+}
+
+#sidebar ul li {
+    color: #000000;
+    list-style: none;
+    padding: 11px 12px;
+    text-align: left;
+}
+
+li a {
+    color: black;
+    text-decoration: none;
+}
+.logOut {
+    border: 1px solid #F9B233;
+    width: 180px;
+    height: 40px;
+    border-radius: 20px;
+    margin: 20px;
+    cursor: pointer;
+    align-self: flex-end;
+}
+.listMenu {
+    background: #F9B233;
+    width: 180px;
+    height: 40px;
+    border-radius: 20px;
+    margin: 20px;
+    cursor: pointer;
+}
+
+.listMenu:hover, .logOut:hover {
+    background-color: rgba(253, 199, 105, 0.966);
+    box-shadow: 0 4px 5px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.logoToggle {
+    display: block;
+    margin: 0 auto;
+    width: 198px;
+    padding: 6px;
+}
+
+#sidebar .toggle-btn {
+    position: absolute;
+    left: 270px;
+    top: 20px;
+    cursor: pointer;
+}
+
+#sidebar .toggle-btn span {
+    display: block;
+    width: 40px;
+    text-align: center;
+    font-size: 30px;
+    border: 3px solid #000;
+}
+
+/*---------EDITAR PERFIL---------*/
+
+.containerEditProfile {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: whitesmoke;
+}
+
+.colorContainerProfile {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 600px;
+    left: 621px;
+    top: 150px;
+    margin: 50px;
+    background: #FDE9C7;
+    border-radius: 22px;
+    box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
+}
+
+.titleEditProfile {
+    font-size: 35px;
+
+}
+
+.infoEditProfile {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    margin: 20px 0px 20px 0px;
+}
+
+.profileCancelBtn,
+.profileBtn {
+    background: #F9B233;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    width: 125px;
+}
+
+.profileItem {
+    margin-bottom: 20px;
+}
+
+.profileUploadBtn {
+    margin-bottom: 20px;
+    width: 125px;
+    height: 38px;
+    background: #F9B233;
+    border-radius: 20px;
+    border: none;
+}
+
+.nameProfile {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: none;
+    width: 255px;
+}
+
+.specialty {
+    padding: 10px;
+    border: none;
+    width: 255px;
+}
+
+.infoEditProfile i {
+    margin: 10px;
+}
+
+/*---------POST---------*/
+
+.create-post {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    margin-bottom: 5%;
+}
+
+header {
+    padding: 40px;
+    margin-top: 45px;
+    text-align: center;
+    font-size: 28px
+}
+
+
+header h4 {
+    font-weight: normal;
+    padding: 30px;
+}
+
+.newPost {
+    background-color: white;
+    box-sizing: border-box;
+    box-shadow: 0 3px 9px 0 rgba(0, 0, 0, 0.3), 0 0px 0px 0 rgba(0, 0, 0, 0.575);
+    border-radius: 7px;
+    width: 700px;
+    height: auto;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    left: 28.4%;
+    top: 65%;
+}
+
+.editDelete, .saveCancel{
+    display:flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: flex-end;
+    align-content: flex-end;
+}
+
+.editDelete i, .saveCancel i{
+    text-decoration: none;
+    color: #F9B233;
+    cursor: pointer;
+    font-size: 25px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.create-post-div {
+    background-color: white;
+    border: 2px solid #F9B233;
+    box-sizing: border-box;
+    box-shadow: 2px 3px 4px #F9B233;
+    border-radius: 7px;
+    width: 700px;
+    height: auto;
+    left: 28.4%;
+    top: 15%;
+}
+
+.writeRecipe,
+.writeIngredients {
+    font-family: Comfortaa;
+    width: 550px;
+    font-size: 14px;
+    height: auto;
+    border: none;
+    margin: 15px 0px 0px 70px;
+}
+
+.writeRecipe:focus,
+.writeIngredients {
+    outline: none;
+}
+
+.writeRecipe::placeholder,
+.writeIngredients {
+    font-size: 14px;
+    font-family: Comfortaa;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.create-post-options {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.recipePost {
+    font-family: Comfortaa;
+    background: #F9B233;
+    padding: 12px;
+    height: 35px;
+    border-radius: 20px;
+    margin-right: 13px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    border: none;
+}
+
+.showRecipe {
+    width: 557px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 7%;
+    height: auto;
+    border: none;
+}
+.showIngredients {
+    width: 557px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    height: auto;
+    border: none;
+}
+
+.userName {
+    align-self: flex-start;
+    margin-left: 10%;
+    margin-top: 7%;
+    font-family: Comfortaa;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 22px;
+    border: none;
+}
+.labelNewPost{
+    align-self: flex-start;
+    margin-left: 10%;
+    margin-top: 2%;
+    font-family: Comfortaa;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 22px;
+    border: none;
+}
+
+.date {
+    align-self: flex-start;
+    margin-left: 10%;
+    margin-top: 1%;
+    font-family: Comfortaa;
+    font-style: normal;
+    font-size: 11px;
+    line-height: 22px;
+    border: none;
+}
+
+.titlePost {
+    margin: 36px 526px 0px 0px;
+    font-size: 35px;
+    font-weight: normal;
+}
+.titleRecipe{
+    margin-right: 10%;
+    margin-left: 10%;
+    align-self: flex-start;
+    font-size: 30px;
+    font-family: Comfortaa;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    border: none;
+    
+}
+
+.dateNewPost {
+    align-self: flex-start;
+    margin: 15px 0px 0px 70px;
+}
+
+@media screen and (max-width: 576px) {
+
+    .containerPage {
+        flex-flow: row wrap;
+
+    }
+
+    .containerLeft {
+        display: none;
+    }
+
+    .containerRight {
+        display: flex;
+        width: 100%;
+        background-color: whitesmoke;
+    }
+
+    .containerMobile {
+        display: fixed;
+        background: url(img/img-background.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 100vh;
+    }
+
+    .containerColor {
+        display: flex;
+        width: 318px;
+        height: auto;
+        left: 29px;
+        top: 138px;
+        background: rgba(252, 244, 244, 0.48);
+        border-radius: 1px;
+    }
+
+    .logoMobile {
+        display: flex;
+        width: 300px;
+    }
+
+    .logoUserMobile {
+        display: flex;
+    }
+
+    .firstTitle {
+        font-size: 30px;
+    }
+
+    .subtitle {
+        font-size: 18px;
+    }
+
+    .loginInput {
+        width: 240px;
+        background: rgba(129, 129, 129, 0.12);
+    }
+
+    .titleRegister {
+        font-size: 14px;
+    }
+
+    .signUp {
+        color: black;
+        text-decoration: none;
+    }
+
+    .btnStart {
+        width: 221px;
+    }
+
+    .btnGoogle {
+        width: 221px;
+    }
+
+    .btnGoogleMobile {
+        display: flex;
+        margin: -2px 0px -18px 12px
+    }
+
+    /*REGISTER PAGE*/
+
+    .userRegisterTitle {
+        font-size: 30px;
+        margin: 15px 0px;
+
+    }
+
+    .userRegisterform {
+        width: 320px;
+        height: auto;
+    }
+
+    .userRegisterform i {
+        font-size: 18px;
+    }
+
+    .userRegisterInput {
+        width: 200px;
+
+    }
+
+    .Allbtn {
+        margin: 25px 0px;
+        width: 320px;
+    }
+
+    /*-----EDITAR PERFIL----*/
+
+    .titleEditProfile {
+        font-size: 25px;
+    }
+
+    .colorContainerProfile {
+        width: 310px;
+        margin: 36px;
+    }
+
+    .nameProfile .specialty {
+        width: 228px;
+    }
+
+    /*-----SIDEBAR------*/
+
+    #sidebar {
+        width: 190px;
+    }
+
+    .listMenu {
+        width: 142px;
+        height: 37px;
+        margin: 12px;
+
+    }
+
+    .logoToggle {
+        width: 162px;
+        padding: 6px 16px 7px 0px;
+    }
+
+    li a {
+        font-size: 12px;
+    }
+
+    #sidebar .toggle-btn span {
+        margin-left: -55px;
+        font-size: 20px;
+        width: 31px;
+    }
+
+    /*-----------POST-------------*/
+
+    .newPost {
+        width: 304px;
+        height: auto;
+        margin: 22px 23px 0px 2px;
+    }
+
+    .recipePost {
+        font-family: Comfortaa;
+        font-size: 10px;
+        padding: 6px;
+        width: 60px;
+        height: 24px;
+    }
+
+    .editDelete i ,.saveCancel i {
+        font-size: 18px;
+        margin-right: 13px;
+        margin-bottom: 12px;
+    }
+
+    .titlePost {
+        margin: 28px 204px 0px -14px;
+        font-size: 20px;
+    }
+
+    header {
+        padding: 20px;
+        margin-top: 45px;
+        font-size: 18px
+    }
+
+    header h4 {
+        padding: 10px;
+    }
+    .create-post {
+        margin-bottom: 70px
+    }
+    .create-post-div {
+        width: 304px;
+        height: auto;
+        margin: 0px 23px 0px 2px;
+    }
+
+    .writeRecipe {
+        width: 220px;
+        margin: 2px 0px 0px 35px;
+    }
+
+    .showRecipe {
+        width: 242px;
+        font-size: 12px;
+        margin: auto;
+        margin-top: 10px;
+        margin-bottom: 35px;
+        height: auto
+    }
+    .showIngredients {
+        margin-bottom: 0px;
+        width: 242px;
+        font-size: 12px;
+        margin-top: 10px;
+        height: auto
+    }
+
+    .writeRecipe,
+    .writeIngredients {
+        width: 243px;
+        font-size: 12px;
+        margin: 12px 7px 0px 35px;
+        height: auto;
+
+    }
+
+    .writeRecipe::placeholder,
+    .writeIngredients {
+        font-size: 12px;
+        width: 220px;
+        margin: 11px 0px 0px 30px;
+    }
+
+    .userName,
+    .labelNewPost {
+        font-size: 12px;
+
+    }
+
+    .dateNewPost {
+        font-size: 12px;
+        margin: 11px 0px 0px 30px;
+    }
+
+    .selectRecipe {
+        margin: 0px 18px 0px 10px;
+    }
+}

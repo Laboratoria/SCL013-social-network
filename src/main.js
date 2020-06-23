@@ -1,5 +1,25 @@
-// Este es el punto de entrada de tu aplicacion
+import { changeRoute } from './router.js';
 
-import { myFunction } from './lib/index.js';
+// Observer
+export const firebaseAuthentication = () => {
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      // User is signed in.
+      if (user.emailVerified) {
+        changeRoute('#/home');
+      }
+    } else {
+      changeRoute('#/login');
+    }
+  });
+};
 
-myFunction();
+firebaseAuthentication();
+
+const init = () => {
+  window.addEventListener('hashchange', () => {
+    changeRoute(window.location.hash);
+  });
+};
+
+window.addEventListener('load', init);
